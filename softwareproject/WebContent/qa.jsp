@@ -7,7 +7,7 @@
 <title>졸업프로젝트 설명</title>
 </head>
 <body>
-	<jsp:include page="testNavbar.jsp" />
+	<jsp:include page="nav.jsp" />
 
 
 	<div id="page-wrapper">
