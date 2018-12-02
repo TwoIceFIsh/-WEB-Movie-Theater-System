@@ -97,7 +97,7 @@
 					<ul class="nav" id="side-menu">
 						 
 			  
-						<li><a href="testIndex.jsp"><i class="fa fa-dashboard fa-fw"></i>
+						<li><a href="#"><i class="fa fa-dashboard fa-fw"></i>
 								영화 목록 </a></li>
 			 			
 								<li><a href="#"><i class="fa fa-dashboard      fa-fw"></i>
