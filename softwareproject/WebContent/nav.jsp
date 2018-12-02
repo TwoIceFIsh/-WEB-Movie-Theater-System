@@ -50,7 +50,7 @@
 				</button>
 				<a class="navbar-brand" href="m_index.jsp">오유이동 영화관</a>
 			</div>
- 
+
 			<ul class="nav navbar-top-links navbar-right">
 
 
@@ -89,9 +89,9 @@
 					}
 				%>
 
-		 
+
 			</ul>
- 
+
 
 			<div class="navbar-default sidebar" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
@@ -122,16 +122,16 @@
 
 					</ul>
 				</div>
- 
+
 			</div>
- 
+
 		</nav>
 
 
-	 
+
 
 	</div>
- 
+
 
 
 
