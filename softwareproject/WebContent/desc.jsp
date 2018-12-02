@@ -24,14 +24,14 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">버튼식 명령</div>
+					<div class="panel-heading">adfsafasdf</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body row">
 
 
 						<div class="col-md-6" style="height: 750px; width: 350px;">
 							<img alt="That Image" style="max-height: 100%; max-width: 100%;"
-								src="image/A.jpeg">
+								src=" ">
 
 
 						</div>
@@ -54,15 +54,13 @@
 
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">음성인식 명령</div>
+					<div class="panel-heading">sdfasdf</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body row">
 
 
 						<div class="col-md-6" style="height: 750px; width: 350px;">
-							<img alt="That Image" style="max-height: 100%; max-width: 100%;"
-								src="image/D.jpeg">
-
+							 
 
 						</div>
 
@@ -82,7 +80,7 @@
 			<!-- /.col-lg-12 -->
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">실시간 그래프</div>
+					<div class="panel-heading">asdfsdfs</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body row">
 
@@ -97,7 +95,7 @@
 			<!-- /.col-lg-6 -->
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">알림 패널</div>
+					<div class="panel-heading">asdfsfsd</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body row">
 
