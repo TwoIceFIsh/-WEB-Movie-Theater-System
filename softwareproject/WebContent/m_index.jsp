@@ -14,7 +14,7 @@
 <body>
 
   <div>
-    <jsp:include page="testNavbar.jsp" />
+    <jsp:include page="nav.jsp" />
     </div>
 	<!-- [main] show  -->
 

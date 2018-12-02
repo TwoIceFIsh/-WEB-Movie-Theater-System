@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<jsp:include page="testNavbar.jsp" />
+	<jsp:include page="nav.jsp" />
 	<!-- [session] check logic -->
 	<%
 		String userID = null;

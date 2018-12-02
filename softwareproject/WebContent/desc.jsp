@@ -7,7 +7,7 @@
 <title>사이트 기술 설명</title>
 </head>
 <body>
-	<jsp:include page="testNavbar.jsp" />
+	<jsp:include page="nav.jsp" />
 
 	<div id="page-wrapper">
 		<div class="row">

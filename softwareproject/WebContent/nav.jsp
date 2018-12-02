@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<jsp:include page="testJs.jsp" />
+	<jsp:include page="js.jsp" />
 
 
 	<%

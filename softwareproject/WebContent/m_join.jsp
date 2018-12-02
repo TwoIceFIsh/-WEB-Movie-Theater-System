@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<jsp:include page="testNavbar.jsp" />
+	<jsp:include page="nav.jsp" />
 
 
 	<div class="row">
