@@ -5,7 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-
+<!-- 무조건 이양식을 따라야 한글이 제대로 출력이됩니다.
+ -->
 <title>기본 구성 페이지!</title>
 </head>
 <body>
