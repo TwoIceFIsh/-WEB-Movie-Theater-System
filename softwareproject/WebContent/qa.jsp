@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>졸업프로젝트 설명</title>
+<title>질문있으신가요?</title>
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
@@ -15,9 +15,9 @@
 
 			<div class="col-lg-12">
 
-				<h1 class="page-header">Q&A.</h1>
+				<h1 class="page-header">Q A.</h1>
 			</div>
-			<!-- /.col-lg-12 -->
+		 
 		</div>
 
 
