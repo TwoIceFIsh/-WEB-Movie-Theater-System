@@ -27,9 +27,7 @@
 				<div class="panel panel-default">
 
 					<!-- /.panel-heading -->
-					<div class=" col-md-12">
-
-
+					<div class=" col-md-12">안ㄴㅇ
 
 						<br>
 						<h1>이병호</h1>
