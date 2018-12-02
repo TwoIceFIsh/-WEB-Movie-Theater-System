@@ -20,8 +20,8 @@
 
 	<div id="page-wrapper">
 		<div class=" ">
-			<h1 class="display-4"> 나만을 위한 정원 관리 시스템 </h1>
-			<p class="lead">언제 어디서든 나의 식물들을 관리 할 수 있습니다.</p>
+			<h1 class="display-4"> 오유이동 영화관 </h1>
+			<p class="lead">어서오십시오!.</p>
 		
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
@@ -35,10 +35,10 @@
 						<img class="first-slide" src="./image/bg1.jpg" alt="First slide">
 						<div class="container">
 							<div class="carousel-caption">
-								<h1>간단하고 직관적인 컨트롤 패널!</h1>
+								<h1>황해</h1>
 								<p>
-									자동 빛감지를 통한 차단막형성<br>
-									습도 온도 조절
+									맛있는 맛집여행<br>
+								 
 									
 									 
 								</p>

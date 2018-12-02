@@ -30,8 +30,7 @@ public class UserUpdateServlet extends HttpServlet {
 				userEMAIL == null || userEMAIL.equals("")  
 				  )
 		{
-			request.getSession().setAttribute("messageType", "오류 메세지");
-			request.getSession().setAttribute("messageContent", "모든 내용을 입력 해주세요.");	
+			 
 			response.sendRedirect("m_index.jsp");	
 			return;
 		}
@@ -39,24 +38,18 @@ public class UserUpdateServlet extends HttpServlet {
 
 		if(!userPW1.equals(userPW2))
 		{
-			request.getSession().setAttribute("messageType", "오류 메세지");
-			request.getSession().setAttribute("messageContent", "비밀번호가 일치하지 않습니다.");
-			response.sendRedirect("m_index.jsp");
+			 response.sendRedirect("m_index.jsp");
 			return;
 		}
 
 		int result = new UserDAO().update(userID, userPW1 , userEMAIL);
 
 		if(result == 1) {
-			request.getSession().setAttribute("messageType", "성공 메세지");
-			request.getSession().setAttribute("messageContent", "정보수정에 성공했습니다.");
-			response.sendRedirect("m_index.jsp");
+			 response.sendRedirect("m_index.jsp");
 			return;
 		}
 		else {
-			request.getSession().setAttribute("messageType", "오류 메세지");
-			request.getSession().setAttribute("messageContent","디비접근 불가.");
-			response.sendRedirect("m_index.jsp");
+			 response.sendRedirect("m_index.jsp");
 			return;
 		}
 	}
