@@ -45,11 +45,11 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
+					<span class="sr-only"> </span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="m_index.jsp">SMART GREEN HOUSE</a>
+				<a class="navbar-brand" href="m_index.jsp">오유이동 영화관</a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -96,28 +96,17 @@
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 						 
-						  <%
-					if (userID != null) {
-				%>
-						 
+			  
 						<li><a href="testIndex.jsp"><i class="fa fa-dashboard fa-fw"></i>
-								 ☆ 개발자 컨트롤 패널 ☆ </a></li>
+								영화 목록 </a></li>
+			 			
+								<li><a href="#"><i class="fa fa-dashboard      fa-fw"></i>
+								현재 진행중인 이벤트</a></li>
 								
-									  <%
-					}  else{
-				%>
-								
-								<li><a href="guest.jsp"><i class="fa fa-dashboard      fa-fw"></i>
-								손님용 컨트롤 패널</a></li>
-								
-									  <%
-					}
-				%>
-									<li><a href="m_serialR.jsp"><i class="fa fa-key   fa-fw"></i>
-								시리얼 등록</a></li>
-								<!-- 	<li><a href="m_maker.jsp"><i class="fa fa-comment   fa-fw"></i>
-								제작자</a></li> -->
-								
+			 				<li><a href=#"><i class="fa fa-key   fa-fw"></i>
+								영화 예매 하기</a></li>
+								 
+							 
 						 
 								
 								<li><a href="desc.jsp"><i class="fa fa-gears       fa-fw"></i>

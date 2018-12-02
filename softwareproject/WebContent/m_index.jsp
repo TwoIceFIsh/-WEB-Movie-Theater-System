@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>스마트그린하우스에 오신것을 환영합니다.</title>
+<title>오유이동 영화관에오신것을 환영합니다.</title>
 
 </head>
 <body>
@@ -50,10 +50,10 @@
 						<img class="second-slide"    src="./image/bg2.jpg" alt="Second slide">
 						<div class="container">
 							<div class="carousel-caption">
-								 <h1>너무 좋아요!</h1>
+								 <h1>타임머신</h1>
 								<p>
-									밖에서도 편안히 내식물을 관리해요!<br>
-									습도 온도 조절등등 편하네요~
+									헉 옛날로갔당<br>
+								 
 									
 									 
 								</p>
