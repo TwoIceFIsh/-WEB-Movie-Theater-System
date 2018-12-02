@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -44,9 +44,9 @@
 	%>
 	
 	<h1 align="center"> 영화예매 </h1>
-	<form name ="Movie_choice_form" action="http://localhost:8080/softwareproject/reserved_Movie_Page/temp.jsp" method="post">
+	<form name ="Movie_choice_form" action="result.jsp" accept-charset="utf-8" method="post">
 	<p class="select_theater_room">영화관 선택</p>
-		<select name="Movie_room" method="post">
+		<select name="Movie_room" method="post" accept-charset="utf-8">
 			<option value = "제 1영화관" selected>1영화관</option>
 			<option vlaue = "제 2영화관" select>2영화관</option>
 			<option vlaue = "제 3영화관" select>3영화관</option>
@@ -62,6 +62,16 @@
 			<option vlaue = "영화4" select>영화4</option>
 			<option vlaue = "영화5" select>영화5</option>
 		</select>
+		
+		<p class="select_theater_Date">영화관 날짜선택</p>
+		
+		<fieldset style = "width:350">
+			<legend> 영화관 날짜  <date> </legend>
+			<br>
+			날짜입력 
+			<br>
+			<input type = "date" min ="2018-12-20" max="2019-01-30" name = "date" step ="7">
+			<br>
 		
 		<p class="select_theater_Time">영화 시간 선택</p>
 		<select name="Movie_Time" action="" method="post">
@@ -80,7 +90,7 @@
 		<p class="check_normal">이렇게 하시겠습니까?</p>
 		<input type ="submit" value="보내기">
 		<input type ="reset" value="원점으로 돌리기">
-		
+		</fieldset>
 	</form>
 	
 
