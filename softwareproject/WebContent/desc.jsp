@@ -30,10 +30,7 @@
 
 
 						<div class="col-md-6" style="height: 750px; width: 350px;">
-							<img alt="That Image" style="max-height: 100%; max-width: 100%;"
-								src=" ">
-
-
+							 asdasdasdasdasdasd
 						</div>
 
 						<div class="col-md-6">
