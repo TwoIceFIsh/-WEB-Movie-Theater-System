@@ -48,19 +48,19 @@
 	<p class="select_theater_room">영화관 선택</p>
 		<select name="Movie_room" method="post" accept-charset="utf-8">
 			<option value = "제 1영화관" selected>1영화관</option>
-			<option vlaue = "제 2영화관" select>2영화관</option>
-			<option vlaue = "제 3영화관" select>3영화관</option>
-			<option vlaue = "제 4영화관" select>4영화관</option>
-			<option vlaue = "제 5영화관" select>5영화관</option>
+			<option value = "제 2영화관" select>2영화관</option>
+			<option value = "제 3영화관" select>3영화관</option>
+			<option value = "제 4영화관" select>4영화관</option>
+			<option value = "제 5영화관" select>5영화관</option>
 		</select>
 		
 		<p class="select_theater_Movie">영화관 선택</p>
 		<select name="Movie_name" method="post">
 			<option value = "영화1" selected>영화1</option>
-			<option vlaue = "영화2" select>영화2</option>
-			<option vlaue = "영화3" select>영화3</option>
-			<option vlaue = "영화4" select>영화4</option>
-			<option vlaue = "영화5" select>영화5</option>
+			<option value = "영화2" select>영화2</option>
+			<option value = "영화3" select>영화3</option>
+			<option value = "영화4" select>영화4</option>
+			<option value = "영화5" select>영화5</option>
 		</select>
 		
 		<p class="select_theater_Date">영화관 날짜선택</p>
