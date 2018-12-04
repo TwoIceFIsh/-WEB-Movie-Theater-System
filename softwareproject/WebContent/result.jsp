@@ -9,10 +9,10 @@
 <body>
 	<h1>영화 예매 결과</h1>
 	<ul>
-		<li>영화관: <%=request.getParameter("Movie_room") %></li>	
-		<li>영화이름: <%=request.getParameter("Movie_name") %></li>	
-		<li>날짜:<%=request.getParameter("date") %></li>	
-		<li>시간:<%=request.getParameter("Movie_Time") %></li>	
+		<li>영화관: <%="영화관은 " + request.getParameter("Movie_room") + "입니다."%></li>	
+		<li>영화이름: <%="영화이름은 "+ request.getParameter("Movie_name") + "입니다."%></li>	
+		<li>날짜:<%="날짜는 " + request.getParameter("date") + "입니다."%></li>	
+		<li>시간:<%="시간는 "+ request.getParameter("Movie_Time") + "입니다." %></li>	
 	</ul>
 	
 </body>
