@@ -26,9 +26,6 @@
 			success : function(result) {
 				if(result == 1 ){
 			 
-					$('#statusMessage').html('워터펌프 ON.');
-					$('#statusMessage').css("color", "green");
-					
 				}
 				if (result == -1 ) {
 					$('#statusMessage').html('예약이 마감되었습니다');
@@ -37,6 +34,33 @@
 			}
 		});
 	}
+	
+	setInterval(function drawFunction() {
+	
+		$.ajax({
+			type : 'POST',
+			url : './UserDataServlet',
+			data : {
+			
+			},
+			success : function(result) {
+			
+				
+				$('#seatA').html(result);
+			 
+				 
+				if (result <= 0) {
+					$('#seatA').html('매진');
+					 
+				}
+				
+				
+				 
+				
+			}
+		});
+	}
+	, 1000);
  </script>
 
 	<!-- 네비게이션 바를 로딩합니다 -->
@@ -69,7 +93,7 @@
 			<div class="col-lg-12">
 				<p>나는 최고다</p>
 				<button type="button" class="btn btn-default btn-lg">
-					2관<br> 09:30 <br>남은좌석 : 80
+					2관<br> 09:30 <br>남은좌석 : <a id="seatA"></a>
 				</button>
 				<button type="button" class="btn btn-default btn-lg">
 					1관 <br> 11:30<br>남은좌석 : 40

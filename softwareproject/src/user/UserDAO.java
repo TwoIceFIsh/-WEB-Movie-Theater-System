@@ -78,15 +78,20 @@ public class UserDAO {
 		return -1;
 	}
 	
-	public int checkTheater(String movieName, String movieTime) {
+ 
+	
+	public int getInfoA() {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT userID,userPW FROM USER WHERE userID = ? ";
+		String SQL = "SELECT total_number, number FROM MOVIESTATION ";
+		int A=0;
+	
+		
 
 		System.out.println("---------------------");
-		System.out.println("UserDAO login Function");
+		System.out.println("UserDAO getInfo Function");
 		System.out.println("---------------------");
 
 		try {
@@ -94,19 +99,15 @@ public class UserDAO {
 			Class.forName("com.mysql.jdbc.Driver");    
 			conn = DriverManager.getConnection(url,username,password);
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, movieName);
+		 
 			rs=pstmt.executeQuery();
 
 			if(rs.next())
 			{
-				if(rs.getString("userPW").equals("")) 
-				{
-					System.out.println("ID/PW  [1]");
-					return 1;
-				}
-
-				System.out.println("ID/PW  [2]");
-				return 2;
+				A= rs.getInt("total_number");
+				 A -= rs.getInt("number");
+				 return A;
+			 
 			}
 
 			else 
