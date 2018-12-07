@@ -41,61 +41,20 @@
 			<div class="col-lg-12">
 				<p>나는 최고다</p>
 				<button type="button" class="btn btn-default btn-lg">
-					1관 <a class="list-group-item"></a> 09:30 <a class="list-group-item"></a>남은좌석
-					: 80
+					2관<br> 09:30 <br>남은좌석 : 80
 				</button>
 				<button type="button" class="btn btn-default btn-lg">
-					1관 <a class="list-group-item"></a> 09:30 <a class="list-group-item"></a>남은좌석
-					: 80
+					1관 <br> 11:30<br>남은좌석 : 40
 				</button>
 				<button type="button" class="btn btn-default btn-lg">
-					1관 <a class="list-group-item"></a> 09:30 <a class="list-group-item"></a>남은좌석
-					: 80
+					3관 <br>15:30 <br>남은좌석 : 23
 				</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<p class="select_theater_room">2관</p>
-				<button type="button" class="btn btn-default btn-lg">나는 최고다
-					09:30</button>
-				<button type="button" class="btn btn-default btn-lg">나는 최고다
-					11:30</button>
-				<button type="button" class="btn btn-default btn-lg">나는 최고다
-					13:30</button>
-
 			</div>
 		</div>
 
 
-		<p class="select_theater_Date">영화관 날짜선택</p>
-		<button type="button" class="btn btn-default">Default</button>
 
 
-		<fieldset style="width: 350">
-			<legend>
-				영화관 날짜
-				<date>
-			</legend>
-			<br> 날짜입력 <br> <input type="date" min="2018-12-20"
-				max="2019-01-30" name="date" step="7"> <br>
-
-			<p class="select_theater_Time">영화 시간 선택</p>
-			<select name="Movie_Time" action="" method="post">
-				<option value="Am_06:00" selected>06:00</option>
-				<option value="Am_08:00" select>08:00</option>
-				<option value="Am_11:00" select>11:00</option>
-				<option value="Pm_13:00" select>13:00</option>
-				<option value="Pm_15:00" select>15:00</option>
-				<option value="Pm_17:00" select>17:00</option>
-				<option value="Pm_19:00" select>19:00</option>
-				<option value="Pm_21:00" select>21:00</option>
-			</select> <br>
-
-			<p class="check_normal">이렇게 하시겠습니까?</p>
-			<input type="submit" value="보내기"> <input type="reset"
-				value="원점으로 돌리기">
-		</fieldset>
 
 
 	</div>
