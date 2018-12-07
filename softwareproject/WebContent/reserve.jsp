@@ -11,30 +11,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-	function selectButton() {
-		var userID = $('#userID').val();
-		var movieName = "movieName";
-		var movieTime ="movieTime";
-		$.ajax({
-			type : 'POST',
-			url : './UserSelectServlet',
-			data : {
-				userID : userID,
-				movieName : movieName,
-				movieTime : movieTime
-			},
-			success : function(result) {
-				if(result == 1 ){
-			 
-				}
-				if (result == -1 ) {
-					$('#statusMessage').html('예약이 마감되었습니다');
-					$('#statusMessage').css("color", "red");
-				}
-			}
-		});
-	}
-	
+	 
 	setInterval(function drawFunction() {
 	
 		$.ajax({
@@ -53,10 +30,7 @@
 					$('#seatA').html('매진');
 					 
 				}
-				
-				
-				 
-				
+							
 			}
 		});
 	}
@@ -93,7 +67,7 @@
 			<div class="col-lg-12">
 				<p>나는 최고다</p>
 				<button type="button" class="btn btn-default btn-lg">
-					2관<br> 09:30 <br>남은좌석 : <a id="seatA"></a>
+					2관<br> 09:30 <br>남은좌석 : <a id="seatA">?</a>
 				</button>
 				<button type="button" class="btn btn-default btn-lg">
 					1관 <br> 11:30<br>남은좌석 : 40
