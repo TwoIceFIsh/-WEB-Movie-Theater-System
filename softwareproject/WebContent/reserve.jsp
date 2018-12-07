@@ -10,7 +10,33 @@
 <title>기본 구성 페이지!</title>
 </head>
 <body>
-
+	<script type="text/javascript">
+	function selectButton() {
+		var userID = $('#userID').val();
+ 
+		$.ajax({
+			type : 'POST',
+			url : './UserControlServlet',
+			data : {
+				userID : userID,
+				func : func,
+				status : status
+			},
+			success : function(result) {
+				if(result ==1 ){
+				 
+					$('#statusMessage').html('워터펌프 ON.');
+					$('#statusMessage').css("color", "green");
+					
+				}
+				if (result == -1 ) {
+					$('#statusMessage').html('malfunction.');
+					$('#statusMessage').css("color", "red");
+				}
+			}
+		});
+	}
+ </script>
 
 	<!-- 네비게이션 바를 로딩합니다 -->
 	<jsp:include page="nav.jsp" />
@@ -21,7 +47,7 @@
 
 			<div class="col-lg-12">
 
-				<h1 class="page-header">영화예매</h1>
+				<h1 class="page-header">보고싶은 영화를 선택하세요!</h1>
 			</div>
 
 		</div>
@@ -29,7 +55,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<p class="select_theater_Movie">영화</p>
-				<button type="button" class="btn btn-default btn-lg">나는 최고다</button>
+				<button id="buttonA" onClick="checkBUtton" type="button"
+					class="btn btn-default btn-lg">나는 최고다</button>
 				<button type="button" class="btn btn-default btn-lg">내이름은
 					돼지</button>
 				<button type="button" class="btn btn-default btn-lg">멋진 나의
@@ -53,8 +80,9 @@
 		</div>
 
 
-
-
+		<br>
+		<br>
+		<button type="button" class="btn btn-default btn-lg">좌석 선택하기</button>
 
 
 	</div>
