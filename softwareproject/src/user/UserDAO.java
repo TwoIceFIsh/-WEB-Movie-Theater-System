@@ -77,6 +77,63 @@ public class UserDAO {
 
 		return -1;
 	}
+	
+	public int checkTheater(String movieName, String movieTime) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "SELECT userID,userPW FROM USER WHERE userID = ? ";
+
+		System.out.println("---------------------");
+		System.out.println("UserDAO login Function");
+		System.out.println("---------------------");
+
+		try {
+
+			Class.forName("com.mysql.jdbc.Driver");    
+			conn = DriverManager.getConnection(url,username,password);
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, movieName);
+			rs=pstmt.executeQuery();
+
+			if(rs.next())
+			{
+				if(rs.getString("userPW").equals("")) 
+				{
+					System.out.println("ID/PW  [1]");
+					return 1;
+				}
+
+				System.out.println("ID/PW  [2]");
+				return 2;
+			}
+
+			else 
+			{
+				System.out.println(" [0]");
+				return 0;
+			}
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if(rs!= null)rs.close();
+
+				if(pstmt !=null) pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return -1;
+	}
+	
+	
+	
 
 
 

@@ -17,11 +17,18 @@ public class UserSelectServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8"); 
 		response.setContentType("text/html;charset=UTF-8");
 		
-		String userID = request.getParameter("userID")==null?"m_join.jsp 널":request.getParameter("userID");  
-
-		System.out.println("가입된 아이디 : "+userID);
+		String userID = request.getParameter("userID");  
+		String movieName = request.getParameter("movieName");  
+		String movieTime = request.getParameter("movieTime");  
 		
-		response.getWriter().write(new UserDAO().registerCheck(userID)+"");
+		if(userID.equals("") || userID == null)
+			return;
+		
+		//redirect select seat
+		//선택한 정보의 영화를 쏴준다 함수를 하나더 호출?
+		response.getWriter().write(new UserDAO().checkTheater(userID, movieName)+"");
+		
+		
 		}
 	
 

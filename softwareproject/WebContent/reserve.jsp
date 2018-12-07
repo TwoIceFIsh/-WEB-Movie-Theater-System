@@ -13,24 +13,25 @@
 	<script type="text/javascript">
 	function selectButton() {
 		var userID = $('#userID').val();
- 
+		var movieName = "movieName";
+		var movieTime ="movieTime";
 		$.ajax({
 			type : 'POST',
-			url : './UserControlServlet',
+			url : './UserSelectServlet',
 			data : {
 				userID : userID,
-				func : func,
-				status : status
+				movieName : movieName,
+				movieTime : movieTime
 			},
 			success : function(result) {
-				if(result ==1 ){
-				 
+				if(result == 1 ){
+			 
 					$('#statusMessage').html('워터펌프 ON.');
 					$('#statusMessage').css("color", "green");
 					
 				}
 				if (result == -1 ) {
-					$('#statusMessage').html('malfunction.');
+					$('#statusMessage').html('예약이 마감되었습니다');
 					$('#statusMessage').css("color", "red");
 				}
 			}
@@ -80,8 +81,7 @@
 		</div>
 
 
-		<br>
-		<br>
+		<br> <br>
 		<button type="button" class="btn btn-default btn-lg">좌석 선택하기</button>
 
 
