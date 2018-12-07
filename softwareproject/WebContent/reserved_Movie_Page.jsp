@@ -45,7 +45,7 @@
 
 	 //<1> 영화관 선택, 영화 선택, 날짜 선택
 	%>
-	
+ 
 	<h1 align="center"> 영화예매 </h1>
 	<form name ="Movie_choice_form" action="result.jsp" accept-charset="utf-8" method="post">
 	<p class="select_theater_room">영화관 선택</p>

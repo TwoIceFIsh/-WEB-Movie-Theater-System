@@ -31,7 +31,6 @@
 			}
 
 			UserDTO user = new UserDAO().getUser(userID);
-			
 
 		}
 	%>
@@ -104,11 +103,8 @@
 						<li><a href="#"><i class="fa fa-dashboard      fa-fw"></i>
 								현재 진행중인 이벤트</a></li>
 
-						<li><a href=" #"><i class="fa fa-key   fa-fw"></i> 영화 예매 하기</a></li>
-						
-
-
-
+						<li><a href="reserve.jsp"><i class="fa fa-key   fa-fw"></i> 영화 예매
+								하기</a></li>
 
 						<li><a href="desc.jsp"><i class="fa fa-gears       fa-fw"></i>
 								홈페이지 기술 설명</a></li>
@@ -119,18 +115,12 @@
 						<li><a href="qa.jsp"><i
 								class="fa fa-question-circle           fa-fw"></i> 마지막 페이지</a></li>
 
-
-
 					</ul>
 				</div>
 
 			</div>
 
 		</nav>
-
-
-
-
 	</div>
 
 
