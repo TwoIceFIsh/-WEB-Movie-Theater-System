@@ -24,7 +24,7 @@ public class UserDAO {
 
 	//[Y] LOGIN LOGIC
 	public int MEMBER_LOGIN(String MEMBER_ID, String USER_PW) {
-		System.out.println("Login Function");
+	 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -158,7 +158,7 @@ public class UserDAO {
 	//[Y] Return UserDTO structure
 	public UserDTO getMEMBER_INFO(String MEMBER_ID) {
 
-		UserDTO user = new UserDTO();
+		UserDTO MEMBER = new UserDTO();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -173,10 +173,12 @@ public class UserDAO {
 			rs=pstmt.executeQuery();
 
 			if(rs.next() ) {
-				user.setMEMBER_ID (MEMBER_ID);
-				user.setMEMBER_PW(rs.getString("MEMBER_PW")); 
-				user.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
-				user.setMEMBER_ADDRESS(rs.getString("MEMBER_ADDRESS"));
+				MEMBER.setMEMBER_ID (MEMBER_ID);
+				MEMBER.setMEMBER_PW(rs.getString("MEMBER_PW")); 
+				MEMBER.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
+				MEMBER.setMEMBER_ADDRESS(rs.getString("MEMBER_ADDRESS"));
+				
+				return MEMBER;
 
 			}
 
@@ -194,13 +196,13 @@ public class UserDAO {
 			}
 		}
 
-		return user;
+		return MEMBER;
 	}
 
 
 
 	//[Y] update user Info.
-	public int update(String MEMBER_ID, String MEMBER_PW, String MEMBER_NAME, String MEMBER_ADDRESS) {
+	public int MEMBER_UPDATE(String MEMBER_ID, String MEMBER_PW, String MEMBER_NAME, String MEMBER_ADDRESS) {
 		 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -214,6 +216,7 @@ public class UserDAO {
 			pstmt.setString(1, MEMBER_PW);	
 			pstmt.setString(2, MEMBER_NAME);
 			pstmt.setString(3, MEMBER_ADDRESS);
+			pstmt.setString(4, MEMBER_ID);	
 			return pstmt.executeUpdate();
 
 

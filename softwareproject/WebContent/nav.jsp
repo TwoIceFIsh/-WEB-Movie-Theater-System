@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>SMART GREEN HOUSE</title>
+<title>OU2D</title>
 
 </head>
 
@@ -22,17 +22,15 @@
 
 	<%
 		String MEMBER_ID = null;
-			if (session.getAttribute("MEMBER_ID") != null) {
-				MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
-		response.sendRedirect("./m_index.jsp");
 
+		if (session.getAttribute("MEMBER_ID") != null) {
+			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
+
+			response.sendRedirect("./m_index.jsp");
+		}
 		if (MEMBER_ID == null) {
 			response.sendRedirect("./m_index.jsp");
 		}
-
-		UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
-
-			}
 	%>
 
 
@@ -103,8 +101,8 @@
 						<li><a href="#"><i class="fa fa-dashboard      fa-fw"></i>
 								현재 진행중인 이벤트</a></li>
 
-						<li><a href="reserve.jsp"><i class="fa fa-key   fa-fw"></i> 영화 예매
-								하기</a></li>
+						<li><a href="reserve.jsp"><i class="fa fa-key   fa-fw"></i>
+								영화 예매 하기</a></li>
 
 						<li><a href="desc.jsp"><i class="fa fa-gears       fa-fw"></i>
 								홈페이지 기술 설명</a></li>
@@ -122,8 +120,6 @@
 
 		</nav>
 	</div>
-
-
 
 
 </body>

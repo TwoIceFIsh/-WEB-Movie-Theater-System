@@ -18,29 +18,26 @@ public class UserCheckServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String userID = request.getParameter("userID1");
-		String userPW = request.getParameter("userPW1");
-
-		System.out.println("UserCheckServlet ID = "+ userID);
-		System.out.println("UserCheckServlet PW = " + userPW);
-
-		if(userID == null || userID.equals("") || userPW==null || userPW.equals("")) {
-			System.out.println("Servlet ID/PW null");
+		String MEMBER_ID = request.getParameter("MEMBER_ID");
+		String MEMBER_PW = request.getParameter("MEMBER_PW_1");
+ 
+		if(MEMBER_ID == null || MEMBER_ID.equals("") || MEMBER_PW==null || MEMBER_PW.equals("")) {
+	 
 			response.getWriter().write("7");
 			return;
 
 		}
 
 
-		int result = new UserDAO().MEMBER_LOGIN(userID, userPW);
+		int result = new UserDAO().MEMBER_LOGIN(MEMBER_ID, MEMBER_PW);
 		
-		System.out.println(result);
+		 
 		if(result == 1) {
 			
-			request.getSession().setAttribute("userID", userID);
+			request.getSession().setAttribute("MEMBER_ID", MEMBER_ID);
 
 		}
-		response.getWriter().write(result+"");
+ 
 		
 		return;
 	}
