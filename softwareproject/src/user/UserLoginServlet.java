@@ -21,12 +21,9 @@ public class UserLoginServlet extends HttpServlet {
 
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
 		String MEMBER_PW = request.getParameter("MEMBER_PW");
-
-		System.out.println("UserLoginServlet ID = "+ MEMBER_ID);
-		System.out.println("UserLoginServlet PW = " + MEMBER_PW);
-
+ 
 		if(MEMBER_ID == null || MEMBER_ID.equals("") || MEMBER_PW==null || MEMBER_PW.equals("")) {
-			System.out.println("Servlet ID/PW null");
+	 
 			response.getWriter().write("7");
 			return;
 

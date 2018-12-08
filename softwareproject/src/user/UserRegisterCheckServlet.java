@@ -19,10 +19,7 @@ public class UserRegisterCheckServlet extends HttpServlet {
 		
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
 
-		System.out.println("S : "+ MEMBER_ID);
-	 
-		
-		response.getWriter().write(new UserDAO().MEMBER_ID_CHECK(MEMBER_ID)+"");
+	 	response.getWriter().write(new UserDAO().MEMBER_ID_CHECK(MEMBER_ID)+"");
 		}
 	
 
