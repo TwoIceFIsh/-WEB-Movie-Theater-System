@@ -46,7 +46,7 @@ public class UserJoinServlet extends HttpServlet {
 
 		System.out.println(userID+userPW1+userEMAIL);
 		//ask query
-		int result = new UserDAO().register(userID,userPW1 ,userEMAIL);
+		int result = new UserDAO().MEMBER_REGISTRATION(userID,userPW1 ,userEMAIL);
 
 		//result ok
 		if(result == 1) {

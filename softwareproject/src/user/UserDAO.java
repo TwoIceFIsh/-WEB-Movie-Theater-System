@@ -10,54 +10,49 @@ import java.sql.ResultSet;
 //DB login class
 public class UserDAO {
 
-	String username="hg1506";
-	String password="!hg31031"  ;
-	String url="jdbc:mysql://homepage.cb1vx3m0pxsf.ap-northeast-2.rds.amazonaws.com:3306/homepagedesu?useUnicode=true&characterEncoding=UTF-8";
-
-
+	String DB_ID="hg1506";
+	String DB_PW="!hg31031";
+	String DB_URL="jdbc:mysql://homepage.cb1vx3m0pxsf.ap-northeast-2.rds.amazonaws.com:3306/MOVIE_PROJECT?useUnicode=true&characterEncoding=UTF-8";
 
 
 	public UserDAO() {
 
+		System.out.println("Try to DB connection");
 
 	}
 
 
 	//[Y] LOGIN LOGIC
-	public int login(String userID, String userPW) {
-
+	public int MEMBER_LOGIN(String MEMBER_ID, String USER_PW) {
+		System.out.println("Login Function");
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT userID,userPW FROM USER WHERE userID = ? ";
-
-		System.out.println("---------------------");
-		System.out.println("UserDAO login Function");
-		System.out.println("---------------------");
+		String SQL = "SELECT MEMBER_ID,MEMBER_PW FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 		try {
 
 			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
+			pstmt.setString(1, MEMBER_ID);
 			rs=pstmt.executeQuery();
 
 			if(rs.next())
 			{
-				if(rs.getString("userPW").equals(userPW)) 
+				if(rs.getString("USER_PW").equals(USER_PW)) 
 				{
-					System.out.println("ID/PW  [1]");
+
 					return 1;
 				}
 
-				System.out.println("ID/PW  [2]");
+
 				return 2;
 			}
 
 			else 
 			{
-				System.out.println(" [0]");
+
 				return 0;
 			}
 
@@ -77,84 +72,26 @@ public class UserDAO {
 
 		return -1;
 	}
-	
- 
-	
-	public int getInfoA() {
 
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String SQL = "SELECT total_number, number FROM MOVIESTATION ";
-		int A=0;
-	
-		
-
-		System.out.println("---------------------");
-		System.out.println("UserDAO getInfo Function");
-		System.out.println("---------------------");
-
-		try {
-
-			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
-			pstmt = conn.prepareStatement(SQL);
-		 
-			rs=pstmt.executeQuery();
-
-			if(rs.next())
-			{
-				A= rs.getInt("total_number");
-				 A -= rs.getInt("number");
-				 return A;
-			 
-			}
-
-			else 
-			{
-				System.out.println(" [0]");
-				return 0;
-			}
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-
-			try {
-				if(rs!= null)rs.close();
-
-				if(pstmt !=null) pstmt.close();
-				if(conn!=null)conn.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		return -1;
-	}
-	
-	
-	
 
 
 
 	//userID CHECK
-	public int registerCheck(String userID) {
+	public int MEMBER_ID_CHECK(String MEMBER_ID) {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT userid FROM USER WHERE userID = ? ";
-
+		String SQL = "SELECT MEMBER_ID FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
+			pstmt.setString(1, MEMBER_ID);
 			rs=pstmt.executeQuery();
 
-			if(rs.next() || userID.equals("")) {
+			if(rs.next() || MEMBER_ID.equals("")) {
 				return 0;
 			}
 			else {
@@ -182,60 +119,23 @@ public class UserDAO {
 
 
 
-	// REGIST SERIAL LOGIC2
-	public int serialREGIST(String userID, String userSERIAL) {
-
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String SQL = "UPDATE SERIAL SET sUser = ? WHERE sID = ?";
-		//search serialID is exist and not registered
-
-		try {
-			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			pstmt.setString(2, userSERIAL);
-			return pstmt.executeUpdate();
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-
-			try {
-				if(rs!= null)rs.close();
-
-				if(pstmt !=null) pstmt.close();
-				if(conn!=null)conn.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		return -1;
-	}
-
-
-
-	
 
 	//join User DATA
-	public int register(String userID, String userPW, String userEMAIL) {
+	public int MEMBER_REGISTRATION(String MEMBER_ID, String MEMBER_PW, String MEMBER_NAME, String MEMBER_ADDRESS) {
 
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
-		String SQL = "INSERT INTO USER VALUES (?,?,?)";
+		String SQL = "INSERT INTO MOVIE_MEMBER VALUES (?,?,?,?)";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			pstmt.setString(2, userPW);	
-			//		pstmt.setString(3, userNAME);
-			pstmt.setString(3, userEMAIL);
+			pstmt.setString(1, MEMBER_ID);
+			pstmt.setString(2, MEMBER_PW);	
+			pstmt.setString(3, MEMBER_NAME);
+			pstmt.setString(4, MEMBER_ADDRESS);
 			return pstmt.executeUpdate();
 
 
@@ -256,27 +156,27 @@ public class UserDAO {
 
 
 	//[Y] Return UserDTO structure
-	public UserDTO getUser(String userID) {
+	public UserDTO getMEMBER_INFO(String MEMBER_ID) {
 
 		UserDTO user = new UserDTO();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT * FROM USER WHERE userID = ? ";
+		String SQL = "SELECT * FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
+			pstmt.setString(1, MEMBER_ID);
 			rs=pstmt.executeQuery();
 
 			if(rs.next() ) {
-				user.setUserID(userID);
-				user.setUserPW(rs.getString("userPW"));
-				//user.setUserName(rs.getString("userNAME"));
-				user.setUserEMAIL(rs.getString("userEMAIL"));
+				user.setMEMBER_ID (MEMBER_ID);
+				user.setMEMBER_PW(rs.getString("MEMBER_PW")); 
+				user.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
+				user.setMEMBER_ADDRESS(rs.getString("MEMBER_ADDRESS"));
 
 			}
 
@@ -296,68 +196,24 @@ public class UserDAO {
 
 		return user;
 	}
-
-
-	//[N] userID -> getSERIAL
-	public UserDTO getSERIAL(String userID) {
-
-		UserDTO user = new UserDTO();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String SQL = "SELECT * FROM SERIAL WHERE sUser = ? ";
-
-
-		try {
-			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			rs=pstmt.executeQuery();
-
-			if(rs.next() ) {
-
-				user.setUserSERIAL(rs.getString("sID"));
-
-
-			}
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-
-			try {
-				if(rs!= null)rs.close();
-
-				if(pstmt !=null) pstmt.close();
-				if(conn!=null)conn.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		return user;
-	}
-
 
 
 
 	//[Y] update user Info.
-	public int update(String userID, String userPW,  String userEMAIL) {
-
-
+	public int update(String MEMBER_ID, String MEMBER_PW, String MEMBER_NAME, String MEMBER_ADDRESS) {
+		 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
-		String SQL = "UPDATE USER SET userPW =?,  userEMAIL=? WHERE userID = ?";
+		String SQL = "UPDATE MOVIE_MEMBER SET MEMBER_PW =?,  MEMBER_NAME=?, MEMBER_ADDRESS = ? WHERE MEMBER_ID = ?";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");    
-			conn = DriverManager.getConnection(url,username,password);
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 
-			pstmt.setString(1, userPW);	
-			pstmt.setString(2, userEMAIL);
-			pstmt.setString(3, userID);
+			pstmt.setString(1, MEMBER_PW);	
+			pstmt.setString(2, MEMBER_NAME);
+			pstmt.setString(3, MEMBER_ADDRESS);
 			return pstmt.executeUpdate();
 
 

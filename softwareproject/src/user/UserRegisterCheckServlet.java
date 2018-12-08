@@ -21,7 +21,7 @@ public class UserRegisterCheckServlet extends HttpServlet {
 
 		System.out.println("가입된 아이디 : "+userID);
 		
-		response.getWriter().write(new UserDAO().registerCheck(userID)+"");
+		response.getWriter().write(new UserDAO().MEMBER_ID_CHECK(userID)+"");
 		}
 	
 

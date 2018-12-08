@@ -19,15 +19,19 @@
 
 	<!-- [session] check logic -->
 	<%
-		String userID = null;
-		if (session.getAttribute("userID") != null) {
-			userID = (String) session.getAttribute("userID");
-		}
-		if (userID == null) {
+		String MEMBER_ID = null;
+		if (session.getAttribute("MEMBER_ID") != null) {
+			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
 			response.sendRedirect("./m_index.jsp");
-		}
-		UserDTO user = new UserDAO().getUser(userID);
+
+			if (MEMBER_ID == null) {
+				response.sendRedirect("./m_index.jsp");
+			}
+
+			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+ 
 	%>
+
 
 
 
@@ -43,32 +47,45 @@
 							<fieldset>
 								<div>
 									<h5>아이디</h5>
-									<%=user.getUserID()%>
-									<input type="hidden" name="userID"
-										value="<%=user.getUserID()%>">
+									<%=MEMBER.getMEMBER_ID()%>
+									<input type="hidden" value="<%=MEMBER.getMEMBER_ID()%>">
+								</div>
+
+								<div>
+									<h5>이름</h5>
+									<input class="form-control" type="text" id="MEMBER_NAME"
+										maxLength="20" placeholder="<%=MEMBER.getMEMBER_NAME()%>">
 								</div>
 
 
 								<div>
 									<h5>비밀번호</h5>
 									<input onkeyup="passwordCheckFunction();" class="form-control"
-										type="password" id="userPW1" name="userPW1" maxLength="20"
+										type="password" id="MEMBER_PW_1" maxLength="20"
 										placeholder="비밀번호를 입력하세요.">
 								</div>
 								<div>
 									<h5>비밀번호 확인</h5>
 									<input onkeyup="passwordCheckFunction();" class="form-control"
-										type="password" id="userPW2" name="userPW2" maxLength="20"
+										type="password" id="MEMBER_PW_2" " maxLength="20"
 										placeholder="비밀번호를 입력하세요.">
 								</div>
 
 
 								<div>
-									<h5>이메일</h5>
-									<input class="form-control" type="text" id="userEMAIL"
-										name="userEMAIL" maxLength="20"
-										placeholder="<%=user.getUserEMAIL()%>">
+									<h5>주소</h5>
+									<input class="form-control" type="text" id="MEMBER_ADDRESS"
+										maxLength="20" placeholder="<%=MEMBER.getMEMBER_ADDRESS()%>">
 								</div>
+
+
+								<div>
+									<h5>보유 포인트</h5>
+									<input class="form-control" type="hidden" id="MEMBER_POINT"
+										maxLength="20" placeholder="<%=MEMBER.getMEMBER_POINT()%>">
+								</div>
+
+
 								<h5 style="" id="statusMessage"></h5>
 								<input class="btn btn-primary pull-right" type="submit"
 									value="수정완료">
@@ -79,8 +96,9 @@
 			</div>
 		</div>
 	</div>
-
-
+	<% 
+		}
+	%>
 
 
 

@@ -32,7 +32,7 @@ public class UserCheckServlet extends HttpServlet {
 		}
 
 
-		int result = new UserDAO().login(userID, userPW);
+		int result = new UserDAO().MEMBER_LOGIN(userID, userPW);
 		
 		System.out.println(result);
 		if(result == 1) {
