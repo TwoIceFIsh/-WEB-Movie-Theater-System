@@ -17,39 +17,39 @@ public class UserUpdateServlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String userID = request.getParameter("userID");
-		HttpSession session = request.getSession();
+		String userID = request.getParameter("MEMBER_ID");
+ 
 
-		String userPW1 = request.getParameter("userPW1");
-		String userPW2 = request.getParameter("userPW2");
-		String userEMAIL = request.getParameter("userEMAIL");
-	 
+		String MEMBER_PW_1 = request.getParameter("MEMBER_PW_1");
+		String MEMBER_PW_2 = request.getParameter("MEMB2R_PW_1");
+		String MEMBER_NAME = request.getParameter("MEMBER_NAME");
+		String MEMBER_ADDRESS = request.getParameter("MEMBER_ADDRESS");
 
-		if(	userPW1 == null || userPW1.equals("") ||
-				userPW2 == null || userPW2.equals("") ||
-				userEMAIL == null || userEMAIL.equals("")  
-				  )
+		if(	MEMBER_PW_1 == null || MEMBER_PW_1.equals("") ||
+				MEMBER_PW_2 == null || MEMBER_PW_2.equals("") ||
+				MEMBER_NAME == null || MEMBER_NAME.equals("")  
+				)
 		{
-			 
+
 			response.sendRedirect("m_index.jsp");	
 			return;
 		}
- 
 
-		if(!userPW1.equals(userPW2))
+
+		if(!MEMBER_PW_1.equals(MEMBER_PW_2))
 		{
-			 response.sendRedirect("m_index.jsp");
+			response.sendRedirect("m_index.jsp");
 			return;
 		}
 
-		int result = new UserDAO().update(userID, userPW1 , userEMAIL);
+		int result = new UserDAO().MEMBER_UPDATE(userID, MEMBER_PW_1 , MEMBER_NAME, MEMBER_ADDRESS);
 
 		if(result == 1) {
-			 response.sendRedirect("m_index.jsp");
+			response.sendRedirect("m_index.jsp");
 			return;
 		}
 		else {
-			 response.sendRedirect("m_index.jsp");
+			response.sendRedirect("m_index.jsp");
 			return;
 		}
 	}

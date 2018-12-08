@@ -20,17 +20,17 @@
 	<!-- [session] check logic -->
 	<%
 		String userID = null;
-		if (session.getAttribute("userID") != null) {
-			userID = (String) session.getAttribute("userID");
-	
-		}
+			if (session.getAttribute("userID") != null) {
+		userID = (String) session.getAttribute("userID");
+		
+			}
 
-		if (userID == null) {
+			if (userID == null) {
 
-			response.sendRedirect("./m_index.jsp");
-		}
+		response.sendRedirect("./m_index.jsp");
+			}
 
-		UserDTO user = new UserDAO().getUser(userID);
+			UserDTO user = new UserDAO().getMEMBER_INFO(userID);
 	%>
 
 

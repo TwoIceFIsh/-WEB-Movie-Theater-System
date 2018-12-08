@@ -17,11 +17,9 @@ public class UserRegisterCheckServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8"); 
 		response.setContentType("text/html;charset=UTF-8");
 		
-		String userID = request.getParameter("userID")==null?"m_join.jsp 널":request.getParameter("userID");  
+		String MEMBER_ID = request.getParameter("MEMBER_ID");
 
-		System.out.println("가입된 아이디 : "+userID);
-		
-		response.getWriter().write(new UserDAO().registerCheck(userID)+"");
+	 	response.getWriter().write(new UserDAO().MEMBER_ID_CHECK(MEMBER_ID)+"");
 		}
 	
 

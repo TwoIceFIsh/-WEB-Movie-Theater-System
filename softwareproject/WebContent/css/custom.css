@@ -1,0 +1,169 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+	font-family: 'Nanum Gothic';
+}
+
+h5 {
+	font-family: 'Noto Sans KR';
+	font-size: 15px;
+}
+
+h4 {
+	font-family: 'Noto Sans KR';
+}
+
+h3 {
+	font-family: 'Hanna';
+}
+
+h2 {
+	font-family: 'Hanna';
+}
+
+h1 {
+	font-family: 'Hanna';
+}
+
+thead th {
+	background-color: #006DCC;
+	color: white;
+	text-align: center;
+}
+
+tr td:first-child, tr th:first-child {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.left-box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: red;
+}
+
+.right-box {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: blue;
+}
+
+tr td:last-child, tr th:last-child {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+#result {
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	height: 150px;
+	border: solid 1px #000;
+	border-radius: 6px;
+}
+
+#result span {
+	line-height: 1.5;
+}
+
+#btn-mic {
+	text-align: center;
+	min-width: 160px;
+}
+
+#btn-mic span {
+	display: inline-block;
+	margin: 1px 0 0 5px;
+	width: 10px;
+	height: 10px;
+	border: solid 1px #fff;
+	background: #bbb;
+	border-radius: 50%;
+}
+
+#btn-mic.on span {
+	background: green;
+}
+
+#icon-music {
+	display: none;
+	position: absolute;
+	top: -7px;
+	right: 30px;
+	font-size: 80px;
+}
+
+ul li {
+	font-size: 1em;
+}
+
+.red {
+	background: red;
+}
+
+.blue {
+	background: blue;
+	color: #fff !important;
+}
+
+.green {
+	background: green;
+}
+
+.yellow {
+	background: yellow;
+}
+
+.orange {
+	background: orange;
+}
+
+.grey {
+	background: grey;
+}
+
+.gold {
+	background: gold;
+}
+
+.white {
+	background: white;
+}
+
+.black {
+	background: black;
+	color: #fff !important;
+}
+
+.visible {
+	display: block !important;
+}
+
+
+.imgSelect {
+	cursor: pointer;
+}
+
+ 
+
+[data-tooltip-text]:hover {
+	position: relative;
+}
+[data-tooltip-text]:hover:after {
+	content: attr(data-tooltip-text);
+
+    position: absolute;
+	bottom: 100%;
+	left: 0;
+    
+    background-color: rgba(0, 0, 0, 0.8);
+	color: #FFFFFF;
+	font-size: 12px;
+
+	z-index: 9999;
+}

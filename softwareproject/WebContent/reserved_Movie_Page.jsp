@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +10,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>©╣х╜ ©╧╦е </title>
+<title>Л≤│М≥■ Л≤┬К╖╓ </title>
 <style type="text/css">
 	h1 {
 		font:bold;
@@ -37,43 +40,59 @@
 <body>
 	<jsp:include page="js.jsp" />
 	
-	<% //©╣х╜ ©╧╦е ╩Гюлф╝
-	//©╣х╜ ©╧╦е фДюлаЖ
+	<% //Л≤│М≥■ Л≤┬К╖╓ Л┌╛Л²╢М┼╦
+	//Л≤│М≥■ Л≤┬К╖╓ М▌≤Л²╢Л╖─
 
-	 //<1> ©╣х╜╟Э ╪╠ец, ©╣х╜ ╪╠ец, Ё╞б╔ ╪╠ец
+	 //<1> Л≤│М≥■Й╢─ Л└═М┐², Л≤│М≥■ Л└═М┐², К┌═Л╖° Л└═М┐²
 	%>
-	
-	<h1 align="center"> ©╣х╜©╧╦е </h1>
+ 
+	<h1 align="center"> Л≤│М≥■Л≤┬К╖╓ </h1>
 	<form name ="Movie_choice_form" action="result.jsp" accept-charset="utf-8" method="post">
-	<p class="select_theater_room">©╣х╜╟Э ╪╠ец</p>
+	<p class="select_theater_room">Л≤│М≥■Й╢─ Л└═М┐²</p>
 		<select name="Movie_room" method="post" accept-charset="utf-8">
+<<<<<<< HEAD
 			<option value = "а╕ 1©╣х╜╟Э" selected>1©╣х╜╟Э</option>
 			<option value = "а╕ 2©╣х╜╟Э" select>2©╣х╜╟Э</option>
 			<option value = "а╕ 3©╣х╜╟Э" select>3©╣х╜╟Э</option>
 			<option value = "а╕ 4©╣х╜╟Э" select>4©╣х╜╟Э</option>
 			<option value = "а╕ 5©╣х╜╟Э" select>5©╣х╜╟Э</option>
+=======
+			<option value = "Л═° 1Л≤│М≥■Й╢─" selected>1Л≤│М≥■Й╢─</option>
+			<option value = "Л═° 2Л≤│М≥■Й╢─" select>2Л≤│М≥■Й╢─</option>
+			<option value = "Л═° 3Л≤│М≥■Й╢─" select>3Л≤│М≥■Й╢─</option>
+			<option value = "Л═° 4Л≤│М≥■Й╢─" select>4Л≤│М≥■Й╢─</option>
+			<option value = "Л═° 5Л≤│М≥■Й╢─" select>5Л≤│М≥■Й╢─</option>
+>>>>>>> branch 'master' of https://github.com/TwoIceFIsh/softwareproject.git
 		</select>
 		
-		<p class="select_theater_Movie">©╣х╜╟Э ╪╠ец</p>
+		<p class="select_theater_Movie">Л≤│М≥■Й╢─ Л└═М┐²</p>
 		<select name="Movie_name" method="post">
+<<<<<<< HEAD
 			<option value = "©╣х╜1" selected>©╣х╜1</option>
 			<option value = "©╣х╜2" select>©╣х╜2</option>
 			<option value = "©╣х╜3" select>©╣х╜3</option>
 			<option value = "©╣х╜4" select>©╣х╜4</option>
 			<option value = "©╣х╜5" select>©╣х╜5</option>
+=======
+			<option value = "Л≤│М≥■1" selected>Л≤│М≥■1</option>
+			<option value = "Л≤│М≥■2" select>Л≤│М≥■2</option>
+			<option value = "Л≤│М≥■3" select>Л≤│М≥■3</option>
+			<option value = "Л≤│М≥■4" select>Л≤│М≥■4</option>
+			<option value = "Л≤│М≥■5" select>Л≤│М≥■5</option>
+>>>>>>> branch 'master' of https://github.com/TwoIceFIsh/softwareproject.git
 		</select>
 		
-		<p class="select_theater_Date">©╣х╜╟Э Ё╞б╔╪╠ец</p>
+		<p class="select_theater_Date">Л≤│М≥■Й╢─ К┌═Л╖°Л└═М┐²</p>
 		
 		<fieldset style = "width:350">
-			<legend> ©╣х╜╟Э Ё╞б╔  <date> </legend>
+			<legend> Л≤│М≥■Й╢─ К┌═Л╖°  <date> </legend>
 			<br>
-			Ё╞б╔ют╥б 
+			К┌═Л╖°Л·┘К═╔ 
 			<br>
 			<input type = "date" min ="2018-12-20" max="2019-01-30" name = "date" step ="7">
 			<br>
 		
-		<p class="select_theater_Time">©╣х╜ ╫ц╟ё ╪╠ец</p>
+		<p class="select_theater_Time">Л≤│М≥■ Л▀°Й╟└ Л└═М┐²</p>
 		<select name="Movie_Time" action="" method="post">
 			<option value ="Am_06:00" selected> 06:00 </option>
 			<option value ="Am_08:00" select> 08:00 </option>
@@ -87,9 +106,9 @@
 		
 		<br>
 		
-		<p class="check_normal">юл╥╦╟т го╫ц╟з╫ю╢о╠Н?</p>
-		<input type ="submit" value="╨╦Ё╩╠Б">
-		<input type ="reset" value="©Ьа║ю╦╥н ╣╧╦╝╠Б">
+		<p class="check_normal">Л²╢К═┤Й╡▄ М∙≤Л▀°Й╡═Л┼╣К▀┬Й╧▄?</p>
+		<input type ="submit" value="КЁ╢К┌╢Й╦╟">
+		<input type ="reset" value="Л⌡░Л═░Л°╪К║° К▐▄К╕╛Й╦╟">
 		</fieldset>
 	</form>
 	

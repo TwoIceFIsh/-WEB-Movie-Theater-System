@@ -17,47 +17,38 @@ public class UserJoinServlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String userID = request.getParameter("userID").toLowerCase();
-		String userPW1 = request.getParameter("userPW1");
-		String userPW2 = request.getParameter("userPW2");
-		String userEMAIL = request.getParameter("userEMAIL");
-		//String userNAME = request.getParameter("userNAME");
-	 
+	
+		String MEMBER_ID = request.getParameter("MEMBER_ID").toLowerCase();
+		System.out.println(MEMBER_ID);
+		String MEMBER_PW = request.getParameter("MEMBER_PW_1");
+		String MEMBER_PW_2 = request.getParameter("MEMBER_PW_2");
+		String MEMBER_NAME = request.getParameter("MEMBER_NAME");
+		String MEMBER_ADDRESS = request.getParameter("MEMBER_ADDRESS");
 
-		if(userID == null || userID.equals("") ||
-				userPW1 == null || userPW1.equals("") ||
-				userPW2 == null || userPW2.equals("") ||
-				userEMAIL == null || userEMAIL.equals("")
-				//|| userNAME == null || userNAME.equals("") 
-				)
-		{
-		//null check
+
+		if(MEMBER_ID == null || MEMBER_ID.equals("") ||
+				MEMBER_PW == null || MEMBER_PW.equals("") ||
+				MEMBER_PW_2 == null || MEMBER_PW_2.equals("") ||
+				MEMBER_NAME == null || MEMBER_NAME.equals(""))
+		{	 
 			response.sendRedirect("m_join.jsp");	
 			return;
 		}
+ 
 
-		//pw error
-		if(!userPW1.equals(userPW2))
-		{
-		 
-			response.sendRedirect("m_join.jsp");
-			return;
-		}
-
-		System.out.println(userID+userPW1+userEMAIL);
 		//ask query
-		int result = new UserDAO().register(userID,userPW1 ,userEMAIL);
+		int result = new UserDAO().MEMBER_REGISTRATION(MEMBER_ID,MEMBER_PW ,MEMBER_NAME, MEMBER_ADDRESS);
 
 		//result ok
 		if(result == 1) {
- 
+			
 			response.sendRedirect("m_index.jsp");
 			return;
 		}
-		
+
 		//result already exist
 		else {
-		 
+
 			response.sendRedirect("m_join.jsp");
 			return;
 		}

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>SMART GREEN HOUSE</title>
+<title>OU2D</title>
 
 </head>
 
@@ -21,18 +21,15 @@
 
 
 	<%
-		String userID = null;
-		if (session.getAttribute("userID") != null) {
-			userID = (String) session.getAttribute("userID");
+		String MEMBER_ID = null;
+
+		if (session.getAttribute("MEMBER_ID") != null) {
+			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
+
 			response.sendRedirect("./m_index.jsp");
-
-			if (userID == null) {
-				response.sendRedirect("./m_index.jsp");
-			}
-
-			UserDTO user = new UserDAO().getUser(userID);
-			
-
+		}
+		if (MEMBER_ID == null) {
+			response.sendRedirect("./m_index.jsp");
 		}
 	%>
 
@@ -55,7 +52,7 @@
 
 
 				<%
-					if (userID == null) {
+					if (MEMBER_ID == null) {
 				%>
 
 
@@ -76,7 +73,7 @@
 
 				<li class="divider"></li>
 				<li><a href="./m_check.jsp"> <i class="fa fa-user fa-fw"></i>
-						&nbsp;<%=userID%>님 정보수정
+						&nbsp;<%=MEMBER_ID%>님 정보수정
 				</a></li>
 
 				<li class="divider"></li>
@@ -104,11 +101,8 @@
 						<li><a href="#"><i class="fa fa-dashboard      fa-fw"></i>
 								현재 진행중인 이벤트</a></li>
 
-						<li><a href=" #"><i class="fa fa-key   fa-fw"></i> 영화 예매 하기</a></li>
-						
-
-
-
+						<li><a href="reserve.jsp"><i class="fa fa-key   fa-fw"></i>
+								영화 예매 하기</a></li>
 
 						<li><a href="desc.jsp"><i class="fa fa-gears       fa-fw"></i>
 								홈페이지 기술 설명</a></li>
@@ -119,21 +113,13 @@
 						<li><a href="qa.jsp"><i
 								class="fa fa-question-circle           fa-fw"></i> 마지막 페이지</a></li>
 
-
-
 					</ul>
 				</div>
 
 			</div>
 
 		</nav>
-
-
-
-
 	</div>
-
-
 
 
 </body>
