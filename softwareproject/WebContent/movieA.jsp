@@ -185,7 +185,7 @@
 			<a href="#">Back to top</a>
 		</p>
 		<p>
-			&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
+			&copy; 2018 오유이동 영화관, Inc. &middot; <a href="#">Privacy</a> &middot; <a
 				href="#">Terms</a>
 		</p>
 		</footer>
