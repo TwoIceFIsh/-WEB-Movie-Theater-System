@@ -48,17 +48,19 @@
 							<span class="sr-only">---</span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">오유이동 영화관</a>
+						<a class="navbar-brand" href="./m_index.jsp">오유이동 영화관</a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
+						 
 							<li class="active"><a href="m_index.jsp">홈</a></li>
 							<li><a href="#about">영화목록</a></li>
 							<li><a href="#contact">예매하기</a></li>
+							
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
-								%> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+								%> <a href="#" class="dropdown-toggle  " data-toggle="dropdown"
 								role="button" aria-expanded="false">Sign In/Sign Up <span
 									class="caret"></span>
 							</a> <%
