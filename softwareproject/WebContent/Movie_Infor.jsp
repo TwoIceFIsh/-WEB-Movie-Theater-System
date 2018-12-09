@@ -15,7 +15,7 @@
 </head>
 <body>
    
-
+	
 	<!-- 네비게이션 바를 로딩합니다 -->
 	<jsp:include page="nav.jsp" />
 
@@ -25,7 +25,7 @@
 
 			<div class="col-lg-12">
 
-				<h1 class="page-header">영화 정보.</h1>
+				<h1 class="page-header">영화 정보</h1>
 			</div>
 
 		</div>
@@ -39,7 +39,7 @@
 
 					<div class=" col-md-12">
 					
-					<h3>현재 상형 중인 영화</h3>
+					<h3>현재 상영 중인 영화</h3>
 					
 					<br>
 					<a href="movie_info_your_name.jsp">너의 군번은</a>
