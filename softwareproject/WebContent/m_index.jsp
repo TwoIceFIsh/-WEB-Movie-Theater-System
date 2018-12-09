@@ -92,7 +92,7 @@
 									<div class="caption">
 										<h3>속초에 가보니 피카츄가 울고있다</h3>
 
-										<a href="#" class="btn btn-default col-md-6" role="button">영화정보</a>
+										<a href="./movieA.jsp" class="btn btn-default col-md-6" role="button">영화정보</a>
 										<a href="#" class="btn btn-danger col-md-6" role="button">예매하기</a>
 										<h5>나와랏 피카츄! 지우의 우렁찬 함성이 온대지를흔든다.. 범접할수없는 힘을 가진 지우의 영향으로
 											포캣몬들은 자취를 감추는데.. 지우의 포켓몬 몰이사냥의 이야기가 지금 여기서 시작된다</h5>
@@ -120,4 +120,3 @@
 
 </body>
 </html>
-
