@@ -1,9 +1,40 @@
  @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300,100|Open+Sans+Condensed:300);
 @import url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
+* {
+	font-family: 'Hanna';
+}
+
+h5 {
+	font-family: 'Noto Sans KR';
+	font-size: 15px;
+}
+
+h4 {
+	font-family: 'Noto Sans KR';
+}
+
+h3 {
+	font-family: 'Hanna';
+}
+
+h2 {
+	font-family: 'Hanna';
+}
+
+h1 {
+	font-family: 'Hanna';
+}
 
 body {
   background: #FFF linear-gradient(to bottom, #81F7BE, #FE2E2E) no-repeat;
-  font-family: Open Sans, sans-serif;
+  font-family: Hanna;
 }
 a {
   text-decoration: none;
@@ -11,6 +42,7 @@ a {
 }
 a:hover {
   transition-duration: .05s;
+    font-family: Hanna;
 }
 .window-margin {
   max-width: 1200px;
@@ -29,6 +61,7 @@ a:hover {
 .window .main .top-bar {
   height: 65px;
   color: #FFF;
+    font-family: Hanna;
 }
 .window .sidebar {
   position: absolute;
@@ -39,17 +72,20 @@ a:hover {
   background: #24282C;
   transition-duration: .3s;
   color: #DDD;
+    font-family: Hanna;
 }
 .window .sidebar .top-bar {
   background: #3AB0FF;
   overflow: hidden;
+    font-family: Hanna;
 }
 .window .sidebar .top-bar .logo {
   float: left;
-  font-family: Open Sans Condensed, sans-serif;
+  font-family: Hanna;
   font-size: 40px;
   line-height: 65px;
   margin-left: 20px;
+    font-family: Hanna;
 }
 .window .sidebar .search-box {
   background: #373D41;
@@ -64,6 +100,7 @@ a:hover {
   outline: none;
   color: #999;
   transition-duration: .3s;
+    font-family: Hanna;
 }
 .window .sidebar .search-box input:focus {
   color: #333;
@@ -193,6 +230,7 @@ a:hover {
   background: #3AB0FF;
   color: #FFF;
   font-weight: bold;
+    font-family: Hanna;
 }
 .window .main .top-bar .top-menu a {
   padding: 0 25px;

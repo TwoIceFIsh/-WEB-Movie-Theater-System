@@ -6,7 +6,7 @@
 
 
 * {
-	font-family: 'Nanum Gothic';
+	font-family: 'Noto Sans KR';
 }
 
 h5 {
@@ -172,7 +172,7 @@ body {
   height: 100%;
   width: 100%;
   background: #e9e9e9;
-  font-family: 'Arimo', Arial, sans-serif;
+  font-family: Noto Sans KR;
   font-weight: 400;
   font-size: 14px;
   color: #010b26;

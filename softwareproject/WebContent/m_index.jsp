@@ -6,8 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
+ 
 
 </head>
 
@@ -20,11 +19,11 @@
 
 			<aside class="sidebar">
 				<div class="top-bar">
-					<p class="logo">REPLEX</p>
+					<p class="logo">OU2D 영화관</p>
 				</div>
 
 				<div class="search-box">
-					<input type="text" placeholder="Search..." />
+					<input type="text" placeholder="영화검색하기" />
 					<p class="fa fa-search"></p>
 				</div>
 
@@ -73,7 +72,7 @@
 						</li>
 						<li><a href="#">Headlines</a></li>
 						<li><a href="#">Articles</a></li>
-						<li class="active"><a href="#">Movies & Films</a></li>
+						<li class="active"><a href="#">홈페이지</a></li>
 						<li><a href="#">Television</a></li>
 						<li><a href="#">Music</a></li>
 						<li><a href="#">Celebrities</a></li>
