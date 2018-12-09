@@ -168,3 +168,38 @@ function joinFunction() {
 	});
 
 }
+function MileageFunction() {
+
+	var MEMBER_ID = $('#MEMBER_ID').val();
+
+	$.ajax({
+		type : 'POST',
+		url : './UserLoginServlet',
+		data : {
+			MEMBER_ID : MEMBER_ID
+		},
+		success : function(result) {
+
+
+			if(result == 1 ){
+				$(location).attr('href', './m_update.jsp');
+
+			}
+			if (result == 7) {
+				$('#statusMessage').html('아이디 및 비밀번호를 입력해주세요.');
+				$('#statusMessage').css("color", "red");
+
+			}
+			if (result == 2) {
+				$('#statusMessage').html('아이디 혹은 비밀번호가 다릅니다.');
+				$('#statusMessage').css("color", "red");
+			}
+
+			if (result == -1 || result == 0) {
+				$('#statusMessage').html('아이디 혹은 비밀번호를 확인해주세요.');
+				$('#statusMessage').css("color", "red");
+			}
+		}
+	});
+
+}

@@ -58,6 +58,7 @@ p.select_theater_Time {
 		</select>
 		<p>
 		<p class="select_theater_Movie">포인트 결제</p>
+		<a> 현재 당신의 포인트 잔액은 <%=MEMBER.getMEMBER_POINT() %> 입니다</a>
 		<p class="select_theater_Date">마일리지 포인트 잔액 : %d point</p>
 		<p>
 		<select name="Movie_name" method="post">
