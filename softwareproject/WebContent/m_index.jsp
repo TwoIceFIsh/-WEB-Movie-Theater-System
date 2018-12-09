@@ -32,7 +32,7 @@
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img class="first-slide" src="./image/bg1.jpg" alt="First slide">
+						<img class="first-slide" src="./img/pig_of_red.jpg" alt="First slide">
 						<div class="container">
 							<div class="carousel-caption">
 								<h1>황해</h1>
@@ -47,7 +47,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img class="second-slide"    src="./image/bg2.jpg" alt="Second slide">
+						<img class="second-slide"    src="./img/station_of_sokcho.jpg" alt="Second slide">
 						<div class="container">
 							<div class="carousel-caption">
 								 <h1>타임머신</h1>
