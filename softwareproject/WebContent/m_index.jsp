@@ -46,7 +46,7 @@
 
 										<a href="#" class="btn btn-default" role="button">영화정보</a> <a
 											href="#" class="btn btn-danger" role="button">예매하기</a>
-
+<h5>사람으 말을 할수 있는 돼지가있다? 무려 이 돼지는 비행기도 조종할수있습니다.</h5>
 									</div>
 								</div>
 							</div>
@@ -72,29 +72,13 @@
 
 											<a href="#" class="btn btn-default" role="button">영화정보</a> <a
 											href="#" class="btn btn-danger" role="button">예매하기</a>
-
+<h5>헉헉헉... 전역한지 2년째 그당시의 악몽은 가시지 않는다. 어느날 똑같이 군대꿈을 꾸는대 잠에서 깨질않는다? 넌누구야 내가왜 다른사람이 되어있지? 만기대재병장의 어느 이병의 군대대리 스토리..</h5>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="row">
-							<div class="col-sm-6 col-md-4">
-								<div class="thumbnail">
-									<img src="./img/pig_of_red.jpg" alt="...">
-									<div class="caption">
-										<h3>Thumb nail label</h3>
-
-										<a href="#" class="btn btn-primary" role="button">Button</a> <a
-											href="#" class="btn btn-default" role="button">Button</a>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
+					
 				</div>
 				<a class="left carousel-control" href="#myCarousel" role="button"
 					data-slide="prev"> <span
