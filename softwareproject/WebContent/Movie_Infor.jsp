@@ -14,7 +14,7 @@
 
 </head>
 <body>
-
+   
 
 	<!-- 네비게이션 바를 로딩합니다 -->
 	<jsp:include page="nav.jsp" />
