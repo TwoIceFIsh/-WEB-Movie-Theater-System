@@ -21,14 +21,14 @@
 
 
 	<%
-		String userID = null;
-		if (session.getAttribute("userID") != null) {
-			userID = (String) session.getAttribute("userID");
+		String MEMBER_ID = null;
+		if (session.getAttribute("MEMBER_ID") != MEMBER_ID) {
+			MEMBER_ID = (String) session.getAttribute("userID");
 			response.sendRedirect("./m_index.jsp");
-			if (userID == null) {
+			if (MEMBER_ID == null) {
 				response.sendRedirect("./m_index.jsp");
 			}
-			UserDTO user = new UserDAO().getMEMBER_INFO(userID);
+			UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 			
 		}
 	%>
@@ -54,7 +54,7 @@
 				 
 		 
 				   <%
-					if (userID == null) {
+					if (MEMBER_ID == null) {
 				%>
 
 
@@ -73,7 +73,7 @@
 					 
 						<li class="divider"></li>
 										<li><a href="./m_check.jsp"> <i class="fa fa-user fa-fw"></i> 
-							&nbsp;<%=userID%>님 정보수정 </a></li>
+							&nbsp;<%=MEMBER_ID%>님 정보수정 </a></li>
 						 
 						<li class="divider"></li>
 						<li><a href="./F_logout.jsp"><i class="fa fa-sign-out fa-fw"></i>
@@ -94,7 +94,7 @@
 					<ul class="nav" id="side-menu">
 						 
 						  <%
-					if (userID != null) {
+					if (MEMBER_ID != null) {
 				%>
 						 
 						<li><a href="testIndex.jsp"><i class="fa fa-dashboard fa-fw"></i>

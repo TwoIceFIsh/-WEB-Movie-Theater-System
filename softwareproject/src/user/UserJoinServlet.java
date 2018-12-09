@@ -19,7 +19,6 @@ public class UserJoinServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 	
 		String MEMBER_ID = request.getParameter("MEMBER_ID").toLowerCase();
-		System.out.println(MEMBER_ID);
 		String MEMBER_PW = request.getParameter("MEMBER_PW_1");
 		String MEMBER_PW_2 = request.getParameter("MEMBER_PW_2");
 		String MEMBER_NAME = request.getParameter("MEMBER_NAME");
@@ -31,27 +30,18 @@ public class UserJoinServlet extends HttpServlet {
 				MEMBER_PW_2 == null || MEMBER_PW_2.equals("") ||
 				MEMBER_NAME == null || MEMBER_NAME.equals(""))
 		{	 
-			response.sendRedirect("m_join.jsp");	
+			response.getWriter().write(-1+"");
 			return;
 		}
  
 
 		//ask query
 		int result = new UserDAO().MEMBER_REGISTRATION(MEMBER_ID,MEMBER_PW ,MEMBER_NAME, MEMBER_ADDRESS);
-
-		//result ok
-		if(result == 1) {
-			
-			response.sendRedirect("m_index.jsp");
+ 
+			response.getWriter().write(result+"");
 			return;
-		}
+ 
 
-		//result already exist
-		else {
-
-			response.sendRedirect("m_join.jsp");
-			return;
-		}
 	}
 
 }

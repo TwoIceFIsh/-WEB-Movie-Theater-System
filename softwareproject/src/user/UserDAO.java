@@ -127,7 +127,7 @@ public class UserDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
-		String SQL = "INSERT INTO MOVIE_MEMBER VALUES (?,?,?,?)";
+		String SQL = "INSERT INTO MOVIE_MEMBER VALUES (?,?,?,?,0)";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);

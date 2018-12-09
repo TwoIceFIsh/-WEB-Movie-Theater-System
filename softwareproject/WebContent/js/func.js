@@ -143,25 +143,15 @@ function joinFunction() {
 			MEMBER_ADDRESS:MEMBER_ADDRESS
 		},
 		success : function(result) {
-
-
+alert(result);
 			if(result == 1 ){
 				alert('회원가입이 완료되었습니다.');
-				$(location).attr('href', './m_update.jsp');
+				$(location).attr('href', './m_index.jsp');
 
 			}
-			if (result == 7) {
-				$('#statusMessage').html('아이디 및 비밀번호를 입력해주세요.');
-				$('#statusMessage').css("color", "red");
 
-			}
-			if (result == 2) {
-				$('#statusMessage').html('아이디 혹은 비밀번호가 다릅니다.');
-				$('#statusMessage').css("color", "red");
-			}
-
-			if (result == -1 || result == 0) {
-				$('#statusMessage').html('아이디 혹은 비밀번호를 확인해주세요.');
+			if (result == -1) {
+				$('#statusMessage').html('모든정보를 입력하세요.');
 				$('#statusMessage').css("color", "red");
 			}
 		}

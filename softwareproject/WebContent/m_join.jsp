@@ -11,8 +11,7 @@
 
 </head>
 <body>
- 
-
+ 	<jsp:include page="nav.jsp" />
 
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
