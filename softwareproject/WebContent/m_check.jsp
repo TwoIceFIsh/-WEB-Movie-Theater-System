@@ -19,23 +19,22 @@
 	<jsp:include page="nav.jsp" />
 	<!-- [session] check logic -->
 	<%
-		String userID = null;
-			if (session.getAttribute("userID") != null) {
-		userID = (String) session.getAttribute("userID");
+	String MEMBER_ID = null;
+	if (session.getAttribute("MEMBER_ID") != null) {
+		MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
+	 
 		
-			}
+		if (MEMBER_ID == null) {
+			response.sendRedirect("./m_index.jsp");
+		}
+		UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 
-			if (userID == null) {
-
-		response.sendRedirect("./m_index.jsp");
-			}
-
-			UserDTO user = new UserDAO().getMEMBER_INFO(userID);
+	}
 	%>
 
 
 
-	 
+
 
 
 	<div class="container">
@@ -49,12 +48,12 @@
 						<form role="form">
 							<fieldset>
 								<div class="form-group">
-									<input type="text" class="form-control" readonly id="userID"
-										name="userID1" value="<%=userID%>">
+									<input type="text" class="form-control" readonly id="MEMBER_ID"
+										value="<%=MEMBER_ID%>">
 								</div>
 								<div class="form-group">
-									<input type="password" class="form-control" id="userPW"
-										name="userPW1" autofocus>
+									<input type="password" class="form-control" id="MEMBER_PW"
+										autofocus>
 								</div>
 
 

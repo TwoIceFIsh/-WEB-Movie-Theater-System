@@ -3,7 +3,7 @@
 <%@ page import="user.UserDTO"%>
 <%@ page import="user.UserDAO"%>
 <!DOCTYPE html>
-<html  >
+<html>
 
 <head>
 
@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
  
 
-<title>SMART GREEN HOUSE</title>
+<title>오유이동 영화관</title>
 
 </head>
 
@@ -22,14 +22,15 @@
 
 	<%
 		String MEMBER_ID = null;
-		if (session.getAttribute("MEMBER_ID") != MEMBER_ID) {
-			MEMBER_ID = (String) session.getAttribute("userID");
+		if (session.getAttribute("MEMBER_ID") != null) {
+			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
 			response.sendRedirect("./m_index.jsp");
+			
 			if (MEMBER_ID == null) {
 				response.sendRedirect("./m_index.jsp");
 			}
 			UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
-			
+
 		}
 	%>
 
@@ -46,32 +47,32 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="m_index.jsp">SMART GREEN HOUSE</a>
+				<a class="navbar-brand" href="m_index.jsp">OU2D</a>
 			</div>
 			<!-- /.navbar-header -->
 
 			<ul class="nav navbar-top-links navbar-right">
-				 
-		 
-				   <%
+
+
+				<%
 					if (MEMBER_ID == null) {
 				%>
 
 
-					 
-						<li class="divider"></li>
+
+				<li class="divider"></li>
 						<li><a href="./m_login.jsp"><i class="fa fa-user fa-fw"></i> 로그인</a></li>
 						<li class="divider"></li>
 						<li><a href="./m_join.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a></li>
 						<li class="divider"></li>
-						 
-					  <%
+
+				<%
 					} else {
 				%>
-				
-				
-					 
-						<li class="divider"></li>
+
+
+
+				<li class="divider"></li>
 										<li><a href="./m_check.jsp"> <i class="fa fa-user fa-fw"></i> 
 							&nbsp;<%=MEMBER_ID%>님 정보수정 </a></li>
 						 
@@ -79,7 +80,7 @@
 						<li><a href="./F_logout.jsp"><i class="fa fa-sign-out fa-fw"></i>
 								로그아웃</a></li>
 								<li class="divider"></li>
-					 
+
 
 				<%
 					}
@@ -92,25 +93,25 @@
 			<div class="navbar-default sidebar" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
-						 
-						  <%
-					if (MEMBER_ID != null) {
-				%>
-						 
+
+						<%
+							if (MEMBER_ID != null) {
+						%>
+
 						<li><a href="testIndex.jsp"><i class="fa fa-dashboard fa-fw"></i>
 								 ☆ 개발자 컨트롤 패널 ☆ </a></li>
-								
-									  <%
-					}  else{
-				%>
-								
-								<li><a href="guest.jsp"><i class="fa fa-dashboard      fa-fw"></i>
+
+						<%
+							} else {
+						%>
+
+						<li><a href="guest.jsp"><i class="fa fa-dashboard      fa-fw"></i>
 								손님용 컨트롤 패널</a></li>
-								
-									  <%
-					}
-				%>
-									<li><a href="m_serialR.jsp"><i class="fa fa-key   fa-fw"></i>
+
+						<%
+							}
+						%>
+						<li><a href="m_serialR.jsp"><i class="fa fa-key   fa-fw"></i>
 								시리얼 등록</a></li>
 								<!-- 	<li><a href="m_maker.jsp"><i class="fa fa-comment   fa-fw"></i>
 								제작자</a></li> -->

@@ -1,8 +1,8 @@
-function loginCheckFunction() {
+function loginFunction() {
 
 	var MEMBER_ID = $('#MEMBER_ID').val();
 	var MEMBER_PW = $('#MEMBER_PW').val();
-
+	alert( MEMBER_ID);
 	$.ajax({
 		type : 'POST',
 		url : './UserLoginServlet',
@@ -13,7 +13,7 @@ function loginCheckFunction() {
 		success : function(result) {
 
 
-			if(result ==1 ){
+			if(result == 1 ){
 				$(location).attr('href', './m_index.jsp');
 
 			}
@@ -143,9 +143,8 @@ function joinFunction() {
 			MEMBER_ADDRESS:MEMBER_ADDRESS
 		},
 		success : function(result) {
-alert(result);
-			if(result == 1 ){
-				alert('회원가입이 완료되었습니다.');
+		 
+			if(result ==1 ){
 				$(location).attr('href', './m_index.jsp');
 
 			}

@@ -21,14 +21,13 @@ public class UserLoginServlet extends HttpServlet {
 
 		String MEMBER_ID = request.getParameter("MEMBER_ID");
 		String MEMBER_PW = request.getParameter("MEMBER_PW");
- 
+
 		if(MEMBER_ID == null || MEMBER_ID.equals("") || MEMBER_PW==null || MEMBER_PW.equals("")) {
-	 
+
 			response.getWriter().write("7");
 			return;
 
 		}
-
 
 		int result = new UserDAO().MEMBER_LOGIN(MEMBER_ID, MEMBER_PW);
 
@@ -36,7 +35,7 @@ public class UserLoginServlet extends HttpServlet {
 		if(result == 1) {
 
 			request.getSession().setAttribute("MEMBER_ID", MEMBER_ID); 
- 
+
 			response.getWriter().write("1");
 			return;
 

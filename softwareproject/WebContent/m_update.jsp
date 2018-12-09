@@ -22,7 +22,7 @@
 		String MEMBER_ID = null;
 		if (session.getAttribute("MEMBER_ID") != null) {
 			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
-			response.sendRedirect("./m_index.jsp");
+	 
 
 			if (MEMBER_ID == null) {
 				response.sendRedirect("./m_index.jsp");

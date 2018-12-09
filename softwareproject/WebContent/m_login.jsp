@@ -10,33 +10,33 @@ e<%@ page language="java" contentType="text/html; charset=UTF-8"
 
 </head>
 <body>
-	<jsp:include page="nav.jsp" />
+	<jsp:include page="nav.jsp"/>
  
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="login-panel panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">로그인 하기</h3>
+						<h3 class="panel-title">로그인</h3>
 					</div>  
 					<div class="panel-body">
 						<form role="form">
 							<fieldset>
 								<div class="form-group">
-									<input class="form-control" placeholder="E-mail" name="email"
-										id="userID" type="email" autofocus>
+									<input class="form-control" placeholder="ID"  
+										id="MEMBER_ID" type="email" autofocus>
 								</div>
 								<div class="form-group">
-									<input class="form-control" placeholder="Password" id="userPW"
-										name="password" type="password" value="">
+									<input class="form-control" placeholder="Password" id="MEMBER_PW"
+										 type="password" value="">
 								</div>
 								<div class="checkbox">
 									<label> <input name="remember" type="checkbox"
-										value="Remember Me">아이디 기억
+										value="Remember Me">아이디 기억하기
 									</label>
 								</div>
 								<div>
-									<button type="button" onclick="loginCheckFunction();"
+									<button type="button" onclick="loginFunction();"
 										class="form-control btn btn-primary">로그인</button>
 									<h5 style="" id="statusMessage"></h5>
 								</div>
@@ -45,7 +45,7 @@ e<%@ page language="java" contentType="text/html; charset=UTF-8"
 					</div>
 			
 				</div>
-						관리자계정 로그인시 조작가능합니다.
+						
 			</div>
 		</div>
 	</div>

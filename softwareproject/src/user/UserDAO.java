@@ -23,16 +23,15 @@ public class UserDAO {
 
 
 	//[Y] LOGIN LOGIC
-	public int MEMBER_LOGIN(String MEMBER_ID, String USER_PW) {
-	 
+	public int MEMBER_LOGIN(String MEMBER_ID, String MEMBER_PW) {
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT MEMBER_ID,MEMBER_PW FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
+		String SQL = "SELECT MEMBER_PW FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 		try {
-
-			Class.forName("com.mysql.jdbc.Driver");    
+			 	Class.forName("com.mysql.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
@@ -40,7 +39,7 @@ public class UserDAO {
 
 			if(rs.next())
 			{
-				if(rs.getString("USER_PW").equals(USER_PW)) 
+				if(rs.getString("MEMBER_PW").equals(MEMBER_PW)) 
 				{
 
 					return 1;
@@ -177,7 +176,7 @@ public class UserDAO {
 				MEMBER.setMEMBER_PW(rs.getString("MEMBER_PW")); 
 				MEMBER.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
 				MEMBER.setMEMBER_ADDRESS(rs.getString("MEMBER_ADDRESS"));
-				
+
 				return MEMBER;
 
 			}
@@ -203,7 +202,7 @@ public class UserDAO {
 
 	//[Y] update user Info.
 	public int MEMBER_UPDATE(String MEMBER_ID, String MEMBER_PW, String MEMBER_NAME, String MEMBER_ADDRESS) {
-		 
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
