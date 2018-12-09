@@ -1,4 +1,4 @@
-e<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -10,25 +10,26 @@ e<%@ page language="java" contentType="text/html; charset=UTF-8"
 
 </head>
 <body>
-	<jsp:include page="nav.jsp"/>
- 
+	<div>
+		<jsp:include page="nav.jsp" />
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="login-panel panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">로그인</h3>
-					</div>  
+					</div>
 					<div class="panel-body">
 						<form role="form">
 							<fieldset>
 								<div class="form-group">
-									<input class="form-control" placeholder="ID"  
-										id="MEMBER_ID" type="email" autofocus>
+									<input class="form-control" placeholder="ID" id="MEMBER_ID"
+										type="email" autofocus>
 								</div>
 								<div class="form-group">
-									<input class="form-control" placeholder="Password" id="MEMBER_PW"
-										 type="password" value="">
+									<input class="form-control" placeholder="Password"
+										id="MEMBER_PW" type="password" value="">
 								</div>
 								<div class="checkbox">
 									<label> <input name="remember" type="checkbox"
@@ -43,12 +44,11 @@ e<%@ page language="java" contentType="text/html; charset=UTF-8"
 							</fieldset>
 						</form>
 					</div>
-			
+
 				</div>
-						
+
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

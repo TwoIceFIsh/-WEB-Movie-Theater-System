@@ -10,15 +10,16 @@
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
 
 <title>오유이동 영화관</title>
 
 </head>
 
 <body>
-	<jsp:include page="js.jsp" />
-
+	<div>
+		<jsp:include page="js.jsp" />
+	</div>
 
 	<%
 		String MEMBER_ID = null;
@@ -34,113 +35,59 @@
 		}
 	%>
 
+	<div class="navbar-wrapper">
+		<div class="container">
 
-	<div id="wrapper">
+			<nav class="navbar navbar-inverse navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar"
+							aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">---</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">오유이동 영화관</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="m_index.jsp">홈</a></li>
+							<li><a href="#about">영화목록</a></li>
+							<li><a href="#contact">예매하기</a></li>
+							<li class="dropdown">
+								<% if (MEMBER_ID == null){ %> <a href="#" class="dropdown-toggle"
+								data-toggle="dropdown" role="button" aria-expanded="false">Sign
+									In/Sign Up <span class="caret"></span>
+							</a> <% }else{ %> <a href="#" class="dropdown-toggle"
+								data-toggle="dropdown" role="button" aria-expanded="false"><%=MEMBER_ID %>님 정보관리 <span class="caret"></span>
+							</a> <%} %>
 
-		<!-- Navigation -->
-		<nav class="navbar navbar-default navbar-static-top" role="navigation"
-			style="margin-bottom: 0">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="m_index.jsp">OU2D</a>
-			</div>
-			<!-- /.navbar-header -->
+								<ul class="dropdown-menu" role="menu">
 
-			<ul class="nav navbar-top-links navbar-right">
+									<% if (MEMBER_ID == null){ %>
+									<li><a href="m_login.jsp">로그인</a></li>
+									<li class="divider"></li>
+									<li><a href="m_join.jsp">회원가입</a></li>
 
+									<%}else {%>
+									<li><a href="m_check.jsp">회원정보 수정</a></li>
+									<li class="divider"></li>
+									<li><a href="F_logout.jsp">로그아웃</a></li>
 
-				<%
-					if (MEMBER_ID == null) {
-				%>
-
-
-
-				<li class="divider"></li>
-						<li><a href="./m_login.jsp"><i class="fa fa-user fa-fw"></i> 로그인</a></li>
-						<li class="divider"></li>
-						<li><a href="./m_join.jsp"><i class="fa fa-gear fa-fw"></i> 회원가입</a></li>
-						<li class="divider"></li>
-
-				<%
-					} else {
-				%>
-
-
-
-				<li class="divider"></li>
-										<li><a href="./m_check.jsp"> <i class="fa fa-user fa-fw"></i> 
-							&nbsp;<%=MEMBER_ID%>님 정보수정 </a></li>
-						 
-						<li class="divider"></li>
-						<li><a href="./F_logout.jsp"><i class="fa fa-sign-out fa-fw"></i>
-								로그아웃</a></li>
-								<li class="divider"></li>
-
-
-				<%
-					}
-				%>
-
-				<!-- /.dropdown -->
-			</ul>
-			<!-- /.navbar-top-links -->
-
-			<div class="navbar-default sidebar" role="navigation">
-				<div class="sidebar-nav navbar-collapse">
-					<ul class="nav" id="side-menu">
-
-						<%
-							if (MEMBER_ID != null) {
-						%>
-
-						<li><a href="testIndex.jsp"><i class="fa fa-dashboard fa-fw"></i>
-								 ☆ 개발자 컨트롤 패널 ☆ </a></li>
-
-						<%
-							} else {
-						%>
-
-						<li><a href="guest.jsp"><i class="fa fa-dashboard      fa-fw"></i>
-								손님용 컨트롤 패널</a></li>
-
-						<%
-							}
-						%>
-						<li><a href="m_serialR.jsp"><i class="fa fa-key   fa-fw"></i>
-								시리얼 등록</a></li>
-								<!-- 	<li><a href="m_maker.jsp"><i class="fa fa-comment   fa-fw"></i>
-								제작자</a></li> -->
-								
-						 
-								
-								<li><a href="desc.jsp"><i class="fa fa-gears       fa-fw"></i>
-								홈페이지 기술 설명</a></li>
-									<li><a href="desc2.jsp"><i class="fa fa-question-circle           fa-fw"></i>
-								Q&A</a></li> 
-								
-								 
-									<li><a href="qa.jsp"><i class="fa fa-question-circle           fa-fw"></i>
-								마지막 페이지</a></li>
-								
-								
-						
-					</ul>
+									<%} %>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<!-- /.sidebar-collapse -->
-			</div>
-			<!-- /.navbar-static-side -->
-		</nav>
+			</nav>
 
-
-		<!-- /#page-wrapper -->
-
+		</div>
 	</div>
-	<!-- /#wrapper -->
+
+
+
 
 
 
