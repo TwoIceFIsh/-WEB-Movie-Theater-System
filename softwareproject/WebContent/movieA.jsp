@@ -131,7 +131,7 @@
 		<hr class="featurette-divider">
 
 		<div class="row featurette">
-			<div class="col-md-7">
+			<div class="col-md-7 ">
 				<h2 class="featurette-heading">
 					고뇌하는 지우 <span class="text-muted">그 처량한 눈망울을 보라.</span>
 				</h2>

@@ -20,16 +20,13 @@
 	<!-- [session] check logic -->
 	<%
 		String MEMBER_ID = null;
+		if (session.getAttribute("MEMBER_ID") == null) {
+			response.sendRedirect("./m_index.jsp");
+		}
 		if (session.getAttribute("MEMBER_ID") != null) {
 			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
-	 
-
-			if (MEMBER_ID == null) {
-				response.sendRedirect("./m_index.jsp");
-			}
 
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
- 
 	%>
 
 
@@ -96,10 +93,10 @@
 			</div>
 		</div>
 	</div>
-	<% 
+
+	<%
 		}
 	%>
-
 
 
 </body>

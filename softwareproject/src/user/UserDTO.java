@@ -26,17 +26,17 @@ public class UserDTO {
 	public void setMEMBER_ADDRESS(String mEMBER_ADDRESS) {
 		MEMBER_ADDRESS = mEMBER_ADDRESS;
 	}
-	public String getMEMBER_POINT() {
+	public int getMEMBER_POINT() {
 		return MEMBER_POINT;
 	}
-	public void setMEMBER_POINT(String mEMBER_POINT) {
+	public void setMEMBER_POINT(int mEMBER_POINT) {
 		MEMBER_POINT = mEMBER_POINT;
 	}
 	public String MEMBER_ID;
 	public String MEMBER_PW;
 	public String MEMBER_NAME;
 	public String MEMBER_ADDRESS;
-	public String MEMBER_POINT;
+	public int MEMBER_POINT;
 	
 	
  

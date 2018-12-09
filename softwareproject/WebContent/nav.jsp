@@ -23,14 +23,15 @@
 
 	<%
 		String MEMBER_ID = null;
+
 		if (session.getAttribute("MEMBER_ID") != null) {
 			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
 			response.sendRedirect("./m_index.jsp");
-			
+
 			if (MEMBER_ID == null) {
 				response.sendRedirect("./m_index.jsp");
 			}
-			UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 
 		}
 	%>
@@ -44,9 +45,8 @@
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar"
 							aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">---</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
+							<span class="sr-only">---</span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="#">오유이동 영화관</a>
 					</div>
@@ -56,28 +56,49 @@
 							<li><a href="#about">영화목록</a></li>
 							<li><a href="#contact">예매하기</a></li>
 							<li class="dropdown">
-								<% if (MEMBER_ID == null){ %> <a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false">Sign
-									In/Sign Up <span class="caret"></span>
-							</a> <% }else{ %> <a href="#" class="dropdown-toggle"
-								data-toggle="dropdown" role="button" aria-expanded="false"><%=MEMBER_ID %>님 정보관리 <span class="caret"></span>
-							</a> <%} %>
-
+								<%
+									if (MEMBER_ID == null) {
+								%> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+								role="button" aria-expanded="false">Sign In/Sign Up <span
+									class="caret"></span>
+							</a> <%
+ 	} else {
+ %> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+								role="button" aria-expanded="false"><%=MEMBER_ID%>님 정보관리 <span
+									class="caret"></span> </a> <%
+ 	}
+ %> <%
+ 	if (MEMBER_ID == null) {
+ %>
 								<ul class="dropdown-menu" role="menu">
-
-									<% if (MEMBER_ID == null){ %>
 									<li><a href="m_login.jsp">로그인</a></li>
 									<li class="divider"></li>
 									<li><a href="m_join.jsp">회원가입</a></li>
-
-									<%}else {%>
+								</ul> <%
+										} else {
+									%>
+								<ul class="dropdown-menu" role="menu">
 									<li><a href="m_check.jsp">회원정보 수정</a></li>
 									<li class="divider"></li>
 									<li><a href="F_logout.jsp">로그아웃</a></li>
 
-									<%} %>
-								</ul>
+
+								</ul> <%
+											}
+										%>
 							</li>
+							<%
+								if (MEMBER_ID != null) {
+									UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+									int MEMBER_POINT = MEMBER.getMEMBER_POINT();
+							%>
+							<li><a>포인트 <%=MEMBER.getMEMBER_POINT()%>점
+							</a></li>
+
+							<%
+								}
+							%>
+
 						</ul>
 					</div>
 				</div>
