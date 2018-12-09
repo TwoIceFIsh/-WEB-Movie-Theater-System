@@ -13,16 +13,19 @@
 </head>
 <body>
 
-  <div>
-    <jsp:include page="nav.jsp" />
-    </div>
+	<div>
+		<jsp:include page="nav.jsp" />
+	</div>
 	<!-- [main] show  -->
 
 	<div id="page-wrapper">
 		<div class=" ">
-			<h1 class="display-4"> 오유이동 영화관 </h1>
+			<h1 class="display-4">오유이동 영화관</h1>
 			<p class="lead">어서오십시오!.</p>
-		
+
+
+
+
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
@@ -32,31 +35,62 @@
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<img class="first-slide" src="./img/pig_of_red.jpg" alt="First slide">
-						<div class="container">
-							<div class="carousel-caption">
-								<h1>황해</h1>
-								<p>
-									맛있는 맛집여행<br>
-								 
-									
-									 
-								</p>
-							 
+					
+					
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/pig_of_red.jpg" alt="...">
+									<div class="caption">
+										<h3>Thumb nail label</h3>
+
+										<a href="#" class="btn btn-primary" role="button">영화정보</a> <a
+											href="#" class="btn btn-danger" role="button">예매하기</a>
+
+									</div>
+								</div>
+							</div>
+						
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/station_of_sokcho.jpg" alt="...">
+									<div class="caption">
+										<h3>Thumb nail label</h3>
+
+											<a href="#" class="btn btn-primary" role="button">영화정보</a> <a
+											href="#" class="btn btn-danger" role="button">예매하기</a>
+
+									</div>
+								</div>
+							</div>
+					
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/your_arm_number.jpg" alt="...">
+									<div class="caption">
+										<h3>Thumb nail label</h3>
+
+											<a href="#" class="btn btn-primary" role="button">영화정보</a> <a
+											href="#" class="btn btn-danger" role="button">예매하기</a>
+
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="item">
-						<img class="second-slide"    src="./img/station_of_sokcho.jpg" alt="Second slide">
-						<div class="container">
-							<div class="carousel-caption">
-								 <h1>타임머신</h1>
-								<p>
-									헉 옛날로갔당<br>
-								 
-									
-									 
-								</p>
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/pig_of_red.jpg" alt="...">
+									<div class="caption">
+										<h3>Thumb nail label</h3>
+
+										<a href="#" class="btn btn-primary" role="button">Button</a> <a
+											href="#" class="btn btn-default" role="button">Button</a>
+
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -75,7 +109,7 @@
 			<!-- /.carousel -->
 		</div>
 	</div>
- 
+
 </body>
 </html>
 
