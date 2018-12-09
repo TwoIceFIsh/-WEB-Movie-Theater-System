@@ -42,9 +42,9 @@
 								<div class="thumbnail">
 									<img src="./img/pig_of_red.jpg" alt="...">
 									<div class="caption">
-										<h3>Thumb nail label</h3>
+										<h3>붉은 돼지를 먹어라..</h3>
 
-										<a href="#" class="btn btn-primary" role="button">영화정보</a> <a
+										<a href="#" class="btn btn-default" role="button">영화정보</a> <a
 											href="#" class="btn btn-danger" role="button">예매하기</a>
 
 									</div>
@@ -55,11 +55,11 @@
 								<div class="thumbnail">
 									<img src="./img/station_of_sokcho.jpg" alt="...">
 									<div class="caption">
-										<h3>Thumb nail label</h3>
+										<h3>속초에 가보니 피카츄가 울고있다</h3>
 
-											<a href="#" class="btn btn-primary" role="button">영화정보</a> <a
+											<a href="#" class="btn btn-default" role="button">영화정보</a> <a
 											href="#" class="btn btn-danger" role="button">예매하기</a>
-
+<h5>나와랏 피카츄! 지우의 우렁찬 함성이 온대지를흔든다.. 범접할수없는 힘을 가진 지우의 영향으로 포캣몬들은 자취를 감추는데.. 지우의 포켓몬 몰이사냥의 이야기가 지금 여기서 시작된다</h5>
 									</div>
 								</div>
 							</div>
@@ -68,9 +68,9 @@
 								<div class="thumbnail">
 									<img src="./img/your_arm_number.jpg" alt="...">
 									<div class="caption">
-										<h3>Thumb nail label</h3>
+										<h3>니군번은</h3>
 
-											<a href="#" class="btn btn-primary" role="button">영화정보</a> <a
+											<a href="#" class="btn btn-default" role="button">영화정보</a> <a
 											href="#" class="btn btn-danger" role="button">예매하기</a>
 
 									</div>
