@@ -1,260 +1,101 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<!DOCTYPE html >
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
+<title>오유이동 영화관에오신것을 환영합니다.</title>
 
 </head>
-
 <body>
 
-	<jsp:include page="js.jsp" />
-	
-	<div class="window-margin">
-		<div class="window">
 
-			<aside class="sidebar">
-				<div class="top-bar">
-					<p class="logo">OU2D 영화관</p>
-				</div>
+	<jsp:include page="nav.jsp" />
 
-				<div class="search-box">
-					<input type="text" placeholder="영화검색하기" />
-					<p class="fa fa-search"></p>
-				</div>
+	<!-- [main] show  -->
 
-				<menu class="menu">
-					<p class="menu-name">Movie trailers</p>
-					<ul>
-						<li class="active"><a href="#">Action / Adventure</a>
-							<ul>
-								<li><a href="#">Latest</a></li>
-								<li class="active"><a href="#">Popular</a></li>
-								<li><a href="#">Coming soon</a></li>
-								<li><a href="#">Staff picks</a></li>
-							</ul></li>
-						<li><a href="#">Animation</a></li>
-						<li><a href="#">Comedy</a></li>
-						<li><a href="#">Documentaries</a></li>
-						<li><a href="#">Drama</a></li>
-						<li><a href="#">Horror</a></li>
-						<li><a href="#">Sci-Fi / Fantasy</a></li>
-						<li><a href="#">List A-Z</a></li>
-					</ul>
-
-					<div class="separator"></div>
-
-					<ul class="no-bullets">
-						<li><a href="#">Latest news</a></li>
-						<li><a href="#">Critic reviews</a></li>
-						<li><a href="#">Box office</a></li>
-						<li><a href="#">Top 250</a></li>
-					</ul>
-
-					<div class="separator"></div>
-				</menu>
-			</aside>
+	<div id="page-wrapper">
+		<div class=" ">
+			<h1 class="display-4">오유이동 영화관</h1>
+			<p class="lead">어서오십시오!.</p>
 
 
-			<div class="main" role="main">
-
-				<div class="top-bar">
-
-					<ul class="top-menu">
-						<li class="menu-icon trigger-sidebar-toggle">
-							<div class="line"></div>
-							<div class="line"></div>
-							<div class="line"></div>
-						</li>
-						<li><a href="#">Headlines</a></li>
-						<li><a href="#">Articles</a></li>
-						<li class="active"><a href="#">홈페이지</a></li>
-						<li><a href="#">Television</a></li>
-						<li><a href="#">Music</a></li>
-						<li><a href="#">Celebrities</a></li>
-					</ul>
-
-					<div class="profile-box">
-						<div class="circle"></div>
-						<span class="arrow fa fa-angle-down"></span>
-					</div>
-
-				</div>
-				<!-- top bar -->
 
 
-				<div class="featured-movie">
-					<img class="cover"
-						src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394277453/backdrop_ggwxvq.jpg"
-						alt="" class="cover" />
-					<p class="corner-title">Staff pick</p>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
 
-					<div class="bottom-bar">
-						<div class="title-container">
-							<span class="fa fa-play-circle"></span> <b>Non-stop</b> Trailer
-							#1
-						</div>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
 
-						<div class="right">
-							<div class="stars">
-								<span class="fa fa-star"></span> <span class="fa fa-star"></span>
-								<span class="fa fa-star"></span> <span class="fa fa-star-half-o"></span>
-								<span class="fa fa-star-o"></span>
+
+						<div class="row">
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/pig_of_red.jpg" alt="...">
+									<div class="caption">
+										<h3>붉은 돼지를 먹어라..</h3>
+
+										<a href="#" class="btn btn-default" role="button">영화정보</a> <a
+											href="#" class="btn btn-danger" role="button">예매하기</a>
+										<h5>사람으 말을 할수 있는 돼지가있다? 무려 이 돼지는 비행기도 조종할수있습니다.</h5>
+									</div>
+								</div>
 							</div>
-							<div class="share">
-								<icon class="fa fa-share-square"></icon>
-								Share
+
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/station_of_sokcho.jpg" alt="...">
+									<div class="caption">
+										<h3>속초에 가보니 피카츄가 울고있다</h3>
+
+										<a href="#" class="btn btn-default" role="button">영화정보</a> <a
+											href="#" class="btn btn-danger" role="button">예매하기</a>
+										<h5>나와랏 피카츄! 지우의 우렁찬 함성이 온대지를흔든다.. 범접할수없는 힘을 가진 지우의 영향으로
+											포캣몬들은 자취를 감추는데.. 지우의 포켓몬 몰이사냥의 이야기가 지금 여기서 시작된다</h5>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<img src="./img/your_arm_number.jpg" alt="...">
+									<div class="caption">
+										<h3>니군번은</h3>
+
+										<a href="#" class="btn btn-default" role="button">영화정보</a> <a
+											href="#" class="btn btn-danger" role="button">예매하기</a>
+										<h5>헉헉헉... 전역한지 2년째 그당시의 악몽은 가시지 않는다. 어느날 똑같이 군대꿈을 꾸는대
+											잠에서 깨질않는다? 넌누구야 내가왜 다른사람이 되어있지? 만기대재병장의 어느 이병의 군대대리 스토리..</h5>
+									</div>
+								</div>
 							</div>
 						</div>
-						<!-- right -->
 					</div>
-					<!-- bottom bar -->
-				</div>
-				<!-- featured -->
-
-
-				<div class="movie-list">
-					<div class="title-bar">
-						<div class="left">
-							<p class="bold">Popular Trailers</p>
-							<p class="grey">Action / Adventure</p>
-						</div>
-						<!-- left -->
-						<div class="right">
-							<a class="blue" href="#">Rating <i class="fa fa-angle-down"></i></a>
-							<a href="#">Newest</a> <a href="#">Oldest</a>
-						</div>
-						<!-- right -->
-					</div>
-					<!-- title-bar -->
-
-					<ul class="list">
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283878/2014-03-08_140412_oavbye.png"
-							alt="" class="cover" />
-							<p class="title">Sin City: A Dame To Kill For</p>
-							<p class="genre">Action, Crime</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140329_aawn02.png"
-							alt="" class="cover" />
-							<p class="title">Transcendence</p>
-							<p class="genre">Action, Drama</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140239_kyg9i7.png"
-							alt="" class="cover" />
-							<p class="title">Need For Speed</p>
-							<p class="genre">Action, Crime</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140052_dq4dyx.png"
-							alt="" class="cover" />
-							<p class="title">The Amazing Spiderman</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140104_tdgzka.png"
-							alt="" class="cover" />
-							<p class="title">Pompeii</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140248_fmufrz.png"
-							alt="" class="cover" />
-							<p class="title">Divergent</p>
-							<p class="genre">Action, Sci-Fi</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140401_aewzsy.png"
-							alt="" class="cover" />
-							<p class="title">Guardians of the Galaxy</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140339_wck2gw.png"
-							alt="" class="cover" />
-							<p class="title">X-Men: Days of Fury</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140311_rj1det.png"
-							alt="" class="cover" />
-							<p class="title">Captain America: The Winter Soilder</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140248_fmufrz.png"
-							alt="" class="cover" />
-							<p class="title">Divergent</p>
-							<p class="genre">Action, Sci-Fi</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140132_bcnfqk.png"
-							alt="" class="cover" />
-							<p class="title">RoboCop (2014)</p>
-							<p class="genre">Action, Crime</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140329_aawn02.png"
-							alt="" class="cover" />
-							<p class="title">Transcendence</p>
-							<p class="genre">Action, Drama</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140239_kyg9i7.png"
-							alt="" class="cover" />
-							<p class="title">Need For Speed</p>
-							<p class="genre">Action, Crime</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140157_wvifsp.png"
-							alt="" class="cover" />
-							<p class="title">The Lego Movie</p>
-							<p class="genre">Adventure, Animation</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283878/2014-03-08_140412_oavbye.png"
-							alt="" class="cover" />
-							<p class="title">Sin City: A Dame To Kill For</p>
-							<p class="genre">Action, Crime</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140339_wck2gw.png"
-							alt="" class="cover" />
-							<p class="title">X-Men: Days of Fury</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283879/2014-03-08_140052_dq4dyx.png"
-							alt="" class="cover" />
-							<p class="title">The Amazing Spiderman</p>
-							<p class="genre">Action, Adventure</p></li>
-						<li><img
-							src="https://res.cloudinary.com/dddcqqk0g/image/upload/v1394283880/2014-03-08_140248_fmufrz.png"
-							alt="" class="cover" />
-							<p class="title">Divergent</p>
-							<p class="genre">Action, Sci-Fi</p></li>
-					</ul>
-
-					<a href="#" class="load-more">Show more movies <span
-						class="fa fa-plus"></span></a>
 
 				</div>
-				<!-- movie list -->
-
-
+				<a class="left carousel-control" href="#myCarousel" role="button"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#myCarousel" role="button"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
 			</div>
-			<!-- main -->
-
+			<!-- /.carousel -->
 		</div>
-		<!-- window -->
 	</div>
-	<!-- window margin -->
-	<script
-		src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
-	<script>
-		jQuery(document).ready(function($) {
 
-			$('a').on('click', function(e) {
-				e.preventDefault();
-			});
-
-			$('.trigger-sidebar-toggle').on('click', function() {
-				$('body').toggleClass('sidebar-is-open');
-			});
-
-		});
-		//# sourceURL=pen.js
-	</script>
 </body>
-
 </html>
+
