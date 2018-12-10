@@ -1,14 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="movie.MovieDAO"%>
+<%@ page import="movie.MovieDTO"%>
+<!DOCTYPE html  >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>속초행</title>
+
+<!-- 무조건 이양식을 따라야 한글이 제대로 출력이됩니다.
+ -->
+<title>기본 구성 페이지!</title>
 </head>
 <body>
-<body>
- 
+
+
+	<!-- 네비게이션 바를 로딩합니다 -->
+	<jsp:include page="nav.jsp" />
+
+	<%
+		String MOVIE_NAME = null;
+		if (session.getAttribute("MOVIE_NAME") == null) {
+			response.sendRedirect("./m_index.jsp");
+		}
+		if (session.getAttribute("MOVIE_NAME") != null) {
+			MOVIE_NAME = (String) session.getAttribute("MOVIE_NAME");
+
+			MovieDTO MOVIE = new MovieDAO().getMOVIE_INFO(MOVIE_NAME);
+	%>
 
 	<jsp:include page="nav.jsp" />
 	<!-- Carousel
@@ -21,25 +39,26 @@
 			<li data-target="#myCarousel" data-slide-to="2"></li>
 		</ol>
 		<div class="carousel-inner" role="listbox">
-	 
+			<!-- <div class="item  ">
+
+			 
+			</div> -->
 			<div class="item active">
 
 				<div class="container">
-					<img class="secont-slide" src="./img/station_of_sokcho.jpg"
-						height="400" width="300" alt="Third slide">
+					<img class="secont-slide" src="<%=MOVIE.getMOVIE_IMG_URL()%>"  height="400" width="300" >
 					<div class="carousel-caption">
 
-						<h1>속초에 가보니 피카츄가 울고있다.</h1>
+						<h1><%=MOVIE.getMOVIE_NAME() %></h1>
 						<p>
-							나와랏 피카츄! 지우의 우렁찬 함성이 온대지를흔든다..<br> 범접할수없는 힘을 가진 지우의 영향으로
-							포캣몬들은 자취를 감추는데..<br> 지우의 포켓몬 몰이사냥의 이야기가 지금 여기서 시작된다
+							<%=MOVIE.getMOVIE_INFO() %>
 						<p>
 							<a class="btn btn-lg btn-danger" href="#" role="button"> 예매하기</a>
 						</p>
 					</div>
 				</div>
 			</div>
-			 
+
 		</div>
 		<a class="left carousel-control" href="#myCarousel" role="button"
 			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
@@ -62,27 +81,26 @@
 		<!-- Three columns of text below the carousel -->
 		<div class="row">
 			<div class="col-lg-4">
-				<img class="img-circle" src="./img/movieA/a.png"
-					alt="Generic placeholder image" width="140" height="140">
-				<h2>지우(마동석)</h2>
-				<p>속초로 마블리와함께 소풍을 계획한 지우는 속초에서 정체불명의 괴물과 맞닥뜨리게되는데 그순간 친구의 힘을 빌려
-					위기를 타파한다
+				<img class="img-circle" src="<%=MOVIE.getMOVIE_PEOPLE1_URL() %>"
+					width="140" height="140">
+				<h2><%=MOVIE.getMOVIE_PEOPLE1() %></h2>
+				<p><%=MOVIE.getMOVIE_PEOPLE1_INFO() %>
 				<p></p>
 			</div>
 			<!-- /.col-lg-4 -->
 			<div class="col-lg-4">
-				<img class="img-circle" src="./img/movieA/b.jpg"
-					alt="Generic placeholder image" width="140" height="140">
-				<h2>피카츄</h2>
-				<p>미지의섬에서 지우와 마주치게되어 필사적으로 도망을 치는 역할이다
+				<img class="img-circle" src="<%=MOVIE.getMOVIE_PEOPLE2_URL() %>"
+					width="140" height="140">
+				<h2><%=MOVIE.getMOVIE_PEOPLE2() %></h2>
+				<p><%=MOVIE.getMOVIE_PEOPLE2_INFO() %>
 				<p></p>
 			</div>
 			<!-- /.col-lg-4 -->
 			<div class="col-lg-4">
-				<img class="img-circle" src="./img/movieA/c.jpg"
-					alt="Generic placeholder image" width="140" height="140">
-				<h2>마블리</h2>
-				<p>지우의 여친이자 피카츄의 절대 원수
+				<img class="img-circle" src="<%=MOVIE.getMOVIE_PEOPLE3_URL() %>"
+					width="140" height="140">
+				<h2><%=MOVIE.getMOVIE_PEOPLE3() %></h2>
+				<p><%=MOVIE.getMOVIE_PEOPLE3_INFO() %>
 				<p></p>
 			</div>
 			<!-- /.col-lg-4 -->
@@ -97,14 +115,13 @@
 		<div class="row featurette">
 			<div class="col-md-7 ">
 				<h2 class="featurette-heading">
-					고뇌하는 지우 <span class="text-muted">그 처량한 눈망울을 보라.</span>
+					<%=MOVIE.getMOVIE_SCENE1()%>
 				</h2>
-				<p class="lead">마. 내가 제일힘들떄 무엇을 떠올리는지 아나 피카츄? 그것 바로 나의 친구들이다. 너
-					내 동료가되라.</p>
+				<p class="lead"><%=MOVIE.getMOVIE_SCENE1_INFO() %></p>
 			</div>
 			<div class="col-md-5">
 				<img class="featurette-image img-responsive center-block"
-					src="./img/movieA/1.jpg" width="300" height="400">
+					src="<%=MOVIE.getMOVIE_SCENE1_URL() %>" width="300" height="400">
 			</div>
 		</div>
 
@@ -113,13 +130,13 @@
 		<div class="row featurette">
 			<div class="col-md-7 col-md-push-5">
 				<h2 class="featurette-heading">
-					절채절명의 위기 . <span class="text-muted">전광석화 그자체..</span>
+					<%=MOVIE.getMOVIE_SCENE2() %>
 				</h2>
-				<p class="lead">나를 이길상대는 나 자신뿐이다 다들 덤벼 오늘 죽어보자.</p>
+				<p class="lead"><%=MOVIE.getMOVIE_SCENE2_INFO() %></p>
 			</div>
 			<div class="col-md-5 col-md-pull-7">
 				<img class="featurette-image img-responsive center-block"
-					src="./img/movieA/2.jpg" width="300" height="400">
+					src="<%=MOVIE.getMOVIE_SCENE2_URL() %>" width="300" height="400">
 			</div>
 		</div>
 
@@ -128,13 +145,13 @@
 		<div class="row featurette">
 			<div class="col-md-7">
 				<h2 class="featurette-heading">
-					운수없는날.. <span class="text-muted">힘들군.</span>
+					<%=MOVIE.getMOVIE_SCENE3() %>
 				</h2>
-				<p class="lead">내가 하지말라했지 나 아트박스사장인데 그만하고 퍼뜩집드가자잉.</p>
+				<p class="lead"><%=MOVIE.getMOVIE_SCENE3_INFO() %></p>
 			</div>
 			<div class="col-md-5">
 				<img class="featurette-image img-responsive center-block"
-					src="./img/movieA/3.jpg" width="300" height="400">
+					src="<%=MOVIE.getMOVIE_SCENE3_URL() %>" width="300" height="400">
 			</div>
 		</div>
 
@@ -145,17 +162,19 @@
 
 		<!-- FOOTER -->
 		<footer>
-		<p class="pull-right">
-			<a href="#">Back to top</a>
-		</p>
-		<p>
-			&copy; 2018 오유이동 영화관, Inc. &middot; <a href="#">Privacy</a> &middot;
-			<a href="#">Terms</a>
-		</p>
+			<p class="pull-right">
+				<a href="#">Back to top</a>
+			</p>
+			<p>
+				&copy; 2018 오유이동 영화관, Inc. &middot; <a href="#">Privacy</a> &middot;
+				<a href="#">Terms</a>
+			</p>
 		</footer>
 
 	</div>
 	<!-- /.container -->
-
+	<%
+		}
+	%>
 </body>
 </html>

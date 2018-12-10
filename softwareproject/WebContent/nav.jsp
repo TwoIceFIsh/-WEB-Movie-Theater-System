@@ -29,7 +29,7 @@
 			response.sendRedirect("./m_index.jsp");
 
 			if (MEMBER_ID == null) {
-				response.sendRedirect("./m_index.jsp");
+		response.sendRedirect("./m_index.jsp");
 			}
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 
@@ -77,8 +77,8 @@
 									<li class="divider"></li>
 									<li><a href="m_join.jsp">회원가입</a></li>
 								</ul> <%
-										} else {
-									%>
+ 	} else {
+ %>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="m_check.jsp">회원정보 수정</a></li>
 									<li class="divider"></li>
@@ -86,13 +86,13 @@
 
 
 								</ul> <%
-											}
-										%>
+ 	}
+ %>
 							</li>
 							<%
 								if (MEMBER_ID != null) {
-									UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
-									int MEMBER_POINT = MEMBER.getMEMBER_POINT();
+																			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+																			int MEMBER_POINT = MEMBER.getMEMBER_POINT();
 							%>
 							<li><a>포인트 <%=MEMBER.getMEMBER_POINT()%>점
 							</a></li>

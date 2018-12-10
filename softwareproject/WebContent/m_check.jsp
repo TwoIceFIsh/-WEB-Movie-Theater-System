@@ -19,17 +19,17 @@
 	<jsp:include page="nav.jsp" />
 	<!-- [session] check logic -->
 	<%
-	String MEMBER_ID = null;
-	if (session.getAttribute("MEMBER_ID") != null) {
+		String MEMBER_ID = null;
+			if (session.getAttribute("MEMBER_ID") != null) {
 		MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
-	 
+			 
 		
 		if (MEMBER_ID == null) {
 			response.sendRedirect("./m_index.jsp");
 		}
 		UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 
-	}
+			}
 	%>
 
 
