@@ -97,13 +97,13 @@ public class MovieDAO {
 				MOVIE.setMOVIE_INFO(rs.getString("MOVIE_INFO")); 
 				MOVIE.setPLAY_TIME(rs.getString("PLAY_TIME")); 
 				MOVIE.setMOVIE_IMG_URL(rs.getString("MOVIE_IMG_URL"));
-				MOVIE.setMOVIE_COST(rs.getInt("MOVIE_COST"));
+				MOVIE.setMOVIE_COST(rs.getString("MOVIE_COST"));
 				MOVIE.setMOVIE_PEOPLE1(rs.getString("MOVIE_PEOPLE1"));
 				MOVIE.setMOVIE_PEOPLE2(rs.getString("MOVIE_PEOPLE2"));
 				MOVIE.setMOVIE_PEOPLE3(rs.getString("MOVIE_PEOPLE3"));
-				MOVIE.setMOVIE_PEOPLE1_URL(rs.getString("MOVIE_PEOPLE1"));
-				MOVIE.setMOVIE_PEOPLE2_URL(rs.getString("MOVIE_PEOPLE2"));
-				MOVIE.setMOVIE_PEOPLE3_URL(rs.getString("MOVIE_PEOPLE3"));
+				MOVIE.setMOVIE_PEOPLE1_URL(rs.getString("MOVIE_PEOPLE1_URL"));
+				MOVIE.setMOVIE_PEOPLE2_URL(rs.getString("MOVIE_PEOPLE2_URL"));
+				MOVIE.setMOVIE_PEOPLE3_URL(rs.getString("MOVIE_PEOPLE3_URL"));
 				MOVIE.setMOVIE_PEOPLE1_INFO(rs.getString("MOVIE_PEOPLE1_INFO"));
 				MOVIE.setMOVIE_PEOPLE2_INFO(rs.getString("MOVIE_PEOPLE2_INFO"));
 				MOVIE.setMOVIE_PEOPLE3_INFO(rs.getString("MOVIE_PEOPLE3_INFO"));
@@ -186,24 +186,27 @@ public class MovieDAO {
 			pstmt.setString(3, PLAY_TIME );
 			pstmt.setString(4, MOVIE_IMG_URL);
 			pstmt.setString(5, MOVIE_COST );
+			
 			pstmt.setString(6, MOVIE_PEOPLE1);
 			pstmt.setString(7, MOVIE_PEOPLE2);
 			pstmt.setString(8, MOVIE_PEOPLE3);
-			pstmt.setString(9, MOVIE_PEOPLE1_INFO);
-			pstmt.setString(10, MOVIE_PEOPLE2_INFO);
-			pstmt.setString(11, MOVIE_PEOPLE3_INFO);
-			pstmt.setString(12, MOVIE_PEOPLE1_URL);
-			pstmt.setString(13, MOVIE_PEOPLE2_URL);
-			pstmt.setString(14, MOVIE_PEOPLE3_URL);
+			pstmt.setString(9, MOVIE_PEOPLE1_URL);
+			pstmt.setString(10, MOVIE_PEOPLE2_URL);
+			pstmt.setString(11, MOVIE_PEOPLE3_URL);
+			pstmt.setString(12, MOVIE_PEOPLE1_INFO);
+			pstmt.setString(13, MOVIE_PEOPLE2_INFO);
+			pstmt.setString(14, MOVIE_PEOPLE3_INFO);
+		
+		
 			pstmt.setString(15, MOVIE_SCENE1);
 			pstmt.setString(16, MOVIE_SCENE2);
 			pstmt.setString(17, MOVIE_SCENE3);
-			pstmt.setString(18, MOVIE_SCENE1_INFO);
-			pstmt.setString(19, MOVIE_SCENE2_INFO);
-			pstmt.setString(20, MOVIE_SCENE3_INFO);
-			pstmt.setString(21, MOVIE_SCENE1_URL);
-			pstmt.setString(22, MOVIE_SCENE2_URL);
-			pstmt.setString(23, MOVIE_SCENE3_URL);
+			pstmt.setString(18, MOVIE_SCENE1_URL);
+			pstmt.setString(19, MOVIE_SCENE2_URL);
+			pstmt.setString(20, MOVIE_SCENE3_URL);
+			pstmt.setString(21, MOVIE_SCENE1_INFO);
+			pstmt.setString(22, MOVIE_SCENE2_INFO);
+			pstmt.setString(23, MOVIE_SCENE3_INFO);
 
 			pstmt.executeUpdate();
 			return 1;
@@ -243,11 +246,11 @@ ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
 			rs=pstmt.executeQuery();
 
 			if(rs.next() ) {
-				MOVIE.setMOVIE_NAME("MOVIE_NAME"); 
+				MOVIE.setMOVIE_NAME(rs.getString("MOVIE_NAME")); 
 				MOVIE.setMOVIE_INFO(rs.getString("MOVIE_INFO")); 
 				MOVIE.setPLAY_TIME(rs.getString("PLAY_TIME")); 
 				MOVIE.setMOVIE_IMG_URL(rs.getString("MOVIE_IMG_URL"));
-				MOVIE.setMOVIE_COST(rs.getInt("MOVIE_COST"));
+				MOVIE.setMOVIE_COST(rs.getString("MOVIE_COST"));
 				 list.add(MOVIE);
 				
 

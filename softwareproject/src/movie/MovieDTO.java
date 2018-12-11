@@ -4,6 +4,8 @@ public class MovieDTO {
 
 	
 
+	 
+	
 	public String getMOVIE_NAME() {
 		return MOVIE_NAME;
 	}
@@ -28,10 +30,10 @@ public class MovieDTO {
 	public void setMOVIE_IMG_URL(String mOVIE_IMG_URL) {
 		MOVIE_IMG_URL = mOVIE_IMG_URL;
 	}
-	public int getMOVIE_COST() {
+	public String getMOVIE_COST() {
 		return MOVIE_COST;
 	}
-	public void setMOVIE_COST(int mOVIE_COST) {
+	public void setMOVIE_COST(String mOVIE_COST) {
 		MOVIE_COST = mOVIE_COST;
 	}
 	public String getMOVIE_PEOPLE1() {
@@ -106,31 +108,6 @@ public class MovieDTO {
 	public void setMOVIE_SCENE3_URL(String mOVIE_SCENE3_URL) {
 		MOVIE_SCENE3_URL = mOVIE_SCENE3_URL;
 	}
-	
-	public String MOVIE_NAME;
-	public String MOVIE_INFO;
-	public String PLAY_TIME;
-	public String MOVIE_IMG_URL;
-	public int  MOVIE_COST;
-	public String MOVIE_PEOPLE1;
-	public String MOVIE_PEOPLE2;
-	public String MOVIE_PEOPLE3;
-	public String MOVIE_SCENE1;
-	public String MOVIE_SCENE2;
-	public String MOVIE_SCENE3;
-	public String MOVIE_PEOPLE1_URL;
-
-	public String MOVIE_PEOPLE2_URL;
-	public String MOVIE_PEOPLE3_URL;
-	public String MOVIE_SCENE1_URL;
-	public String MOVIE_SCENE2_URL;
-	public String MOVIE_SCENE3_URL;
-	public String MOVIE_SCENE1_INFO;
-	public String MOVIE_SCENE2_INFO;
-	public String MOVIE_SCENE3_INFO;
-	public String MOVIE_PEOPLE1_INFO;
-	public String MOVIE_PEOPLE2_INFO;
-	public String MOVIE_PEOPLE3_INFO;
 	public String getMOVIE_SCENE1_INFO() {
 		return MOVIE_SCENE1_INFO;
 	}
@@ -167,6 +144,31 @@ public class MovieDTO {
 	public void setMOVIE_PEOPLE3_INFO(String mOVIE_PEOPLE3_INFO) {
 		MOVIE_PEOPLE3_INFO = mOVIE_PEOPLE3_INFO;
 	}
+	public String MOVIE_NAME;
+	public String MOVIE_INFO;
+	public String PLAY_TIME;
+	public String MOVIE_IMG_URL;
+	public String  MOVIE_COST;
+	public String MOVIE_PEOPLE1;
+	public String MOVIE_PEOPLE2;
+	public String MOVIE_PEOPLE3;
+	public String MOVIE_SCENE1;
+	public String MOVIE_SCENE2;
+	public String MOVIE_SCENE3;
+	public String MOVIE_PEOPLE1_URL;
 
+	public String MOVIE_PEOPLE2_URL;
+	public String MOVIE_PEOPLE3_URL;
+	public String MOVIE_SCENE1_URL;
+	public String MOVIE_SCENE2_URL;
+	public String MOVIE_SCENE3_URL;
+	public String MOVIE_SCENE1_INFO;
+	public String MOVIE_SCENE2_INFO;
+	public String MOVIE_SCENE3_INFO;
+	public String MOVIE_PEOPLE1_INFO;
+	public String MOVIE_PEOPLE2_INFO;
+	public String MOVIE_PEOPLE3_INFO;
+	
+	 
 	
 }
