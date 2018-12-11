@@ -27,8 +27,7 @@
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slnamee-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slnamee-to="1"></li>
-				<li data-target="#myCarousel" data-slnamee-to="2"></li>
+			
 			</ol>
 
 
