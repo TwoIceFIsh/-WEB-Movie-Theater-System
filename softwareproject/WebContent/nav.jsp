@@ -56,7 +56,8 @@
 							<li class="active"><a href="m_index.jsp">홈</a></li>
 							<li><a href="#about">영화목록</a></li>
 							<li><a href="#contact">예매하기</a></li>
-							
+							<li><a href="setMovie.jsp">영화등록</a></li>
+								<li><a href="NewFile.jsp">영화검색</a></li>
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
