@@ -17,7 +17,7 @@
 			ArrayList<MovieDTO> MOVIE = new MovieDAO().getMOVIE_LIST();
 	%>
 
-	<%=MOVIE.get(1).getMOVIE_NAME()%> --%>
+	<%=MOVIE.get(1).getMOVIE_NAME()%> zzzz--%>
 	<jsp:include page="nav.jsp" />
 	<form method="post" action="MovieGetServlet">
 		ID : <input type="text" name="MOVIE_NAME" value=""> <input
