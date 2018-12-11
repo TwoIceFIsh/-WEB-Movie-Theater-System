@@ -58,7 +58,7 @@
 							<li><a href="#contact">예매하기</a></li>
 							<li><a href="setMovie.jsp">영화등록</a></li>
 								<li><a href="NewFile.jsp">영화검색</a></li>
-									<li><a href="MovieA.jsp">영화sample</a></li>
+									<li><a href="movieA.jsp">영화sample</a></li>
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
