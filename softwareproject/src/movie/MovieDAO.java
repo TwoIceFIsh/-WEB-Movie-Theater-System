@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.util.ArrayList;
 
 
 //DB login class
@@ -82,7 +82,7 @@ public class MovieDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT * FROM MOVIE_INFO WHERE MEMBER_ID = ? ";
+		String SQL = "SELECT * FROM MOVIE_INFO WHERE MOVIE_NAME = ? ";
 
 
 		try {
@@ -138,9 +138,15 @@ public class MovieDAO {
 		return MOVIE;
 	}
 
-	public int setMOVIE_INFO(String MOVIE_NAME, String MOVIE_INFO, int PLAY_TIME, String MOVIE_IMG_URL,
+	public int setMOVIE_INFO(
 
-			int MOVIE_COST,
+			String MOVIE_NAME, 
+			String MOVIE_INFO, 
+
+			String PLAY_TIME, 
+			String MOVIE_IMG_URL,
+
+			String MOVIE_COST,
 			String MOVIE_PEOPLE1,
 			String MOVIE_PEOPLE2,
 			String MOVIE_PEOPLE3,
@@ -164,24 +170,22 @@ public class MovieDAO {
 
 			) {
 
- 
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "INSERT INTO MOVIE_INFO VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
- 
+		String SQL = "INSERT INTO MOVIE_INFO VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+
 		try {
 			Class.forName("com.mysql.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, MOVIE_NAME);
-			rs=pstmt.executeQuery();
- 
+
 			pstmt.setString(1, MOVIE_NAME);
 			pstmt.setString(2, MOVIE_INFO);	
-			pstmt.setInt(3, PLAY_TIME);
+			pstmt.setString(3, PLAY_TIME );
 			pstmt.setString(4, MOVIE_IMG_URL);
-			pstmt.setInt(5, MOVIE_COST);
+			pstmt.setString(5, MOVIE_COST );
 			pstmt.setString(6, MOVIE_PEOPLE1);
 			pstmt.setString(7, MOVIE_PEOPLE2);
 			pstmt.setString(8, MOVIE_PEOPLE3);
@@ -196,12 +200,13 @@ public class MovieDAO {
 			pstmt.setString(17, MOVIE_SCENE3);
 			pstmt.setString(18, MOVIE_SCENE1_INFO);
 			pstmt.setString(19, MOVIE_SCENE2_INFO);
-			pstmt.setString(21, MOVIE_SCENE3_INFO);
-			pstmt.setString(22, MOVIE_SCENE1_URL);
-			pstmt.setString(23, MOVIE_SCENE2_URL);
-			pstmt.setString(24, MOVIE_SCENE3_URL);
-			
-			return pstmt.executeUpdate();
+			pstmt.setString(20, MOVIE_SCENE3_INFO);
+			pstmt.setString(21, MOVIE_SCENE1_URL);
+			pstmt.setString(22, MOVIE_SCENE2_URL);
+			pstmt.setString(23, MOVIE_SCENE3_URL);
+
+			pstmt.executeUpdate();
+			return 1;
 
 
 
@@ -220,6 +225,49 @@ public class MovieDAO {
 		}
 
 		return -1;
+	}
+
+	public ArrayList<MovieDTO> getMOVIE_LIST( ) {
+
+ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "SELECT * FROM MOVIE_INFO";
+		MovieDTO MOVIE = new MovieDTO();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");    
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
+			pstmt = conn.prepareStatement(SQL);
+		 
+			rs=pstmt.executeQuery();
+
+			if(rs.next() ) {
+				MOVIE.setMOVIE_NAME("MOVIE_NAME"); 
+				MOVIE.setMOVIE_INFO(rs.getString("MOVIE_INFO")); 
+				MOVIE.setPLAY_TIME(rs.getString("PLAY_TIME")); 
+				MOVIE.setMOVIE_IMG_URL(rs.getString("MOVIE_IMG_URL"));
+				MOVIE.setMOVIE_COST(rs.getInt("MOVIE_COST"));
+				 list.add(MOVIE);
+				
+
+			}
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if(rs!= null)rs.close();
+
+				if(pstmt !=null) pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return list;
 	}
 
 	public int findMovie(String MOVIE_NAME) {

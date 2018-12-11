@@ -15,7 +15,7 @@
 
 
 	<!-- 네비게이션 바를 로딩합니다 -->
-	<jsp:include page="nav.jsp" />
+
 
 	<%
 		String MOVIE_NAME = null;
@@ -39,21 +39,21 @@
 			<li data-target="#myCarousel" data-slide-to="2"></li>
 		</ol>
 		<div class="carousel-inner" role="listbox">
-			<!-- <div class="item  ">
-
-			 
-			</div> -->
+		 
 			<div class="item active">
 
 				<div class="container">
-					<img class="secont-slide" src="<%=MOVIE.getMOVIE_IMG_URL()%>"  height="400" width="300" >
+					<img class="secont-slide" src="<%=MOVIE.getMOVIE_IMG_URL()%>"
+						height="400" width="300">
 					<div class="carousel-caption">
 
 						<h1><%=MOVIE.getMOVIE_NAME() %></h1>
 						<p>
-							<%=MOVIE.getMOVIE_INFO() %>
-						<p>
-							<a class="btn btn-lg btn-danger" href="#" role="button"> 예매하기</a>
+							영화내용<%=MOVIE.getMOVIE_INFO() %>
+							<p>
+							상영시간<%=MOVIE.getPLAY_TIME() %> 분
+			<br>
+										<a class="btn btn-lg btn-danger" href="#" role="button"> 예매하기</a>
 						</p>
 					</div>
 				</div>
@@ -85,6 +85,7 @@
 					width="140" height="140">
 				<h2><%=MOVIE.getMOVIE_PEOPLE1() %></h2>
 				<p><%=MOVIE.getMOVIE_PEOPLE1_INFO() %>
+				
 				<p></p>
 			</div>
 			<!-- /.col-lg-4 -->
@@ -93,6 +94,7 @@
 					width="140" height="140">
 				<h2><%=MOVIE.getMOVIE_PEOPLE2() %></h2>
 				<p><%=MOVIE.getMOVIE_PEOPLE2_INFO() %>
+				
 				<p></p>
 			</div>
 			<!-- /.col-lg-4 -->
@@ -101,6 +103,7 @@
 					width="140" height="140">
 				<h2><%=MOVIE.getMOVIE_PEOPLE3() %></h2>
 				<p><%=MOVIE.getMOVIE_PEOPLE3_INFO() %>
+				
 				<p></p>
 			</div>
 			<!-- /.col-lg-4 -->

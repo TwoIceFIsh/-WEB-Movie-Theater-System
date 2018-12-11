@@ -20,9 +20,9 @@ public class MovieGetServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 
 		String MOVIE_NAME = request.getParameter("MOVIE_NAME");
-		String MEMBER_PW = request.getParameter("MEMBER_PW");
 
-		if(MOVIE_NAME == null || MOVIE_NAME.equals("") || MEMBER_PW==null || MEMBER_PW.equals("")) {
+
+		if(MOVIE_NAME == null || MOVIE_NAME.equals("")  ) {
 
 			response.getWriter().write("7");
 			return;
@@ -35,7 +35,7 @@ public class MovieGetServlet extends HttpServlet {
 		if(result == 1) {
 
 			request.getSession().setAttribute("MOVIE_NAME", MOVIE_NAME); 
-
+			 response.sendRedirect("./getMovie.jsp");
 		
 			return;
 

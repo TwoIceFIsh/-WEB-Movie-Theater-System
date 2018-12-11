@@ -7,13 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/MovieRegistServlet")
-class MovieRegistServlet extends HttpServlet {
+ 
+@WebServlet("/MovieSetServlet")
+public class MovieSetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException,
+	IOException {
 
+		request.setCharacterEncoding("euc-kr");
 
+		// 값가져오기
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 
@@ -37,29 +42,13 @@ class MovieRegistServlet extends HttpServlet {
 		String MOVIE_SCENE3_URL = request.getParameter("MOVIE_SCENE3_URL");
 		String MOVIE_SCENE1_INFO = request.getParameter("MOVIE_SCENE1_INFO");
 		String MOVIE_SCENE2_INFO = request.getParameter("MOVIE_SCENE2_INFO");
-		String MOVIE_SCENE3_INFO = request.getParameter("MOVIE_SCENE4_INFO");
+		String MOVIE_SCENE3_INFO = request.getParameter("MOVIE_SCENE3_INFO");
 		String MOVIE_PEOPLE1_INFO = request.getParameter("MOVIE_PEOPLE1_INFO");
 		String MOVIE_PEOPLE2_INFO = request.getParameter("MOVIE_PEOPLE2_INFO");
 		String MOVIE_PEOPLE3_INFO = request.getParameter("MOVIE_PEOPLE3_INFO");
 
-		if(MOVIE_NAME == null || MOVIE_NAME.equals(""))
-					{	 
-			response.getWriter().write(-1+"");
-			return;
-		}
- 
-
-
+		int result = new MovieDAO().setMOVIE_INFO(MOVIE_NAME, MOVIE_INFO, PLAY_TIME, MOVIE_IMG_URL, MOVIE_COST, MOVIE_PEOPLE1, MOVIE_PEOPLE2, MOVIE_PEOPLE3, MOVIE_PEOPLE1_INFO, MOVIE_PEOPLE2_INFO, MOVIE_PEOPLE3_INFO, MOVIE_PEOPLE1_URL, MOVIE_PEOPLE2_URL, MOVIE_PEOPLE3_URL, MOVIE_SCENE1, MOVIE_SCENE2, MOVIE_SCENE3, MOVIE_SCENE1_INFO, MOVIE_SCENE2_INFO, MOVIE_SCENE3_INFO, MOVIE_SCENE1_URL, MOVIE_SCENE2_URL, MOVIE_SCENE3_URL);
 		 
-
-
-		//ask query
-		int result = new MovieDAO().setMOVIE_INFO(MOVIE_NAME, MOVIE_INFO, Integer.parseInt(PLAY_TIME), MOVIE_IMG_URL, Integer.parseInt(MOVIE_COST), MOVIE_PEOPLE1, MOVIE_PEOPLE2, MOVIE_PEOPLE3, MOVIE_PEOPLE1_INFO, MOVIE_PEOPLE2_INFO, MOVIE_PEOPLE3_INFO, MOVIE_PEOPLE1_URL, MOVIE_PEOPLE2_URL, MOVIE_PEOPLE3_URL, MOVIE_SCENE1, MOVIE_SCENE2, MOVIE_SCENE3, MOVIE_SCENE1_INFO, MOVIE_SCENE2_INFO, MOVIE_SCENE3_INFO, MOVIE_SCENE1_URL, MOVIE_SCENE2_URL, MOVIE_SCENE3_URL);
-
-		
-		response.getWriter().write(result+"");
-		return;
-
 
 	}
 
