@@ -1,11 +1,17 @@
 package movie;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
  
 @WebServlet("/MovieSetServlet")
@@ -46,7 +52,9 @@ public class MovieSetServlet extends HttpServlet {
 		String MOVIE_PEOPLE1_INFO = request.getParameter("MOVIE_PEOPLE1_INFO");
 		String MOVIE_PEOPLE2_INFO = request.getParameter("MOVIE_PEOPLE2_INFO");
 		String MOVIE_PEOPLE3_INFO = request.getParameter("MOVIE_PEOPLE3_INFO");
-
+		
+		
+		
 		int result = new MovieDAO().setMOVIE_INFO(MOVIE_NAME, MOVIE_INFO, PLAY_TIME, MOVIE_IMG_URL, MOVIE_COST, MOVIE_PEOPLE1, MOVIE_PEOPLE2, MOVIE_PEOPLE3, MOVIE_PEOPLE1_INFO, MOVIE_PEOPLE2_INFO, MOVIE_PEOPLE3_INFO, MOVIE_PEOPLE1_URL, MOVIE_PEOPLE2_URL, MOVIE_PEOPLE3_URL, MOVIE_SCENE1, MOVIE_SCENE2, MOVIE_SCENE3, MOVIE_SCENE1_INFO, MOVIE_SCENE2_INFO, MOVIE_SCENE3_INFO, MOVIE_SCENE1_URL, MOVIE_SCENE2_URL, MOVIE_SCENE3_URL);
 		 response.sendRedirect("./m_index.jsp");
 			

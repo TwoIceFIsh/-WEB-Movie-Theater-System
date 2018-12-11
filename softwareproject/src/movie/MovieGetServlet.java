@@ -40,7 +40,7 @@ public class MovieGetServlet extends HttpServlet {
 			return;
 
 		}
-		response.getWriter().write(result+"");
+		response.getWriter().write(result+"영화제목  등록된게 없는데?");
 
 		return;
 	}
