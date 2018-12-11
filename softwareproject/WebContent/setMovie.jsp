@@ -54,7 +54,7 @@
 							</div>
 							<div>
 								<span><label>영화플레이시간</label></span><input type="text"
-									class="form-control" name="MOVIE_INFO"
+									class="form-control" name="PLAY_TIME"
 									placeholder="영화플레이시간을 입력하세요 3자">
 							</div>
 							<div>
@@ -115,13 +115,13 @@
 				<div class="col-lg-4">
 					<div>
 						<span><label>등장인물2 사진 주소를 입력하세요</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE1_URL"
+							class="form-control" name="MOVIE_PEOPLE2_URL"
 							placeholder="등장인물 사진 주소를 입력하세요">
 					</div>
 
 					<div>
 						<span><label>등장인물2 이름</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE1"
+							class="form-control" name="MOVIE_PEOPLE2"
 							placeholder="등장인물 이름을 입력하세요 30자">
 					</div>
 
@@ -180,7 +180,7 @@
 				<div class="col-md-5">
 					<div>
 						<span><label>장면1 사진주소 </label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1_INFO"
+							class="form-control" name="MOVIE_SCENE1_URL"
 							placeholder="장면1 사진주소입력하세요 500자">
 					</div>
 				</div>
@@ -190,19 +190,19 @@
 				<div class="col-md-7 ">
 					<div>
 						<span><label>장면1 제목</label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1"
+							class="form-control" name="MOVIE_SCENE2"
 							placeholder="장면1 제목을 입력하세요 500자">
 					</div>
 					<div>
 						<span><label>장면1 설명</label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1_INFO"
+							class="form-control" name="MOVIE_SCENE2_INFO"
 							placeholder="장면1 설명을 입력하세요 500자">
 					</div>
 				</div>
 				<div class="col-md-5">
 					<div>
 						<span><label>장면1 사진주소 </label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1_INFO"
+							class="form-control" name="MOVIE_SCENE2_URL"
 							placeholder="장면1 사진주소입력하세요 500자">
 					</div>
 				</div>
@@ -213,19 +213,19 @@
 				<div class="col-md-7 ">
 					<div>
 						<span><label>장면1 제목</label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1"
+							class="form-control" name="MOVIE_SCENE3"
 							placeholder="장면1 제목을 입력하세요 500자">
 					</div>
 					<div>
 						<span><label>장면1 설명</label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1_INFO"
+							class="form-control" name="MOVIE_SCENE3_INFO"
 							placeholder="장면1 설명을 입력하세요 500자">
 					</div>
 				</div>
 				<div class="col-md-5">
 					<div>
 						<span><label>장면1 사진주소 </label></span><input type="text"
-							class="form-control" name="MOVIE_SCENE1_INFO"
+							class="form-control" name="MOVIE_SCENE3_URL"
 							placeholder="장면1 사진주소입력하세요 500자">
 					</div>
 				</div>

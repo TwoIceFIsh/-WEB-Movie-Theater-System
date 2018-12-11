@@ -187,10 +187,10 @@ public class MovieDAO {
 			pstmt.setString(4, MOVIE_IMG_URL);
 			pstmt.setString(5, MOVIE_COST );
 			
-			pstmt.setString(6, MOVIE_PEOPLE1);
-			pstmt.setString(7, MOVIE_PEOPLE2);
-			pstmt.setString(8, MOVIE_PEOPLE3);
-			pstmt.setString(9, MOVIE_PEOPLE1_URL);
+			pstmt.setString( 6, MOVIE_PEOPLE1);
+			pstmt.setString( 7, MOVIE_PEOPLE2);
+			pstmt.setString( 8, MOVIE_PEOPLE3);
+			pstmt.setString( 9, MOVIE_PEOPLE1_URL);
 			pstmt.setString(10, MOVIE_PEOPLE2_URL);
 			pstmt.setString(11, MOVIE_PEOPLE3_URL);
 			pstmt.setString(12, MOVIE_PEOPLE1_INFO);
