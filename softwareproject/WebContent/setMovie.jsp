@@ -46,7 +46,7 @@
 				 
 
 
-								<input type="submit" value="전송"> <span><label>영화포스터
+							 <span><label>영화포스터
 										주소를 입력하세요</label></span><input type="text" class="form-control"
 									name="MOVIE_IMG_URL" placeholder="img/sample.jpg 형식으로입력!">
 							</div>
