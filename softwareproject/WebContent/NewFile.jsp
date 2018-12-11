@@ -20,7 +20,7 @@
 	<%=MOVIE.get(1).getMOVIE_NAME()%> zzzz--%>
 	<jsp:include page="nav.jsp" />
 	<form method="post" action="MovieGetServlet">
-		ID : <input type="text" name="MOVIE_NAME" value=""> <input
+		영화제목만넣기 정확하게: <input type="text" name="MOVIE_NAME" value=""> <input
 			type="submit" value="전송">
 	</form>
 
