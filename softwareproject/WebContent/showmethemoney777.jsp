@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="EUC-KR"%>
+<%@ page import="user.UserDTO"%>
+<%@ page import="user.UserDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,12 +40,17 @@ p.select_theater_Time {
 <body>
 	<jsp:include page="js.jsp" />
 
-	<% //영화 예매 사이트
-	//영화 예매 페이지
+	<%
+		String MEMBER_ID = null;
 
-	 //<1> 영화관 선택, 영화 선택, 날짜 선택
+		if (session.getAttribute("MEMBER_ID") == null) {
+			response.sendRedirect("./m_index.jsp");
+		}
+
+		if (session.getAttribute("MEMBER_ID") != null) {
+			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
+			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 	%>
-
 	<h1 align="center">요금결제</h1>
 	<form name="Movie_choice_form" action="result.jsp"
 		accept-charset="utf-8" method="post">
@@ -58,15 +65,16 @@ p.select_theater_Time {
 		</select>
 		<p>
 		<p class="select_theater_Movie">포인트 결제</p>
-		<a> 현재 당신의 포인트 잔액은 <%=MEMBER.getMEMBER_POINT() %> 입니다</a>
+		<a> 현재 당신의 포인트 잔액은 <%=MEMBER.getMEMBER_POINT()%> 입니다
+		</a>
 		<p class="select_theater_Date">마일리지 포인트 잔액 : %d point</p>
 		<p>
-		<select name="Movie_name" method="post">
-			<option value="선택" selected>----------선택----------</option>
-			<option value="전액" select>포인트 전액 사용</option>
-			<option value="일부" select>포인트 일부 사용</option>
-			<option value="미사용" select>포인트 미사용</option>
-		</select>
+			<select name="Movie_name" method="post">
+				<option value="선택" selected>----------선택----------</option>
+				<option value="전액" select>포인트 전액 사용</option>
+				<option value="일부" select>포인트 일부 사용</option>
+				<option value="미사용" select>포인트 미사용</option>
+			</select>
 		<p>
 		<fieldset style="width: 350">
 			<legend>
@@ -92,8 +100,10 @@ p.select_theater_Time {
 			<input type="submit" value="보내기"> <input type="reset"
 				value="원점으로 돌리기">
 		</fieldset>
+		<%
+			}
+		%>
 	</form>
-
 
 </body>
 </html>
