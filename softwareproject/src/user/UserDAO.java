@@ -31,7 +31,7 @@ public class UserDAO {
 		String SQL = "SELECT MEMBER_PW FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 		try {
-			 	Class.forName("com.mysql.jdbc.Driver");    
+			 	Class.forName("com.mysql.cj.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
@@ -84,7 +84,7 @@ public class UserDAO {
 		String SQL = "SELECT MEMBER_ID FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");    
+			Class.forName("com.mysql.cj.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
@@ -128,7 +128,7 @@ public class UserDAO {
 
 		String SQL = "INSERT INTO MOVIE_MEMBER VALUES (?,?,?,?,0)";
 		try {
-			Class.forName("com.mysql.jdbc.Driver");    
+			Class.forName("com.mysql.cj.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
@@ -165,7 +165,7 @@ public class UserDAO {
 
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");    
+			Class.forName("com.mysql.cj.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
@@ -208,7 +208,7 @@ public class UserDAO {
 
 		String SQL = "UPDATE MOVIE_MEMBER SET MEMBER_PW =?,  MEMBER_NAME=?, MEMBER_ADDRESS = ? WHERE MEMBER_ID = ?";
 		try {
-			Class.forName("com.mysql.jdbc.Driver");    
+			Class.forName("com.mysql.cj.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 

@@ -1,6 +1,6 @@
 function loginFunction() {
 
-	var MEMBER_ID = $('#ace').val();
+	var MEMBER_ID = $('#MEMBER_ID').val();
 	var MEMBER_PW = $('#MEMBER_PW').val();
 
 
@@ -81,10 +81,59 @@ function registerCheckFunction() {
 
 }
 
+
+//[Y]
+function showMovieInfo() {
+
+	var MOVIE_NAME = $('#MOVIE_NAME').text();
+
+	$.ajax({
+		type : 'POST',
+		url : './MovieGetServlet',
+		data : {
+			MOVIE_NAME : MOVIE_NAME
+		},
+		success : function(result) {
+
+			if (result == 1) {
+
+				alert(result);
+			}
+		}
+	});
+
+} 
+
+function selectMovieInfo() {
+
+	var MOVIE_NAME = $('#MOVIE_NAME').val();
+
+	$.ajax({
+		type : 'POST',
+		url : './UserRegisterCheckServlet',
+		data : {
+			MOVIE_NAME : MOVIE_NAME
+		},
+		success : function(result) {
+
+			if (result == 1) {
+				$('#statusMessage').html('아이디 사용 가능');
+				$('#statusMessage').css("color", "green");
+
+			} else {
+				$('#statusMessage').html('아이디 사용 불가');
+				$('#statusMessage').css("color", "red");
+			}
+
+		}
+	});
+
+}
+
 function PointCheckFunction() {
-	
-	var MEMBER_ID = $('#MEMBER_ID').val();
-	var MOVIE_NAME = $('#MOVIENAME').val();
+
+	var MEMBER_ID = $('#MEMBER_ID').text();
+	var MOVIE_NAME = $('#MOVIE_NAME').text();
 	var langSelect = document.getElementById("select_point");
 
 	// select element에서 선택된 option의 value가 저장된다.
@@ -100,8 +149,15 @@ function PointCheckFunction() {
 			MOVIE_NAME : MOVIE_NAME
 		},
 		success : function(result) {
+			alert(result);
 			var selectValue = langSelect.options[langSelect.selectedIndex].value;
 			var array;
+			
+			if(result == "0,0"){
+				$('#statusMessage1').html('error');
+				$('#statusMessage1').css("color", "red");
+			}
+			
 			array = string.split( ',', result );
 			var moviecost = array[0];
 			var point =array[1];
@@ -127,7 +183,7 @@ function PointCheckFunction() {
 
 }
 
- 
+
 
 
 //[Y]
@@ -171,7 +227,7 @@ function lCheckFunction() {
 
 
 function joinFunction() {
-	
+
 	var MEMBER_ID = $('#MEMBER_ID').val();
 	var MEMBER_PW_1 = $('#MEMBER_PW_1').val();
 	var MEMBER_PW_2 = $('#MEMBER_PW_2').val();
@@ -205,38 +261,4 @@ function joinFunction() {
 	});
 
 }
-function MileageFunction() {
 
-	var MEMBER_ID = $('#MEMBER_ID').val();
-
-	$.ajax({
-		type : 'POST',
-		url : './UserLoginServlet',
-		data : {
-			MEMBER_ID : MEMBER_ID
-		},
-		success : function(result) {
-
-
-			if(result == 1 ){
-				$(location).attr('href', './m_update.jsp');
-
-			}
-			if (result == 7) {
-				$('#statusMessage').html('아이디 및 비밀번호를 입력해주세요.');
-				$('#statusMessage').css("color", "red");
-
-			}
-			if (result == 2) {
-				$('#statusMessage').html('아이디 혹은 비밀번호가 다릅니다.');
-				$('#statusMessage').css("color", "red");
-			}
-
-			if (result == -1 || result == 0) {
-				$('#statusMessage').html('아이디 혹은 비밀번호를 확인해주세요.');
-				$('#statusMessage').css("color", "red");
-			}
-		}
-	});
-
-}

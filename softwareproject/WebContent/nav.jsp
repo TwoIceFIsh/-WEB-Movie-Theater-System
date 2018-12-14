@@ -29,7 +29,7 @@
 			response.sendRedirect("./m_index.jsp");
 
 			if (MEMBER_ID == null) {
-		response.sendRedirect("./m_index.jsp");
+				response.sendRedirect("./m_index.jsp");
 			}
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 
@@ -52,14 +52,12 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-						 
+
 							<li class="active"><a href="m_index.jsp">홈</a></li>
-							<li><a href="#about">영화목록</a></li>
-							<li><a href="#contact">예매하기</a></li>
+							<li><a href="p_movieList.jsp">영화목록</a></li>
 							<li><a href="setMovie.jsp">영화등록</a></li>
-								<li><a href="NewFile.jsp">영화검색</a></li>
-									<li><a href="movieA.jsp">영화sample</a></li>
-									<li><a href="showmethemoney777.jsp">동인이 페이지(로그인필요 asdf/asdf)</a></li>
+							<li><a href="movieA.jsp">영화sample</a></li>
+							<li><a href="showmethemoney777.jsp">동인이 페이지</a></li>
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {

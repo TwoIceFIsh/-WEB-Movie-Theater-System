@@ -24,23 +24,21 @@ public class MovieGetServlet extends HttpServlet {
 
 		if(MOVIE_NAME == null || MOVIE_NAME.equals("")  ) {
 
-			response.getWriter().write("7");
 			return;
 
 		}
-
+		System.out.println("MovieGetServlet"+" ��ȭ�̸� : "+MOVIE_NAME);
 		int result = new MovieDAO().findMovie(MOVIE_NAME);
-
+		System.out.println("result "+result);
 
 		if(result == 1) {
 
 			request.getSession().setAttribute("MOVIE_NAME", MOVIE_NAME); 
-			 response.sendRedirect("./getMovie.jsp");
-		
+			response.sendRedirect("./getMovie.jsp");
+
 			return;
 
 		}
-		response.getWriter().write(result+"영화제목  등록된게 없는데?");
 
 		return;
 	}
