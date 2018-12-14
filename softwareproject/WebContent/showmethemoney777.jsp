@@ -2,9 +2,17 @@
 	pageEncoding="EUC-KR"%>
 <%@ page import="user.UserDTO"%>
 <%@ page import="user.UserDAO"%>
+<%@ page import="movie.MovieDTO"%>
+<%@ page import="movie.MovieDAO"%>
 <!DOCTYPE html>
 <html>
 <head>
+
+<script>
+	
+</script>
+
+
 <meta charset="EUC-KR">
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -41,16 +49,10 @@ p.select_theater_Time {
 	<jsp:include page="js.jsp" />
 
 	<%
-		String MEMBER_ID = null;
-
-		if (session.getAttribute("MEMBER_ID") == null) {
-			response.sendRedirect("./m_index.jsp");
-		}
-
-		if (session.getAttribute("MEMBER_ID") != null) {
-			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
-			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+			UserDTO MEMBER = new UserDAO().getMEMBER_INFO("asdf");
+			MovieDTO MOVIE = new MovieDAO().getMOVIE_INFO("dongin");
 	%>
+
 	<h1 align="center">요금결제</h1>
 	<form name="Movie_choice_form" action="result.jsp"
 		accept-charset="utf-8" method="post">
@@ -65,11 +67,16 @@ p.select_theater_Time {
 		</select>
 		<p>
 		<p class="select_theater_Movie">포인트 결제</p>
-		<a> 현재 <%=MEMBER.getMEMBER_NAME()%>님의 포인트 잔액은 <%=MEMBER.getMEMBER_POINT()%> 입니다
-		</a>
-		 
 		<p>
-			<select name="Movie_name" method="post">
+			현재
+			<%=MEMBER.getMEMBER_NAME()%>님의 포인트 잔액은
+			<%=MEMBER.getMEMBER_POINT()%> point
+			입니다
+		</p>
+
+		<p>
+			<select id="select_point" name="Movie_name" method="post"
+				onchange="PointCheckFunction()">
 				<option value="선택" selected>----------선택----------</option>
 				<option value="전액" select>포인트 전액 사용</option>
 				<option value="일부" select>포인트 일부 사용</option>
@@ -78,31 +85,22 @@ p.select_theater_Time {
 		<p>
 		<fieldset style="width: 350">
 			<legend>
-				결제금액 : %d 원
+				당신이 예매한 영화의 이름은:
+				<%=MOVIE.getMOVIE_NAME()%>
+
+				<br> 당신이 예매한 영화의 내용은:
+				<%=MOVIE.getMOVIE_INFO()%>
+				결제금액은 <%=Integer.parseInt(MOVIE.getMOVIE_COST()) - MEMBER.getMEMBER_POINT()%>
+				원입니다
 				<date>
 			</legend>
-			<br> 날짜입력 <br> <input type="date" min="2018-12-20"
-				max="2019-01-30" name="date" step="7"> <br>
+			
 
-			<p class="select_theater_Time">영화 시간 선택</p>
-			<select name="Movie_Time" action="" method="post">
-				<option value="Am_06:00" selected>06:00</option>
-				<option value="Am_08:00" select>08:00</option>
-				<option value="Am_11:00" select>11:00</option>
-				<option value="Pm_13:00" select>13:00</option>
-				<option value="Pm_15:00" select>15:00</option>
-				<option value="Pm_17:00" select>17:00</option>
-				<option value="Pm_19:00" select>19:00</option>
-				<option value="Pm_21:00" select>21:00</option>
-			</select> <br>
-
-			<p class="check_normal">이렇게 하시겠습니까?</p>
+			<p class="check_normal">이렇게 결제 하시겠습니까?</p>
 			<input type="submit" value="보내기"> <input type="reset"
 				value="원점으로 돌리기">
 		</fieldset>
-		<%
-			}
-		%>
+	
 	</form>
 
 </body>

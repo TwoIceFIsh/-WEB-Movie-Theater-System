@@ -1,8 +1,9 @@
 function loginFunction() {
 
-	var MEMBER_ID = $('#MEMBER_ID').val();
+	var MEMBER_ID = $('#ace').val();
 	var MEMBER_PW = $('#MEMBER_PW').val();
-	alert( MEMBER_ID);
+
+
 	$.ajax({
 		type : 'POST',
 		url : './UserLoginServlet',
@@ -80,6 +81,53 @@ function registerCheckFunction() {
 
 }
 
+function PointCheckFunction() {
+	
+	var MEMBER_ID = $('#MEMBER_ID').val();
+	var MOVIE_NAME = $('#MOVIENAME').val();
+	var langSelect = document.getElementById("select_point");
+
+	// select element에서 선택된 option의 value가 저장된다.
+	var selectValue = langSelect.options[langSelect.selectedIndex].value;
+
+
+
+	$.ajax({
+		type : 'POST',
+		url : './MoviePonitCheckServlet',
+		data : {
+			MEMBER_ID : MEMBER_ID,
+			MOVIE_NAME : MOVIE_NAME
+		},
+		success : function(result) {
+			var selectValue = langSelect.options[langSelect.selectedIndex].value;
+			var array;
+			array = string.split( ',', result );
+			var moviecost = array[0];
+			var point =array[1];
+			if(langSelect=='포인트 전액 사용'||langSelect=='포인트 일부 사용'){
+				if (moviecost - point <= 0) {
+					$('#statusMessage1').html(moviecost +'포인트로 전액결제가능');
+					$('#statusMessage1').css("color", "green");
+					$('#statusMessage2').html('남은포인트는 : ' + point-moviecost);
+					$('#statusMessage2').css("color", "green");
+
+
+				} else {
+					$('#statusMessage1').html(moviecost - point +'포인트를 제외한 가격입니다');
+					$('#statusMessage1').css("color", "red");
+				}
+			}if(langSelect=='포인트 미사용'){
+				$('#statusMessage1').html(moviecost + '원으로 모두 결제하겠습니다.');
+				$('#statusMessage1').css("color", "green");
+			}
+
+		}
+	});
+
+}
+
+
 
 
 //[Y]
@@ -123,7 +171,7 @@ function lCheckFunction() {
 
 
 function joinFunction() {
-
+	
 	var MEMBER_ID = $('#MEMBER_ID').val();
 	var MEMBER_PW_1 = $('#MEMBER_PW_1').val();
 	var MEMBER_PW_2 = $('#MEMBER_PW_2').val();
@@ -143,7 +191,7 @@ function joinFunction() {
 			MEMBER_ADDRESS:MEMBER_ADDRESS
 		},
 		success : function(result) {
-		 
+
 			if(result ==1 ){
 				$(location).attr('href', './m_index.jsp');
 
