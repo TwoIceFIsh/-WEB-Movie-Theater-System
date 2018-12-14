@@ -95,7 +95,7 @@ p.select_theater_Time {
 				<date>
 			</legend>
 			
-
+ 
 			<p class="check_normal">이렇게 결제 하시겠습니까?</p>
 			<input type="submit" value="보내기"> <input type="reset"
 				value="원점으로 돌리기">
