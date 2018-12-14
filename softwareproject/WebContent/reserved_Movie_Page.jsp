@@ -1,6 +1,10 @@
 <%@page import="java.awt.Button"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+%> 
+	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,11 +41,17 @@
 			<div class="col-lg-12">
 				<p class="select_theater_Movie">영화</p>
 				<button onClick="checkBUtton" type="button"
-					class="btn btn-default btn-lg" id="buttonA">나는 최고다</button>
-				<button type="button" class="btn btn-default btn-lg" id="buttonB">내이름은
-					돼지</button>
-				<button type="button" class="btn btn-default btn-lg" id="buttonC">멋진 나의
-					이름은</button>
+					class="btn btn-default btn-lg" id="buttonA">속초에 가보니 피카츄가 울고 있다.</button>
+				<button type="button" class="btn btn-default btn-lg" id="buttonB">붉은 돼지를 먹어라.</button>
+				<button type="button" class="btn btn-default btn-lg" id="buttonC">니 군번은 </button>
+				<button onClick="checkBUtton" type="button"
+					class="btn btn-default btn-lg" id="buttonD">국가부도의날.</button>
+				<button type="button" class="btn btn-default btn-lg" id="buttonE">번개맨의비밀.</button>
+				<button type="button" class="btn btn-default btn-lg" id="buttonF">성난황소 </button>
+				<button onClick="checkBUtton" type="button"
+					class="btn btn-default btn-lg" id="buttonG">도어락.</button>
+				<button type="button" class="btn btn-default btn-lg" id="buttonH">런닝맨-풀룰루의역습.</button>
+				<button type="button" class="btn btn-default btn-lg" id="buttonI">모털엔진 </button>				
 			</div>
 		</div>
 			
@@ -52,49 +62,142 @@
 				
 				<div class="row">
 					<div class="col-lg-12">
-						<p id="000">나는 최고다</p>
-						<button type="button" class="btn btn-default btn-lg" id=001>
-						2관<br> 09:30 <br>남은좌석 : <a id="seatA">?</a>
+						<p id="000">속초에 가보니 피카츄가 울고 있다.</p>
+						<button type="button" class="btn btn-default btn-lg" id=001 onclick="button_click1('2관','09:30',40,'속초에 가보니 피카츄가 울고 있다.');">
+						2관<br> 09:30 <br>남은좌석 :<a id="seatA">40</a>
 						</button>
-						<button type="button" class="btn btn-default btn-lg" id=002>
+						<button type="button" class="btn btn-default btn-lg" id=002 onclick="button_click2('1관','11:30',40, '속초에 가보니 피카츄가 울고 있다.');">
 						1관 <br> 11:30<br>남은좌석 : 40
 						</button>
-						<button type="button" class="btn btn-default btn-lg" id=003>
-						3관 <br>15:30 <br>남은좌석 : 23
+						<button type="button" class="btn btn-default btn-lg" id=003 onclick="button_click3('3관','15:30',40, '속초에 가보니 피카츄가 울고 있다.');">
+						3관 <br>15:30 <br>남은좌석 : 40
 						</button>
 					</div>
 				</div>
 				
 				<div class="row">
 					<div class="col-lg-12">
-						<p id="004">내이름은 돼지</p>
-						<button type="button" class="btn btn-default btn-lg" id=005>
-						2관<br> 09:30 <br>남은좌석 : <a id="seatA">?</a>
+						<p id="004">붉은 돼지를 먹어라.</p>
+						<button type="button" class="btn btn-default btn-lg" id=005 onclick="button_click1('2관','09:30',40,'붉은 돼지를 먹어라.');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
 						</button>
-						<button type="button" class="btn btn-default btn-lg" id=006>
+						<button type="button" class="btn btn-default btn-lg" id=006 onclick="button_click2('1관','11:30',40,'붉은 돼지를 먹어라.');">
 						1관 <br> 11:30<br>남은좌석 : 40
 						</button>
-						<button type="button" class="btn btn-default btn-lg" id=007>
-						3관 <br>15:30 <br>남은좌석 : 23
+						<button type="button" class="btn btn-default btn-lg" id=007 onclick="button_click3('3관','15:30',40,'붉은 돼지를 먹어라.');">
+						3관 <br>15:30 <br>남은좌석 : 40
 						</button>
 					</div>
 				</div>		
-			</div>
 			
 			<div class="row">
 					<div class="col-lg-12">
-						<p id="008">멋진 나의 이름은</p>
-						<button type="button" class="btn btn-default btn-lg" id=009>
-						2관<br> 09:30 <br>남은좌석 : <a id="seatA">?</a>
+						<p id="008">니 군번은</p>
+						<button type="button" class="btn btn-default btn-lg" id=009 onclick="button_click1('2관','09:30',40,'니 군번은');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
 						</button>
-						<button type="button" class="btn btn-default btn-lg" id=010>
+						<button type="button" class="btn btn-default btn-lg" id=010 onclick="button_click2('1관','11:30',40,'니 군번은');">
 						1관 <br> 11:30<br>남은좌석 : 40
 						</button>
-						<button type="button" class="btn btn-default btn-lg" id=011>
-						3관 <br>15:30 <br>남은좌석 : 23
+						<button type="button" class="btn btn-default btn-lg" id=011 onclick="button_click3('3관','15:30',40,'니 군번은');">
+						3관 <br>15:30 <br>남은좌석 : 40
 						</button>
 					</div>
-				</div>		
+				</div>
+				
+			<div class="row">
+					<div class="col-lg-12">
+						<p id="012">국가부도의날</p>
+						<button type="button" class="btn btn-default btn-lg" id=013 onclick="button_click1('2관','09:30',40,'국가부도의날');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=014 onclick="button_click2('1관','11:30',40,'국가부도의날');">
+						1관 <br> 11:30<br>남은좌석 : 40
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=015 onclick="button_click3('3관','15:30',40,'국가부도의날');">
+						3관 <br>15:30 <br>남은좌석 : 40
+						</button>
+					</div>
+				</div>				
+				
+			<div class="row">
+					<div class="col-lg-12">
+						<p id="016">번개맨의비밀</p>
+						<button type="button" class="btn btn-default btn-lg" id=017 onclick="button_click1('2관','09:30',40,'번개맨의비밀');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=018 onclick="button_click2('1관','11:30',40,'번개맨의비밀');">
+						1관 <br> 11:30<br>남은좌석 : 40
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=019 onclick="button_click3('3관','15:30',40,'번개맨의비밀');">
+						3관 <br>15:30 <br>남은좌석 : 40
+						</button>
+					</div>
+				</div>				
+			
+				
+			<div class="row">
+					<div class="col-lg-12">
+						<p id="020">성난황소</p>
+						<button type="button" class="btn btn-default btn-lg" id=021 onclick="button_click1('2관','09:30',40,'성난황소');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=022 onclick="button_click2('1관','11:30',40,'성난황소');">
+						1관 <br> 11:30<br>남은좌석 : 40
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=023 onclick="button_click3('3관','15:30',40,'성난황소');">
+						3관 <br>15:30 <br>남은좌석 : 40
+						</button>
+					</div>
+				</div>					
+				
+			<div class="row">
+					<div class="col-lg-12">
+						<p id="024">도어락</p>
+						<button type="button" class="btn btn-default btn-lg" id=025 onclick="button_click1('2관','09:30',40,'도어락');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=026 onclick="button_click2('1관','11:30',40,'도어락');">
+						1관 <br> 11:30<br>남은좌석 : 40
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=027 onclick="button_click3('3관','15:30',40,'도어락');">
+						3관 <br>15:30 <br>남은좌석 : 40
+						</button>
+					</div>
+				</div>					
+				
+			<div class="row">
+					<div class="col-lg-12">
+						<p id="028">런닝맨-풀룰루의역습</p>
+						<button type="button" class="btn btn-default btn-lg" id=029 onclick="button_click1('2관','09:30',40,'런닝맨-풀룰루의역습');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=030 onclick="button_click2('1관','11:30',40,'런닝맨-풀룰루의역습');">
+						1관 <br> 11:30<br>남은좌석 : 40
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=031 onclick="button_click3('3관','15:30',40,'런닝맨-풀룰루의역습');">
+						3관 <br>15:30 <br>남은좌석 : 40
+						</button>
+					</div>
+				</div>				
+			
+			<div class="row">
+					<div class="col-lg-12">
+						<p id="032">모털엔진</p>
+						<button type="button" class="btn btn-default btn-lg" id=033 onclick="button_click1('2','09:30',40,'모털엔진');">
+						2관<br> 09:30 <br>남은좌석 : <a id="seatA">40</a>
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=034 onclick="button_click2('1','11:30',40,'모털엔진');">
+						1관 <br> 11:30<br>남은좌석 : 40
+						</button>
+						<button type="button" class="btn btn-default btn-lg" id=035 onclick="button_click3('3','15:30',40,'모털엔진');">
+						3관 <br>15:30 <br>남은좌석 : 40
+						</button>
+					</div>
+				</div>	
+
+				
+						
 			</div>
 			
 			<!-- /.col-lg-4 -->
@@ -126,24 +229,54 @@
 	<script type="text/javascript">
 	
 		
-		var a,b,c,control;
-		a=0;
-		b=0;
-		c=0;
+		var a,b,c,d,e,f,g,h,i,control;
+		a=0;b=0;c=0;
+		d=0;e=0;f=0;
+		g=0;h=0;i=0;
 		control=0;
+		
 	 $("#000").hide();	
 	 $("#001").hide();
 	 $("#002").hide();
 	 $("#003").hide();
 	 $("#004").hide();	
 	 $("#005").hide();
+	 
 	 $("#006").hide();
 	 $("#007").hide();
 	 $("#008").hide();	
 	 $("#009").hide();
 	 $("#010").hide();
-	 $("#011").hide();
 	 
+	 $("#011").hide();
+	 $("#012").hide();	
+	 $("#013").hide();
+	 $("#014").hide();
+	 $("#015").hide();
+	 
+	 $("#016").hide();	
+	 $("#017").hide();
+	 $("#018").hide();
+	 $("#019").hide();
+	 $("#020").hide();
+	 
+	 $("#021").hide();
+	 $("#022").hide();
+	 $("#023").hide();
+	 $("#024").hide();
+	 $("#025").hide();
+	 
+	 $("#026").hide();
+	 $("#027").hide();
+	 $("#028").hide();
+	 $("#029").hide();
+	 $("#030").hide();
+	 
+	 $("#031").hide();
+	 $("#032").hide();
+	 $("#033").hide();
+	 $("#034").hide();
+	 $("#035").hide();
 	 
 	 $("#buttonA").click(function(){
 		 	if(a==0&&control==0){
@@ -195,7 +328,128 @@
 		 c=0; control=0;
 		 }
 	 });
+	 
+	 $("#buttonD").click(function(){
+		 if(d==0 &&control==0){
+		 $("#012").show();	
+		 $("#013").show();
+		 $("#014").show();
+		 $("#015").show();
+		 d=1; control=1;
+		 }else if (d==1 &&control==1)
+		 {
+		 $("#012").hide();	
+		 $("#013").hide();
+		 $("#014").hide();
+		 $("#015").hide();
+		 d=0; control=0;
+		 }
+	 });
+	 
+	 $("#buttonE").click(function(){
+		 if(e==0 &&control==0){
+		 $("#016").show();	
+		 $("#017").show();
+		 $("#018").show();
+		 $("#019").show();
+		 e=1; control=1;
+		 }else if (e==1 &&control==1)
+		 {
+		 $("#016").hide();	
+		 $("#017").hide();
+		 $("#018").hide();
+		 $("#019").hide();
+		 e=0; control=0;
+		 }
+	 });
+	 
+	 $("#buttonF").click(function(){
+		 if(f==0 &&control==0){
+		 $("#020").show();	
+		 $("#021").show();
+		 $("#022").show();
+		 $("#023").show();
+		 f=1; control=1;
+		 }else if (f==1 &&control==1)
+		 {
+		 $("#020").hide();	
+		 $("#021").hide();
+		 $("#022").hide();
+		 $("#023").hide();
+		 f=0; control=0;
+		 }
+	 });
+	 
+	 $("#buttonG").click(function(){
+		 if(g==0 &&control==0){
+		 $("#024").show();	
+		 $("#025").show();
+		 $("#026").show();
+		 $("#027").show();
+		 g=1; control=1;
+		 }else if (g==1 &&control==1)
+		 {
+		 $("#024").hide();	
+		 $("#025").hide();
+		 $("#026").hide();
+		 $("#027").hide();
+		 g=0; control=0;
+		 }
+	 });
+	 
+	 $("#buttonH").click(function(){
+		 if(h==0 &&control==0){
+		 $("#028").show();	
+		 $("#029").show();
+		 $("#030").show();
+		 $("#031").show();
+		 h=1; control=1;
+		 }else if (h==1 &&control==1)
+		 {
+		 $("#028").hide();	
+		 $("#029").hide();
+		 $("#030").hide();
+		 $("#031").hide();
+		 h=0; control=0;
+		 }
+	 });
+	 
+	 $("#buttonI").click(function(){
+		 if(i==0 &&control==0){
+		 $("#032").show();	
+		 $("#033").show();
+		 $("#034").show();
+		 $("#035").show();
+		 i=1; control=1;
+		 }else if (i==1 &&control==1)
+		 {
+		 $("#032").hide();	
+		 $("#033").hide();
+		 $("#034").hide();
+		 $("#035").hide();
+		 i=0; control=0;
+		 }
+	 });	
+	 
+	 function button_click1(room1,time1,seat1,movie1) {
+			alert("고객님께서 선택하신 사항은 영화는 <"+movie1+"> 이며 제"+room1+"이며 "+time1+"이며 남은 좌석은 "+seat1+"분 입니다.");
+			location.href="result.jsp?room="+ encodeURI(room1 , "UTF-8")+"&time="+encodeURI(time1 , "UTF-8")+"&seat="+encodeURI(seat1 , "UTF-8")
+			+"&movie="+encodeURI(movie1 , "UTF-8");
+			
+		}
+	 function button_click2(room2,time2,seat2,movie2) {
+		 alert("고객님께서 선택하신 사항은 영화는 <"+movie2+"> 이며 제"+room2+"이며 "+time2+"이며 남은 좌석은 "+seat2+"분 입니다.");
+			location.href="result.jsp?room="+ encodeURI(room2 , "UTF-8")+"&time="+encodeURI(time2 , "UTF-8")+"&seat="+encodeURI(seat2 , "UTF-8")
+			+"&movie="+encodeURI(movie2 , "UTF-8");
+		}
+	 function button_click3(room3,time3,seat3,movie3) {
+			alert("고객님께서 선택하신 사항은 영화는 <"+movie3+"> 이며 제"+room3+"이며 "+time3+"이며 남은 좌석은 "+seat3+"분 입니다.");
+			location.href="result.jsp?room="+ encodeURI(room3 , "UTF-8")+"&time="+encodeURI(time3 , "UTF-8")+"&seat="+encodeURI(seat3 , "UTF-8")
+			+"&movie="+encodeURI(movie3 , "UTF-8");
+			
+		}
+	 
+	 
 	</script>
-	
 </body>
 </html>
