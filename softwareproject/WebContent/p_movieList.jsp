@@ -246,7 +246,7 @@ a:hover {
 				<p></p>
 				<div class="row">
 					<div class="col-md-6">
-						<button type="button" class="btn btn-danger btn-lg">예매하기</button>
+						<button type="button" class="btn btn-danger btn-lg" value="<%=MOVIE.getMOVIE_NAME()%>" >예매하기</button>
 					</div>
 					<div class="col-md-6">
 						<form method="post" action="MovieGetServlet">
