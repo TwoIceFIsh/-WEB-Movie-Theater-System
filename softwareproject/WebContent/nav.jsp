@@ -53,8 +53,8 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 
-							<li class="active"><a href="m_index.jsp">홈</a></li>
-							<li><a href="p_movieList.jsp">영화목록</a></li>
+							<li class="active"><a href="./m_index.jsp">홈</a></li>
+							<li><a href="./m_index.jsp">영화목록</a></li>
 							<li><a href="setMovie.jsp">영화등록</a></li>
 							<li><a href="movieA.jsp">영화sample</a></li>
 							<li><a href="showmethemoney777.jsp">동인이 페이지</a></li>
