@@ -17,6 +17,6 @@
 		<li>영화이름: <%="영화이름은 "+ request.getParameter("time") + "분 입니다."%></li>	
 		<li>남은 관람좌석:<%="남은 관람좌석은 " + request.getParameter("seat") + "좌석 입니다."%></li>		
 	</ul>
-	
+	 
 </body>
 </html>
