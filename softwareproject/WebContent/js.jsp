@@ -34,8 +34,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/func.js" type="text/javascript"></script>
-<script src="js/speech.js" type="text/javascript"></script>
+<script src="js/func.js" type="text/javascript"></script> 
 <script src="js/bootstrap-tooltip.js" type="text/javascript"></script>
 
 
@@ -46,11 +45,7 @@
 <link href="./css/fontawesome-all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link rel="stylesheet" href="css/custom.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/func.js" type="text/javascript"></script>
-<script src="js/speech.js" type="text/javascript"></script>
 
 </head>
 <body>

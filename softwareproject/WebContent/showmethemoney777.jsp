@@ -51,8 +51,8 @@ p.select_theater_Time {
 	<%
 		String MEMBER_ID = null;
 		String MOVIE_NAME = null;
-		if (session.getAttribute("MEMBER_ID") == null || session.getAttribute("MONIE_NAME") == null) {
-			response.sendRedirect("./m_index.jsp");
+		if (session.getAttribute("MEMBER_ID") == null ) {
+			response.sendRedirect("./a_index.jsp");
 		}
 		if (session.getAttribute("MEMBER_ID") != null) {
 			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");

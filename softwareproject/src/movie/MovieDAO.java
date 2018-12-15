@@ -28,7 +28,7 @@ public class MovieDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT MOVIE_NAME, MOVIE_IMG_URL, PLAY_TIME FROM MOVIE_INFO";
+		String SQL = "SELECT MOVIE_NAME,MOVIE_INFO, MOVIE_IMG_URL, PLAY_TIME FROM MOVIE_INFO";
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");    
@@ -42,6 +42,7 @@ public class MovieDAO {
 				MOVIE.setMOVIE_NAME(rs.getString("MOVIE_NAME"));
 				MOVIE.setMOVIE_IMG_URL(rs.getString("MOVIE_IMG_URL"));
 				MOVIE.setPLAY_TIME(rs.getString("PLAY_TIME"));
+				MOVIE.setMOVIE_INFO(rs.getString("MOVIE_INFO"));
 
 				list.add(MOVIE);
 

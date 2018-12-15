@@ -27,14 +27,14 @@ public class MovieGetServlet extends HttpServlet {
 			return;
 
 		}
-		System.out.println("MovieGetServlet"+" 영화이름 : "+MOVIE_NAME);
+		System.out.println("MovieGetServlet"+" : "+MOVIE_NAME);
 		int result = new MovieDAO().findMovie(MOVIE_NAME);
 		System.out.println("result "+result);
 
 		if(result == 1) {
 
 			request.getSession().setAttribute("MOVIE_NAME", MOVIE_NAME); 
-			response.sendRedirect("./getMovie.jsp");
+			response.sendRedirect("./a_getMovie.jsp");
 
 			return;
 

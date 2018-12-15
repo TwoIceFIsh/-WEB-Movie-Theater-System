@@ -195,7 +195,7 @@ a:hover {
 }
 </style>
 
-<title>기본 구성 페이지!</title>
+<title>영화목록</title>
 </head>
 <body>
 
@@ -236,9 +236,10 @@ a:hover {
 				<div class="movie-info">
 					<div class="info-section row">
 						<label>Play Time</label> <span><%=MOVIE.getPLAY_TIME()%>분</span>
+						<div class="info-section row"></div>
+						<label>영화 내용</label> <span><%=MOVIE.getMOVIE_INFO()%></span>
+
 					</div>
-
-
 
 					<!--date,time-->
 					<!--seat-->
@@ -246,7 +247,8 @@ a:hover {
 				<p></p>
 				<div class="row">
 					<div class="col-md-6">
-						<button type="button" class="btn btn-danger btn-lg">예매하기</button>
+						<button type="button" class="btn btn-danger btn-lg"
+							value="<%=MOVIE.getMOVIE_NAME()%>">예매하기</button>
 					</div>
 					<div class="col-md-6">
 						<form method="post" action="MovieGetServlet">

@@ -26,10 +26,10 @@
 
 		if (session.getAttribute("MEMBER_ID") != null) {
 			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
-			response.sendRedirect("./m_index.jsp");
+			response.sendRedirect("./a_index.jsp");
 
 			if (MEMBER_ID == null) {
-				response.sendRedirect("./m_index.jsp");
+				response.sendRedirect("./a_index.jsp");
 			}
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 
@@ -48,16 +48,16 @@
 							<span class="sr-only">---</span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="./m_index.jsp">오유이동 영화관</a>
+						<a class="navbar-brand" href="./a_index.jsp">오유이동 영화관</a>
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 
-							<li class="active"><a href="m_index.jsp">홈</a></li>
-							<li><a href="p_movieList.jsp">영화목록</a></li>
-							<li><a href="setMovie.jsp">영화등록</a></li>
-							<li><a href="movieA.jsp">영화sample</a></li>
-							<li><a href="showmethemoney777.jsp">동인이 페이지</a></li>
+							<li class="active"><a href="./a_index.jsp">홈</a></li>
+							<li><a href="./a_index.jsp">영화목록</a></li>
+							<li><a href="a_setMovie.jsp">영화등록</a></li>
+
+							<li><a href="showmethemoney777.jsp">동인이 페이지[로그인/영화선택 필요]</a></li>
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
@@ -74,16 +74,16 @@
  	if (MEMBER_ID == null) {
  %>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="m_login.jsp">로그인</a></li>
+									<li><a href="a_login.jsp">로그인</a></li>
 									<li class="divider"></li>
-									<li><a href="m_join.jsp">회원가입</a></li>
+									<li><a href="a_join.jsp">회원가입</a></li>
 								</ul> <%
  	} else {
  %>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="m_check.jsp">회원정보 수정</a></li>
+									<li><a href="a_check.jsp">회원정보 수정</a></li>
 									<li class="divider"></li>
-									<li><a href="F_logout.jsp">로그아웃</a></li>
+									<li><a href="a_logout.jsp">로그아웃</a></li>
 
 
 								</ul> <%
