@@ -195,7 +195,7 @@ a:hover {
 }
 </style>
 
-<title>기본 구성 페이지!</title>
+<title>영화목록</title>
 </head>
 <body>
 

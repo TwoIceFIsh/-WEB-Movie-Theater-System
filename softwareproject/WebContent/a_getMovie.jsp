@@ -20,7 +20,7 @@
 	<%
 		String MOVIE_NAME = null;
 		if (session.getAttribute("MOVIE_NAME") == null) {
-			response.sendRedirect("./m_index.jsp");
+			response.sendRedirect("./a_index.jsp");
 		}
 		if (session.getAttribute("MOVIE_NAME") != null) {
 			MOVIE_NAME = (String) session.getAttribute("MOVIE_NAME");
@@ -28,9 +28,7 @@
 			MovieDTO MOVIE = new MovieDAO().getMOVIE_INFO(MOVIE_NAME);
 	%>
 
-	<jsp:include page="nav.jsp" />
-	<!-- Carousel
-    ================================================== -->
+	<jsp:include page="nav.jsp" /> 
 	<div id="myCarousel " class="carousel slide black" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">

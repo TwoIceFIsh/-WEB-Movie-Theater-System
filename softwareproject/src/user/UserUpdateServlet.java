@@ -31,25 +31,25 @@ public class UserUpdateServlet extends HttpServlet {
 				)
 		{
 
-			response.sendRedirect("m_index.jsp");	
+			response.sendRedirect("a_index.jsp");	
 			return;
 		}
 
 
 		if(!MEMBER_PW_1.equals(MEMBER_PW_2))
 		{
-			response.sendRedirect("m_index.jsp");
+			response.sendRedirect("a_index.jsp");
 			return;
 		}
 
 		int result = new UserDAO().MEMBER_UPDATE(userID, MEMBER_PW_1 , MEMBER_NAME, MEMBER_ADDRESS);
 
 		if(result == 1) {
-			response.sendRedirect("m_index.jsp");
+			response.sendRedirect("a_index.jsp");
 			return;
 		}
 		else {
-			response.sendRedirect("m_index.jsp");
+			response.sendRedirect("a_index.jsp");
 			return;
 		}
 	}

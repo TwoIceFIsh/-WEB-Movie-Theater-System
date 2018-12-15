@@ -25,7 +25,7 @@
 			 
 		
 		if (MEMBER_ID == null) {
-			response.sendRedirect("./m_index.jsp");
+			response.sendRedirect("./a_index.jsp");
 		}
 		UserDTO user = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 

@@ -15,7 +15,7 @@ function loginFunction() {
 
 
 			if(result == 1 ){
-				$(location).attr('href', './m_index.jsp');
+				$(location).attr('href', './a_index.jsp');
 
 			}
 			if (result == 7) {
@@ -203,7 +203,7 @@ function lCheckFunction() {
 
 
 			if(result == 1 ){
-				$(location).attr('href', './m_update.jsp');
+				$(location).attr('href', './a_update.jsp');
 
 			}
 			if (result == 7) {
@@ -235,7 +235,7 @@ function joinFunction() {
 	var MEMBER_ADDRESS = $('#MEMBER_ADDRESS').val();
 
 
-	alert(MEMBER_ID);
+
 	$.ajax({
 		type : 'POST',
 		url : './UserJoinServlet',
@@ -249,7 +249,7 @@ function joinFunction() {
 		success : function(result) {
 
 			if(result ==1 ){
-				$(location).attr('href', './m_index.jsp');
+				$(location).attr('href', './a_index.jsp');
 
 			}
 

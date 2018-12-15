@@ -21,7 +21,7 @@
 	<%
 		String MEMBER_ID = null;
 		if (session.getAttribute("MEMBER_ID") == null) {
-			response.sendRedirect("./m_index.jsp");
+			response.sendRedirect("./a_index.jsp");
 		}
 		if (session.getAttribute("MEMBER_ID") != null) {
 			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
