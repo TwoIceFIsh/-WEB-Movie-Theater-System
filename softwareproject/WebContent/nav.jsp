@@ -56,8 +56,8 @@
 							<li class="active"><a href="./m_index.jsp">홈</a></li>
 							<li><a href="./m_index.jsp">영화목록</a></li>
 							<li><a href="setMovie.jsp">영화등록</a></li>
-							<li><a href="movieA.jsp">영화sample</a></li>
-							<li><a href="showmethemoney777.jsp">동인이 페이지</a></li>
+							 
+							<li><a href="showmethemoney777.jsp">동인이 페이지[로그인/영화선택 필요]</a></li>
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
