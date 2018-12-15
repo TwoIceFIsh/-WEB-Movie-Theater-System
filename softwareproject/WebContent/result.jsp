@@ -15,8 +15,8 @@
 		<li>영화: <%="영화는 <" + request.getParameter("movie") + "> 입니다."%></li>	
 		<li>영화관: <%="영화관은 " + request.getParameter("room") + " 입니다."%></li>	
 		<li>영화이름: <%="영화이름은 "+ request.getParameter("time") + "분 입니다."%></li>	
-		<li>남은 관람좌석:<%="남은 관람좌석은 " + request.getParameter("seat") + "좌석 입니다."%></li>		
+		<li>남은 관람좌석:<%="남은 관람좌석은 " + request.getParameter("seat") + "좌석입니다."%></li>		
 	</ul>
-	 
+
 </body>
 </html>
