@@ -237,8 +237,7 @@ a:hover {
 					<div class="info-section row">
 						<label>Play Time</label> <span><%=MOVIE.getPLAY_TIME()%>분</span>
 						<div class="info-section row"></div>
-						<label>영화 내용</label> <span><%=MOVIE.getMOVIE_INFO()%></span>
-
+						 
 					</div>
 
 					<!--date,time-->
