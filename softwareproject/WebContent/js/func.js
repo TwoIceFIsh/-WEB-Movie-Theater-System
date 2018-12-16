@@ -15,7 +15,7 @@ function loginFunction() {
 
 
 			if(result == 1 ){
-				$(location).attr('href', './a_index.jsp');
+				$(location).attr('href', 'a_index.jsp');
 
 			}
 			if (result == 7) {
@@ -203,7 +203,7 @@ function lCheckFunction() {
 
 
 			if(result == 1 ){
-				$(location).attr('href', './a_update.jsp');
+				$(location).attr('href', 'a_update.jsp');
 
 			}
 			if (result == 7) {

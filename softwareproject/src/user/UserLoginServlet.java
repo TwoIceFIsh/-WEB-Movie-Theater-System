@@ -35,7 +35,6 @@ public class UserLoginServlet extends HttpServlet {
 		if(result == 1) {
 
 			request.getSession().setAttribute("MEMBER_ID", MEMBER_ID); 
-
 			response.getWriter().write("1");
 			return;
 

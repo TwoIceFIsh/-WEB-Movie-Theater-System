@@ -58,6 +58,7 @@
 							<li><a href="a_setMovie.jsp">영화등록</a></li>
 
 							<li><a href="showmethemoney777.jsp">동인이 페이지[로그인/영화선택 필요]</a></li>
+							<li><a href="reserved_Movie_Page.jsp">한성이 페이지</a></li>
 							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {

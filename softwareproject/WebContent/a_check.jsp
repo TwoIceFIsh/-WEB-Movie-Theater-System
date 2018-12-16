@@ -63,8 +63,7 @@
 										class="form-control btn btn-primary">로그인</button>
 									<h5 style="" id="statusMessage"></h5>
 								</div>
-								<!-- Change this to a button or input when using this as a form -->
-
+							
 							</fieldset>
 						</form>
 					</div>

@@ -136,7 +136,7 @@ public class MovieDAO {
 				System.out.println("hello point");
 					 
 					//수정해줘야됨 디비 결과값이안나옴
-					System.out.println("arrat : " + rs.getString("MOVIE_COST"));
+					System.out.println("getMOVIE_COST value is : " + rs.getString("MOVIE_COST"));
 					return "1,1";
 				
 			}

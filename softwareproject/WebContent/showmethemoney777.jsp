@@ -63,7 +63,11 @@ p.select_theater_Time {
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 	%>
 
-	<h1 align="center">요금결제</h1>
+<div class="carousel-inner" role="listbox">
+
+			<h1 align="center">결제 패이지</h1>
+
+		</div>
 	<form name="Movie_choice_form" action="result.jsp"
 		accept-charset="utf-8" method="post">
 		<p class="select_theater_room">결제 방식 선택</p>
