@@ -24,7 +24,7 @@ public class MovieSetServlet extends HttpServlet {
 
 		request.setCharacterEncoding("euc-kr");
 
-		// 값가져오기
+	
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 
