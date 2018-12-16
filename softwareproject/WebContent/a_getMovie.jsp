@@ -44,11 +44,11 @@
 						height="400" width="300">
 					<div class="carousel-caption">
 
-						<h1><%=MOVIE.getMOVIE_NAME() %></h1>
+						<h1>줄거리 <%=MOVIE.getMOVIE_NAME() %></h1>
 						<p>
-							영화내용<%=MOVIE.getMOVIE_INFO() %>
+							<%=MOVIE.getMOVIE_INFO() %>
 							<p>
-							상영시간<%=MOVIE.getPLAY_TIME() %> 분
+							상영시간 <%=MOVIE.getPLAY_TIME() %> 분
 			<br>
 										<a class="btn btn-lg btn-danger" href="#" role="button"> 예매하기</a>
 						</p>
