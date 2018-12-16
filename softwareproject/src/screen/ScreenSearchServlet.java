@@ -1,17 +1,11 @@
 package screen;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Enumeration;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
  
 @WebServlet("/ScreenSearchServlet")
@@ -22,15 +16,21 @@ public class ScreenSearchServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException,
 	IOException {
 
-		request.setCharacterEncoding("euc-kr");
-
-	
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 
 
-		String MOVIE_NAME = request.getParameter("MOVIE_NAME");
+		String data = request.getParameter("data");
+		 
+		String array[] = data.split(",");
 		
+		String MOVIE_NAME = array[0];
+		String SCREEN_DATE = array[1];
+		String SCREEN_NUMBER = array[2];
+		
+		System.out.println(MOVIE_NAME);
+		System.out.println(SCREEN_DATE);
+		System.out.println(SCREEN_NUMBER);
 		
 		
 		 response.sendRedirect("./a_index.jsp");

@@ -66,28 +66,36 @@
 					ScreenDAO screen = new ScreenDAO();
 						ArrayList<ScreenDTO> SCREEN_LIST = screen.getScreenList(MOVIE.getMOVIE_NAME());
 
-						if(SCREEN_LIST.size() <= 0){%>
-				<button type="button" class="btn btn-danger btn-lg">일정 없음</button>
-				<% }
-							
-
-							for (int j = 0; j < SCREEN_LIST.size(); j++) {
-								ScreenDTO SCREEN = SCREEN_LIST.get(j);
+						if (SCREEN_LIST.size() <= 0) {
 				%>
-				<form method="post" action="ScreenSearchServlet" >
-				<button type="button" value="<%=MOVIE.getMOVIE_NAME() %>" class="btn btn-default btn-lg">
-				
-					<%=SCREEN.getSCREEN_NUMBER()%>관<br>
-					<%=SCREEN.getSCREEN_DATE()%>
-					<br>남은좌석 :<%=SCREEN.getTOTAL_SEAT() - SCREEN.getRESERVED_SEAT()%>
-				</button>
+				<button type="button" class="btn btn-danger btn-lg">일정 없음</button>
+				<%
+					}
+
+						for (int j = 0; j < SCREEN_LIST.size(); j++) {
+							ScreenDTO SCREEN = SCREEN_LIST.get(j);
+				%>
+
+
+
+
+
+				<form method="post" action="ScreenSearchServlet">
+					<button type="submit" name="data"
+						value="<%=MOVIE.getMOVIE_NAME()%>,<%=SCREEN.getSCREEN_DATE()%>,<%=SCREEN.getSCREEN_NUMBER()%>"
+						class="btn btn-default btn-lg">
+						<%=SCREEN.getSCREEN_NUMBER()%>관<br> 일시:
+						<%=SCREEN.getSCREEN_DATE()%>
+						<br>남은좌석 :<%=SCREEN.getTOTAL_SEAT() - SCREEN.getRESERVED_SEAT()%>
 				</form>
+
+
 				<%
 					}
 				%>
 
 			</div>
-
+			<!-- 영화이름을 넘긴다. -->
 			<p>
 		</div>
 		<br>

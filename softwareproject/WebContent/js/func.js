@@ -81,6 +81,37 @@ function registerCheckFunction() {
 
 }
 
+function reserve() {
+
+	var MOVIE_NAME = $('#MOVIE_NAME').val();
+	var SCREEN_DATE = $('#SCREEN_DATE').val();
+	var SCREEN_NUMBER = $('#SCREEN_NUMBER').val();
+
+	$.ajax({
+		type : 'POST',
+		url : './ScreenSearchServlet',
+		data : {
+			MOVIE_NAME : MOVIE_NAME,
+			SCREEN_DATE:SCREEN_DATE,
+			SCREEN_NUMBER:SCREEN_NUMBER
+		},
+		success : function(result) {
+
+			if (result == 1) {
+				$('#statusMessage').html('아이디 사용 가능');
+				$('#statusMessage').css("color", "green");
+
+			} else {
+				$('#statusMessage').html('아이디 사용 불가');
+				$('#statusMessage').css("color", "red");
+			}
+
+		}
+	});
+
+}
+
+
 
 //[Y]
 function showMovieInfo() {
