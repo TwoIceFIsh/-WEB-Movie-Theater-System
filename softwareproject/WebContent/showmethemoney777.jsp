@@ -46,7 +46,7 @@ p.select_theater_Time {
 </style>
 </head>
 <body>
-	<jsp:include page="js.jsp" />
+	<jsp:include page="nav.jsp" />
 
 	<%
 		String MEMBER_ID = null;
@@ -63,11 +63,11 @@ p.select_theater_Time {
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 	%>
 
-<div class="carousel-inner" role="listbox">
+	<div class="carousel-inner" role="listbox">
 
-			<h1 align="center">결제 패이지</h1>
+		<h1 align="center">결제 패이지</h1>
 
-		</div>
+	</div>
 	<form name="Movie_choice_form" action="result.jsp"
 		accept-charset="utf-8" method="post">
 		<p class="select_theater_room">결제 방식 선택</p>
@@ -86,8 +86,9 @@ p.select_theater_Time {
 			<%=MEMBER.getMEMBER_ID()%></div>
 		님의 포인트 잔액은
 		<%=MEMBER.getMEMBER_POINT()%>
-		point 입니다
-		</p>
+		point 입니다 <br>
+
+
 
 		<p>
 			<select id="select_point" name="Movie_name" method="post"
@@ -101,8 +102,9 @@ p.select_theater_Time {
 		<fieldset style="width: 350">
 			<legend>
 				당신이 예매한 영화의 이름은:
-				<div id="MOVIE_NAME"><%=MOVIE.getMOVIE_NAME()%></div>
-
+				<div id="MOVIE_NAME" name="movie" value="<%=MOVIE.getMOVIE_NAME()%>"><%=MOVIE.getMOVIE_NAME()%></div>
+			 좌석번호 :
+				<div id="seat" name="seat" value="<%=request.getParameter("SEAT_NUMBER")%>"><%=request.getParameter("SEAT_NUMBER")%></div>
 				결제금액은
 				<h5 id="statusMessage1"></h5>
 				<h5 id="statusMessage2"></h5>
@@ -118,6 +120,8 @@ p.select_theater_Time {
 			}
 		%>
 	</form>
+
+
 
 </body>
 </html>

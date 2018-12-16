@@ -17,8 +17,7 @@ public class MovieDAO {
 
 	public MovieDAO() {
 
-		System.out.println("Try to Movie DB connection");
-
+		 
 	}
 
 	public ArrayList<MovieDTO> getMovieList(){
@@ -135,7 +134,7 @@ public class MovieDAO {
 			if(rs.next() ) {
 				System.out.println("hello point");
 					 
-					//¼öÁ¤ÇØÁà¾ßµÊ µðºñ °á°ú°ªÀÌ¾È³ª¿È
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾È³ï¿½ï¿½ï¿½
 					System.out.println("getMOVIE_COST value is : " + rs.getString("MOVIE_COST"));
 					return "1,1";
 				
@@ -320,8 +319,7 @@ public class MovieDAO {
 	
 
 	public int findMovie(String MOVIE_NAME) {
-		System.out.println("findMovie ¿µÈ­ÀÌ¸§ : "+MOVIE_NAME );
-
+		 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

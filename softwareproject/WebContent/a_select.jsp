@@ -27,7 +27,7 @@
 
 			<div class="col-lg-12">
 
-				<h1 class="page-header">제목.</h1>
+				<h1 class="page-header">좌석선택하기</h1>
 			</div>
 
 		</div>
@@ -43,8 +43,8 @@
 				MOVIE_NAME = (String) session.getAttribute("MOVIE_NAME");
 				SCREEN_DATE = (String) session.getAttribute("SCREEN_DATE");
 				SCREEN_NUMBER = (String) session.getAttribute("SCREEN_NUMBER");
-				SEAT_BITMAP = (String[])session.getAttribute("SEAT_BITMAP");
-				BIT_MAP_LENGTH = (int)session.getAttribute("BIT_MAP_LENGTH");
+				SEAT_BITMAP = (String[]) session.getAttribute("SEAT_BITMAP");
+				BIT_MAP_LENGTH = (int) session.getAttribute("BIT_MAP_LENGTH");
 				if (MOVIE_NAME == null) {
 					response.sendRedirect("./a_index.jsp");
 				}
@@ -52,22 +52,51 @@
 
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-default">
 
-
-					<div class=" col-md-12">영화이름 상영관 영화시간 좌석 테이블 그림그리기</div>
-				</div>
-				<%=MOVIE_NAME %>
+				영화 :
+				<%=MOVIE_NAME%>
+				<br> 상영관 :
 				<%=SCREEN_NUMBER%>
-				<%=SCREEN_DATE %>
-				<%=SEAT_BITMAP[0] %>
-				<%=BIT_MAP_LENGTH %>
+				<br> 상영일자 :
+				<%=SCREEN_DATE%>
+				<br> ㅡㅡㅡㅡㅡㅡㅡ 스크린 ㅡㅡㅡㅡㅡㅡㅡ<br>
+
+
+				<div class="row ">
+					<%
+						for (int i = 0; i < BIT_MAP_LENGTH; i++) {
+					%>
+
+
+					<input class="col-md-1" type="submit" id="btn<%=i%>"
+						name="btn<%=i%>" value="<%=i%>" />
+
+
+
+
+
+
+					<%
+						}
+
+						}
+					%>
+				</div>
+
+				<form method="post" class="form-signin" role="form" value=""
+					action="showmethemoney777.jsp">
+					<span><label>좌석번호를 입력하세요</label></span><input type="text"
+						class="form-control" name="SEAT_NUMBER" placeholder="번호">
+
+					<div class="col-md-6">
+						<span><label></label></span> <br>
+						<button type="submit" class="btn btn-danger">좌석선택하기</button>
+					</div>
+				</form>
 			</div>
 
 		</div>
-		<%
-			}
-		%>
+
 	</div>
 </body>
 </html>

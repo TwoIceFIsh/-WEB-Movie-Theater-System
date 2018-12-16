@@ -17,13 +17,10 @@ public class ScreenDAO {
 
 	public ScreenDAO() {
 
-		System.out.println("Try to Movie DB connection");
-
-	}
+		 }
 
 	public ArrayList<ScreenDTO> getScreenList(String MOVIE_NAME){
-		System.out.println("getScreenList");
-		ArrayList<ScreenDTO> list = new ArrayList<ScreenDTO>();
+	 	ArrayList<ScreenDTO> list = new ArrayList<ScreenDTO>();
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -49,8 +46,7 @@ public class ScreenDAO {
 				list.add(SCREEN);
 
 			}
-			System.out.println(MOVIE_NAME + "'s list length is : "+ list.size());
-			return list;
+			 return list;
 
 		} catch(Exception e) {
 			e.printStackTrace();

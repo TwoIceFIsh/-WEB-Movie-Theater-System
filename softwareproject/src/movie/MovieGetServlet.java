@@ -27,9 +27,8 @@ public class MovieGetServlet extends HttpServlet {
 			return;
 
 		}
-		System.out.println("MovieGetServlet"+" : "+MOVIE_NAME);
+		 
 		int result = new MovieDAO().findMovie(MOVIE_NAME);
-		System.out.println("result "+result);
 
 		if(result == 1) {
 

@@ -202,7 +202,9 @@ a:hover {
 	<%
 		MovieDAO getDB = new MovieDAO();
 
-		ArrayList<MovieDTO> MOVIE_LIST = getDB.getMovieList();
+		ArrayList<MovieDTO> MOVIE_LIST = null;
+		if (MOVIE_LIST == null)
+			MOVIE_LIST = getDB.getMovieList();
 	%>
 
 	<!-- 네비게이션 바를 로딩합니다 -->
@@ -246,7 +248,8 @@ a:hover {
 				<p></p>
 				<div class="row">
 					<div class="col-md-6">
-						<button type="button" class="btn btn-danger btn-lg" value="<%=MOVIE.getMOVIE_NAME()%>" >예매하기</button>
+						<button type="button" class="btn btn-danger btn-lg"
+							value="<%=MOVIE.getMOVIE_NAME()%>">예매하기</button>
 					</div>
 					<div class="col-md-6">
 						<form method="post" action="MovieGetServlet">
