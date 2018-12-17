@@ -96,7 +96,7 @@
 																			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 																			int MEMBER_POINT = MEMBER.getMEMBER_POINT();
 							%>
-							<li><a>포인트 <%=MEMBER.getMEMBER_POINT()%>점
+							<li><a>포인트 <%=MEMBER_POINT%>점
 							</a></li>
 
 							<%

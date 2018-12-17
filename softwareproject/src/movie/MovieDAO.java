@@ -117,7 +117,9 @@ public class MovieDAO {
 	}
 	
 	public String getPoint(String MEMBER_ID, String MOVIE_NAME) {
-
+		MEMBER_ID = MEMBER_ID.replaceAll("	", "");
+		MEMBER_ID = MEMBER_ID.replaceAll("\n", "");
+		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -132,11 +134,15 @@ public class MovieDAO {
 			rs=pstmt.executeQuery();
 
 			if(rs.next() ) {
-				System.out.println("hello point");
-					 
-					//��������ߵ� ��� ������̾ȳ���
-					System.out.println("getMOVIE_COST value is : " + rs.getString("MOVIE_COST"));
-					return "1,1";
+					String Cost = rs.getString("MOVIE_COST");
+					String Point = Integer.toString(rs.getInt("MEMBER_POINT"));
+					//占쏙옙占쏙옙占쏙옙占쏙옙森占� 占쏙옙占� 占쏙옙占쏙옙占쏙옙潔홰占쏙옙占�
+					String Text = Cost;
+					Text += ",";
+					Text += Point;
+					
+					System.out.println(Text);
+					return Text;
 				
 			}
 			 

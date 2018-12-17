@@ -176,6 +176,7 @@ public class UserDAO {
 				MEMBER.setMEMBER_PW(rs.getString("MEMBER_PW")); 
 				MEMBER.setMEMBER_NAME(rs.getString("MEMBER_NAME"));
 				MEMBER.setMEMBER_ADDRESS(rs.getString("MEMBER_ADDRESS"));
+				MEMBER.setMEMBER_POINT(rs.getInt("MEMBER_POINT"));
 
 				return MEMBER;
 

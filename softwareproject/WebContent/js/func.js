@@ -180,33 +180,34 @@ function PointCheckFunction() {
 			MOVIE_NAME : MOVIE_NAME
 		},
 		success : function(result) {
-			alert(result);
-			var selectValue = langSelect.options[langSelect.selectedIndex].value;
-			var array;
+			var array = new Array();
 			
 			if(result == "0,0"){
 				$('#statusMessage1').html('error');
 				$('#statusMessage1').css("color", "red");
 			}
-			
-			array = string.split( ',', result );
+			array = result.split(',');
 			var moviecost = array[0];
 			var point =array[1];
-			if(langSelect=='포인트 전액 사용'||langSelect=='포인트 일부 사용'){
+			if(selectValue=='전액'||selectValue=='일부'){
 				if (moviecost - point <= 0) {
-					$('#statusMessage1').html(moviecost +'포인트로 전액결제가능');
+					$('#statusMessage1').html("영화가격 : "+ moviecost +"원 " +'포인트로 전액결제가능');
 					$('#statusMessage1').css("color", "green");
-					$('#statusMessage2').html('남은포인트는 : ' + point-moviecost);
+					$('#statusMessage2').html("결제금액 : 0");
 					$('#statusMessage2').css("color", "green");
 
 
 				} else {
-					$('#statusMessage1').html(moviecost - point +'포인트를 제외한 가격입니다');
+					$('#statusMessage1').html('포인트를 제외한 가격입니다 : '+ (moviecost-point));
 					$('#statusMessage1').css("color", "red");
+					$('#statusMessage2').html('결제금액 : ' + (moviecost-point));
+					$('#statusMessage2').css("color", "green");
 				}
-			}if(langSelect=='포인트 미사용'){
+			}if(selectValue=='미사용'){
 				$('#statusMessage1').html(moviecost + '원으로 모두 결제하겠습니다.');
 				$('#statusMessage1').css("color", "green");
+				$('#statusMessage2').html('결제금액 : ' + moviecost);
+				$('#statusMessage2').css("color", "red");
 			}
 
 		}

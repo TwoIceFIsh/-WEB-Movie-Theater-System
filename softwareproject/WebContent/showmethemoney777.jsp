@@ -100,17 +100,15 @@ p.select_theater_Time {
 			</select>
 		</p>
 		<fieldset style="width: 350">
-			<legend>
-				당신이 예매한 영화의 이름은:
-				<div id="MOVIE_NAME" name="movie" value="<%=MOVIE.getMOVIE_NAME()%>"><%=MOVIE.getMOVIE_NAME()%></div>
-			 좌석번호 :
-				<div id="seat" name="seat" value="<%=request.getParameter("SEAT_NUMBER")%>"><%=request.getParameter("SEAT_NUMBER")%></div>
-				결제금액은
-				<h5 id="statusMessage1"></h5>
-				<h5 id="statusMessage2"></h5>
 
-			</legend>
-
+			당신이 예매한 영화의 이름은:
+			<div id="MOVIE_NAME" name="movie" value="<%=MOVIE.getMOVIE_NAME()%>"><%=MOVIE.getMOVIE_NAME()%></div>
+			좌석번호 :
+			<div id="seat" name="seat"
+				value="<%=request.getParameter("SEAT_NUMBER")%>"><%=request.getParameter("SEAT_NUMBER")%></div>
+			결제금액은
+			<h5 id="statusMessage1"></h5>
+			<h5 id="statusMessage2"></h5>
 
 			<p class="check_normal">이렇게 결제 하시겠습니까?</p>
 			<input type="submit" value="보내기"> <input type="reset"
