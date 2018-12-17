@@ -51,7 +51,7 @@ p.select_theater_Time {
 	<%
 		String MEMBER_ID = null;
 		String MOVIE_NAME = null;
-		if (session.getAttribute("MEMBER_ID") == null ) {
+		if (session.getAttribute("MEMBER_ID") == null) {
 			response.sendRedirect("./a_index.jsp");
 		}
 		if (session.getAttribute("MEMBER_ID") != null) {
@@ -73,11 +73,10 @@ p.select_theater_Time {
 		<p class="select_theater_room">결제 방식 선택</p>
 		<select name="Movie_room" method="post" accept-charset="utf-8">
 			<option value="선택" selected>----------선택----------</option>
-			<option value="카드 결제" select>카드 결제</option>
-			<option value="현금 결제" select>현금 결제</option>
-			<option value="포인트 결제" select>포인트 결제</option>
-			<option value="현금 + 포인트 결제" select>현금 + 포인트 결제</option>
-			<option value="카드 + 포인트 결제" select>카드 + 포인트 결제</option>
+			<option id="creditclick" onclick="creditclickFunction()"
+				value="카드 결제" select>포인트 사용 결제</option>
+			<option id="pointclick" onclick="pointclickFunction()" value="포인트 결제"
+				select>포인트 미사용 결제</option>
 		</select>
 
 		<p class="select_theater_Movie">포인트 결제</p>
@@ -90,15 +89,22 @@ p.select_theater_Time {
 
 
 
-		<p>
+		<div id="pointselect" class="hidden">
 			<select id="select_point" name="Movie_name" method="post"
 				onchange="PointCheckFunction()">
 				<option value="선택" selected>----------선택----------</option>
 				<option value="전액" select>포인트 전액 사용</option>
-				<option value="일부" select>포인트 일부 사용</option>
+				<option value="일부" select>포인트
+					일부 사용</option>
 				<option value="미사용" select>포인트 미사용</option>
 			</select>
-		</p>
+		</div>
+		<br>
+		<div id="partpointselect" class="hidden">
+			<span><label>사용할 포인트를 입력하세요</label></span><input type="text"
+				id="pointvalue" onkeyup="partpointCheckFunction();" class="form-control col-md-3" name="MOVIE_SCENE1"
+				placeholder="숫자만입력">
+		</div>
 		<fieldset style="width: 350">
 
 			당신이 예매한 영화의 이름은:

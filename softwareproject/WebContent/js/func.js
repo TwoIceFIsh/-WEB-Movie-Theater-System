@@ -160,7 +160,7 @@ function selectMovieInfo() {
 	});
 
 }
-
+var moviecost = 0;
 function PointCheckFunction() {
 
 	var MEMBER_ID = $('#MEMBER_ID').text();
@@ -181,29 +181,27 @@ function PointCheckFunction() {
 		},
 		success : function(result) {
 			var array = new Array();
-			
+
 			if(result == "0,0"){
 				$('#statusMessage1').html('error');
 				$('#statusMessage1').css("color", "red");
 			}
 			array = result.split(',');
-			var moviecost = array[0];
+			moviecost = array[0];
 			var point =array[1];
-			if(selectValue=='전액'||selectValue=='일부'){
+			if(selectValue=='전액'){
 				if (moviecost - point <= 0) {
 					$('#statusMessage1').html("영화가격 : "+ moviecost +"원 " +'포인트로 전액결제가능');
 					$('#statusMessage1').css("color", "green");
 					$('#statusMessage2').html("결제금액 : 0");
 					$('#statusMessage2').css("color", "green");
-
-
-				} else {
-					$('#statusMessage1').html('포인트를 제외한 가격입니다 : '+ (moviecost-point));
-					$('#statusMessage1').css("color", "red");
-					$('#statusMessage2').html('결제금액 : ' + (moviecost-point));
-					$('#statusMessage2').css("color", "green");
 				}
-			}if(selectValue=='미사용'){
+
+			}
+			if(selectValue=='일부') {
+				partpointclickFunction();
+			}
+			if(selectValue=='미사용'){
 				$('#statusMessage1').html(moviecost + '원으로 모두 결제하겠습니다.');
 				$('#statusMessage1').css("color", "green");
 				$('#statusMessage2').html('결제금액 : ' + moviecost);
@@ -291,6 +289,36 @@ function joinFunction() {
 			}
 		}
 	});
+
+}
+function pointclickFunction() {
+
+	$('#pointselect').addClass('hidden');
+
+}
+function creditclickFunction() {
+
+	$('#pointselect').removeClass('hidden');
+
+}
+function partpointclickFunction() {
+
+	$('#partpointselect').removeClass('hidden');
+
+}
+var pointvalue=0;
+function partpointCheckFunction() {
+	pointvalue = $('#pointvalue').val();
+	if((moviecost - pointvalue) < 0){
+		$('#statusMessage1').html('영화값을 초과했습니다');
+		$('#statusMessage1').css("color", "red");
+	}
+	else{
+		$('#statusMessage1').html('포인트를 제외한 가격입니다 : '+ (moviecost-pointvalue));
+		$('#statusMessage1').css("color", "red");
+		$('#statusMessage2').html('결제금액 : ' + (moviecost-point));
+		$('#statusMessage2').css("color", "green");
+	}
 
 }
 
