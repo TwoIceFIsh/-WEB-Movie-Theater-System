@@ -33,8 +33,11 @@
 			<div class="row">
 
 
-				<div>
-					<span><label>등록할 영화이름</label></span> <select name="MOVIE_NAME">
+				<div class="container">
+					<h3>
+						<span><label>등록할 영화이름</label></span>
+					</h3>
+					<select multiple class="form-control col-md-6" name="MOVIE_NAME">
 						<%
 							for (int i = 0; i < MOVIE_LIST.size(); i++) {
 								ScreenListDTO MOVIE_NAME_LIST = MOVIE_LIST.get(i);
@@ -46,8 +49,11 @@
 					</select>
 				</div>
 
-				<div>
-					<span><label>상영관</label></span> <select name="SCREEN_NUMBER">
+				<div class="container">
+					<h3>
+						<span><label>상영관</label></span>
+					</h3>
+					<select multiple class="form-control col-md-6" name="SCREEN_NUMBER">
 						<%
 							for (int i = 1; i <= 10; i++) {
 						%>
@@ -59,8 +65,11 @@
 						%>
 					</select>
 				</div>
-				<div>
-					<span><label>시간</label></span> <select name="SCREEN_DATE">
+				<div class="container">
+					<h3>
+						<span><label>시간</label></span>
+					</h3>
+					<select multiple class="col-md-6 form-control" name="SCREEN_DATE">
 
 						<option value="08:30">08:30</option>
 						<option value="09:30">09:30</option>
@@ -73,8 +82,11 @@
 
 					</select>
 				</div>
-				<div>
-					<span><label>총 좌석수</label></span> <select name="TOTAL_SEAT">
+				<div class="container">
+					<h3>
+						<span><label>총 좌석수</label></span>
+					</h3>
+					<select multiple class="form-control col-md-6" name="TOTAL_SEAT">
 
 						<%
 							for (int i = 25; i < 50; i++) {
@@ -89,14 +101,14 @@
 
 				<div class="col-md-6">
 					<span><label></label></span> <br>
-					<button type="submit" class="btn btn-danger">상영스케줄 등록</button>
+					<button type="submit" class="center-block btn btn-danger btn-lg btn-block"><h4>상영스케줄 등록</h4></button>
 				</div>
 				<%
 					if (session.getAttribute("ALERT") != null) {
 				%>
 
 				<div class="col-md-6">
-					<button type="button" class="btn btn-green"><%=(String) session.getAttribute("ALERT")%></button>
+					<button type="button" class="btn btn-green btn-lg btn-block"><%=(String) session.getAttribute("ALERT")%></button>
 				</div>
 				<%
 					session.removeAttribute("ALERT");
@@ -117,8 +129,8 @@
 		<a href="#">Back to top</a>
 	</p>
 	<p>
-		&copy; 2018 오유이동 영화관, Inc. &mnamedot; <a href="#">Privacy</a>
-		&mnamedot; <a href="#">Terms</a>
+		&copy; 2018 오유이동 영화관 <a href="#">Privacy</a>
+	  <a href="#">Terms</a>
 	</p>
 	</footer>
 

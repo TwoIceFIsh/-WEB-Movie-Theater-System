@@ -57,8 +57,8 @@
 
 
 							<li><a onmouseup="goTo()">영화목록</a></li>
-							<li><a href="reserved_Movie_Page.jsp">영화 예매</a></li>
-							<li><a href="a_myTicket.jsp">내 표 확인</a></li>
+							<li><a onmouseup="goTo2()">영화 예매</a></li>
+
 
 							<%
 								AdminBitDTO ADMIN = new AdminDAO().getADMIN_BIT(MEMBER_ID);
@@ -77,6 +77,7 @@
 									class="caret"></span>
 							</a> <%
  	} else {
+ 		
  %> <a href="#" class="dropdown-toggle" data-toggle="dropdown"
 								role="button" aria-expanded="false"><%=MEMBER_ID%>님 정보관리 <span
 									class="caret"></span> </a> <%
@@ -84,6 +85,7 @@
  %> <%
  	if (MEMBER_ID == null) {
  %>
+
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="a_login.jsp">로그인</a></li>
 									<li class="divider"></li>
@@ -101,11 +103,13 @@
  	}
  %>
 							</li>
+
 							<%
 								if (MEMBER_ID != null) {
 									UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
 									int MEMBER_POINT = MEMBER.getMEMBER_POINT();
 							%>
+							<li><a href="a_myTicket.jsp">내 표 확인</a></li>
 							<li><a>포인트 <%=MEMBER_POINT%>점
 							</a></li>
 

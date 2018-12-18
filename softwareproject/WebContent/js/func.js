@@ -3,7 +3,6 @@ function loginFunction() {
 	var MEMBER_ID = $('#MEMBER_ID').val();
 	var MEMBER_PW = $('#MEMBER_PW').val();
 
-
 	$.ajax({
 		type : 'POST',
 		url : './UserLoginServlet',
@@ -13,8 +12,7 @@ function loginFunction() {
 		},
 		success : function(result) {
 
-
-			if(result == 1 ){
+			if (result == 1) {
 				$(location).attr('href', 'a_index.jsp');
 
 			}
@@ -37,9 +35,7 @@ function loginFunction() {
 
 }
 
-
-
-//[Y]
+// [Y]
 function passwordCheckFunction() {
 	var MEMBER_PW_1 = $('#MEMBER_PW_1').val();
 	var MEMBER_PW_2 = $('#MEMBER_PW_2').val();
@@ -52,26 +48,28 @@ function passwordCheckFunction() {
 	}
 }
 
-//[Y]
+// [Y]
 function clickSeat(seatNum) {
-	
-	$('#statusMessage').html(seatNum+"번");
+
+	$('#statusMessage').html(seatNum + "번");
 	$('#statusMessage').css("color", "green");
 
 }
 
 function goTo() {
-	
-	 window.location.href='./reserved_Movie_Page.jsp';
+
+	window.location.href = './a_index.jsp';
+}
+function goTo2() {
+
+	window.location.href = './a_screenList.jsp';
+}
+function goTo3() {
+
+	window.location.href = './a_myTicket.jsp';
 }
 
-
-
-
-
-
-
-//[Y]
+// [Y]
 function registerCheckFunction() {
 
 	var MEMBER_ID = $('#MEMBER_ID').val();
@@ -109,8 +107,8 @@ function reserve() {
 		url : './ScreenSearchServlet',
 		data : {
 			MOVIE_NAME : MOVIE_NAME,
-			SCREEN_DATE:SCREEN_DATE,
-			SCREEN_NUMBER:SCREEN_NUMBER
+			SCREEN_DATE : SCREEN_DATE,
+			SCREEN_NUMBER : SCREEN_NUMBER
 		},
 		success : function(result) {
 
@@ -128,9 +126,7 @@ function reserve() {
 
 }
 
-
-
-//[Y]
+// [Y]
 function showMovieInfo() {
 
 	var MOVIE_NAME = $('#MOVIE_NAME').text();
@@ -145,12 +141,12 @@ function showMovieInfo() {
 
 			if (result == 1) {
 
-				alert(result);
+				 
 			}
 		}
 	});
 
-} 
+}
 
 function selectMovieInfo() {
 
@@ -179,15 +175,13 @@ function selectMovieInfo() {
 }
 var moviecost = 0;
 function PointCheckFunction() {
-
+	 
 	var MEMBER_ID = $('#MEMBER_ID').text();
 	var MOVIE_NAME = $('#MOVIE_NAME').text();
 	var langSelect = document.getElementById("select_point");
 
 	// select element에서 선택된 option의 value가 저장된다.
 	var selectValue = langSelect.options[langSelect.selectedIndex].value;
-
-
 
 	$.ajax({
 		type : 'POST',
@@ -199,26 +193,27 @@ function PointCheckFunction() {
 		success : function(result) {
 			var array = new Array();
 
-			if(result == "0,0"){
+			if (result == "0,0") {
 				$('#statusMessage1').html('error');
 				$('#statusMessage1').css("color", "red");
 			}
 			array = result.split(',');
 			moviecost = array[0];
-			var point =array[1];
-			if(selectValue=='전액'){
+			var point = array[1];
+			if (selectValue == '전액') {
 				if (moviecost - point <= 0) {
-					$('#statusMessage1').html("영화가격 : "+ moviecost +"원 " +'포인트로 전액결제가능');
+					$('#statusMessage1').html(
+							"영화가격 : " + moviecost + "원 " + '포인트로 전액결제가능');
 					$('#statusMessage1').css("color", "green");
 					$('#statusMessage2').html("결제금액 : 0");
 					$('#statusMessage2').css("color", "green");
 				}
 
 			}
-			if(selectValue=='일부') {
+			if (selectValue == '일부') {
 				partpointclickFunction();
 			}
-			if(selectValue=='미사용'){
+			if (selectValue == '미사용') {
 				$('#statusMessage1').html(moviecost + '원으로 모두 결제하겠습니다.');
 				$('#statusMessage1').css("color", "green");
 				$('#statusMessage2').html('결제금액 : ' + moviecost);
@@ -230,10 +225,7 @@ function PointCheckFunction() {
 
 }
 
-
-
-
-//[Y]
+// [Y]
 function lCheckFunction() {
 
 	var MEMBER_ID = $('#MEMBER_ID').val();
@@ -248,8 +240,7 @@ function lCheckFunction() {
 		},
 		success : function(result) {
 
-
-			if(result == 1 ){
+			if (result == 1) {
 				$(location).attr('href', 'a_update.jsp');
 
 			}
@@ -272,7 +263,6 @@ function lCheckFunction() {
 
 }
 
-
 function joinFunction() {
 
 	var MEMBER_ID = $('#MEMBER_ID').val();
@@ -281,8 +271,6 @@ function joinFunction() {
 	var MEMBER_NAME = $('#MEMBER_NAME').val();
 	var MEMBER_ADDRESS = $('#MEMBER_ADDRESS').val();
 
-
-
 	$.ajax({
 		type : 'POST',
 		url : './UserJoinServlet',
@@ -290,12 +278,12 @@ function joinFunction() {
 			MEMBER_ID : MEMBER_ID,
 			MEMBER_PW_1 : MEMBER_PW_1,
 			MEMBER_PW_2 : MEMBER_PW_2,
-			MEMBER_NAME:MEMBER_NAME,
-			MEMBER_ADDRESS:MEMBER_ADDRESS
+			MEMBER_NAME : MEMBER_NAME,
+			MEMBER_ADDRESS : MEMBER_ADDRESS
 		},
 		success : function(result) {
 
-			if(result ==1 ){
+			if (result == 1) {
 				$(location).attr('href', './a_index.jsp');
 
 			}
@@ -309,8 +297,8 @@ function joinFunction() {
 
 }
 function pointclickFunction() {
-
-	$('#pointselect').addClass('hidden');
+ 
+	$('#pointselect').removeClass('hidden');
 
 }
 function creditclickFunction() {
@@ -318,24 +306,21 @@ function creditclickFunction() {
 	$('#pointselect').removeClass('hidden');
 
 }
-function partpointclickFunction() {
 
-	$('#partpointselect').removeClass('hidden');
+var pointvalue = 0;
 
-}
-var pointvalue=0;
 function partpointCheckFunction() {
-	pointvalue = $('#pointvalue').val();
-	if((moviecost - pointvalue) < 0){
+	var moviecost = $('#moviecost').val();
+	var pointvalue = $('#pointvalue').val();
+	var point = $('#point').val();
+	if ((moviecost - pointvalue) < 0) {
 		$('#statusMessage1').html('영화값을 초과했습니다');
 		$('#statusMessage1').css("color", "red");
-	}
-	else{
-		$('#statusMessage1').html('포인트를 제외한 가격입니다 : '+ (moviecost-pointvalue));
-		$('#statusMessage1').css("color", "red");
-		$('#statusMessage2').html('결제금액 : ' + (moviecost-point));
-		$('#statusMessage2').css("color", "green");
+	} else {
+		$('#statusMessage1').html(
+				'실제 결제금액 : ' + (moviecost - pointvalue));
+		$('#statusMessage1').css("color", "green");
+		 
 	}
 
 }
-

@@ -245,7 +245,7 @@ a:hover {
 				<div class="row">
 					<div class="col-md-6">
 
-						<a class="btn btn-lg btn-danger" onmouseup="goTo()"  role="button"> 예매하기</a>
+						<a class="btn btn-lg btn-danger" onmouseup="goTo2()"  role="button"> 예매하기</a>
 					</div>
 					<div class="col-md-6">
 						<form method="post" action="MovieGetServlet">

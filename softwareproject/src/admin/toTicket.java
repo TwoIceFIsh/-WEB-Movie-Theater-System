@@ -26,6 +26,7 @@ public class toTicket extends HttpServlet {
 		int SCREEN_NUMBER = Integer.parseInt(request.getParameter("SCREEN_NUMBER"));
 		int SEAT_NUMBER = Integer.parseInt(request.getParameter("SEAT_NUMBER").replaceAll(" ", ""));
 		String SCREEN_DATE =  request.getParameter("SCREEN_DATE") ;
+		String MOVIE_IMG_URL =  request.getParameter("MOVIE_IMG_URL") ;
 		
 
 		int result = new AdminDAO().UPDATE_BIT_MAP(SEAT_NUMBER, SCREEN_NUMBER, SCREEN_DATE);

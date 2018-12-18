@@ -51,7 +51,7 @@ p.select_theater_Time {
 	<%
 		String MEMBER_ID = null;
 		String MOVIE_NAME = null;
-		String SCREEN_NUMBER=  null;
+		String SCREEN_NUMBER = null;
 		String SCREEN_DATE = null;
 		if (session.getAttribute("MEMBER_ID") == null) {
 			response.sendRedirect("./a_index.jsp");
@@ -64,64 +64,45 @@ p.select_theater_Time {
 			SCREEN_DATE = (String) session.getAttribute("SCREEN_DATE");
 			SCREEN_NUMBER = (String) session.getAttribute("SCREEN_NUMBER");
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
-			
 	%>
 
 	<div class="carousel-inner" role="listbox">
 
-		<h1 align="center">결제 패이지</h1>
+		<h1 align="center">카드 결제 패이지</h1>
 
 	</div>
-	<form name="Movie_choice_form" action="toTicket" accept-charset="utf-8"
-		method="post">
-		<p class="select_theater_room">결제 방식 선택</p>
-		<select name="Movie_room" method="post" accept-charset="utf-8">
-			<option value="선택" selected>----------선택----------</option>
-			<option id="creditclick" onclick="creditclickFunction()"
-				value="카드 결제" select>포인트 사용 결제</option>
-			<option id="pointclick" onclick="pointclickFunction()" value="포인트 결제"
-				select>포인트 미사용 결제</option>
-		</select>
+	<form class="container " name="Movie_choice_form" action="toTicket"
+		accept-charset="utf-8" method="post">
 
-		<p class="select_theater_Movie">포인트 결제</p>
-		<p>현재
+		 
+
+
 		<div class="form-group">
 			<input class="form-control" readonly id="MEMBER_ID" name="MEMBER_ID"
 				value="<%=MEMBER.getMEMBER_ID()%>" autofocus>
 		</div>
 
-		님의 포인트 잔액은
-		<%=MEMBER.getMEMBER_POINT()%>
-		point 입니다 <br>
-
-
-
-		<div id="pointselect" class="hidden">
-			<select id="select_point" name="Movie_name" method="post"
-				onchange="PointCheckFunction()">
-				<option value="선택" selected>----------선택----------</option>
-				<option value="전액" select>포인트 전액 사용</option>
-				<option value="일부" select>포인트 일부 사용</option>
-				<option value="미사용" select>포인트 미사용</option>
-			</select>
+		<div class="container">
+			<h4>
+				포인트 잔액은 :
+				<%=MEMBER.getMEMBER_POINT()%>
+				point 입니다
+			</h4>
 		</div>
 		<br>
-		<div id="partpointselect" class="hidden">
-			<span><label>사용할 포인트를 입력하세요</label></span><input type="text"
-				id="pointvalue" onkeyup="partpointCheckFunction();"
-				class="form-control col-md-3" name="MOVIE_SCENE1"
-				placeholder="숫자만입력">
-		</div>
-		<fieldset style="width: 350">
+<input class="form-control hidden" readonly id="point" name="point"
+				value="<%=MEMBER.getMEMBER_POINT()%>" autofocus>
 
-			당신이 예매한 영화의 이름은:
+
+		<div>
+			<h4>당신이 예매한 영화의 이름은:</h4>
 			<div class="form-group">
-				<input class="form-control" readonly id="MEMBER_ID" name="MEMBER_ID"
-					value="<%=MOVIE.getMOVIE_NAME()%>" autofocus>
+				<input class="form-control" readonly id="MOVIE_NAME"
+					name="MOVIE_NAME" value="<%=MOVIE.getMOVIE_NAME()%>" autofocus>
 			</div>
 
 
-			상영관 :
+			<h4>상영관 :</h4>
 
 			<div class="form-group">
 				<input class="form-control" readonly id="SCREEN_NUMBER"
@@ -129,7 +110,7 @@ p.select_theater_Time {
 			</div>
 
 
-			상영 시간 :
+			<h4>상영 시간 :</h4>
 			<div class="form-group">
 				<input class="form-control" readonly id="SCREEN_DATE"
 					name="SCREEN_DATE" value="<%=SCREEN_DATE%>" autofocus>
@@ -141,25 +122,26 @@ p.select_theater_Time {
 					name="SEAT_NUMBER" value="<%=request.getParameter("SEAT")%>"
 					autofocus>
 			</div>
+			
+			<input type="text" id="moviecost" class=" hidden "
+				placeholder="숫자만입력" value="<%=MOVIE.getMOVIE_COST()%>"> <span><label>사용할
+					포인트를 입력하세요</label></span><input type="text" id="pointvalue"
+				onkeyup="partpointCheckFunction();" class="form-control "
+				placeholder="숫자만입력">
 
+ <%request.getSession().setAttribute("MOVIE_IMG_URL", MOVIE.getMOVIE_IMG_URL());  %>
+			<h4>결제금액은</h4>
+			<a id="statusMessage1"></a> <a id="statusMessage2"></a> 
+			<br>
+			<button class="btn btn-danger btn-lg btn-block"
+				type="submit" >결제 확인</button>
+		</div>
 
-			결제금액은
-			<h5 id="statusMessage1"></h5>
-			<h5 id="statusMessage2"></h5>
-
-			<p class="check_normal">이렇게 결제 하시겠습니까?</p>
-
-
-
-			<input type="submit" value="보내기"> <input type="reset"
-				value="원점으로 돌리기">
-		</fieldset>
-		<%
-			}
-		%>
 	</form>
 
-
+	<%
+		}
+	%>
 
 </body>
 </html>

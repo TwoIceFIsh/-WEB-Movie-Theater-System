@@ -22,13 +22,13 @@
 
 
 
-	<div id="page-wrapper">
-		<div class="row">
+	<div id="">
+		<div class="container">
 
-			<div class="col-lg-12">
 
-				<h1 class="page-header">좌석선택하기</h1>
-			</div>
+
+			<h1 class="page-header">좌석선택하기</h1>
+
 
 		</div>
 
@@ -49,15 +49,15 @@
 			}
 		%>
 
-		<div class="row">
+		<div class="container">
 			<div class="col-lg-12">
 
 				영화 :
 				<%=SCREEN.getMOVIE_NAME()%>
 				<br> 상영관 :
 				<%=SCREEN.getSCREEN_NUMBER()%>
-				
-				
+
+
 				<br> 상영일자 :
 				<%=SCREEN.getSCREEN_DATE()%>
 				<br> ㅡㅡㅡㅡㅡㅡㅡ 스크린 ㅡㅡㅡㅡㅡㅡㅡ<br>
@@ -100,20 +100,23 @@
 					%>
 				</div>
 
-				<form method="post" class="form-signin" role="form"
-					action="showmethemoney777.jsp">
 
-					<span><label>좌석번호를 입력하세요</label></span>
-					<div class="form-group">
-						<input class="form-control" placeholder="SEAT" id="SEAT" name="SEAT"  value=" " autofocus>
-					</div>
-					<div class="col-md-6">
-						<span><label></label></span> <br>
-						<button type="submit" class="btn btn-danger">좌석선택하기</button>
-					</div>
-				</form>
 			</div>
+			<form method="post" class="form-signin" role="form"
+				action="./a_buy.jsp">
 
+				<span><label>좌석번호를 입력하세요</label></span>
+				<div class="form-group">
+					<input class="form-control" placeholder="SEAT" id="SEAT"
+						name="SEAT" value=" " autofocus>
+				</div>
+				<div class="col-md-6">
+					<span><label></label></span> <br>
+					<button type="submit" class="btn btn-danger">좌석선택하기</button>
+				</div>
+				 <%request.getSession().setAttribute("MOVIE_NAME", SCREEN.getMOVIE_NAME());  %>
+				 
+			</form>
 		</div>
 
 	</div>
