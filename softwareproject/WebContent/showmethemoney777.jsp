@@ -94,24 +94,27 @@ p.select_theater_Time {
 				onchange="PointCheckFunction()">
 				<option value="선택" selected>----------선택----------</option>
 				<option value="전액" select>포인트 전액 사용</option>
-				<option value="일부" select>포인트
-					일부 사용</option>
+				<option value="일부" select>포인트 일부 사용</option>
 				<option value="미사용" select>포인트 미사용</option>
 			</select>
 		</div>
 		<br>
 		<div id="partpointselect" class="hidden">
 			<span><label>사용할 포인트를 입력하세요</label></span><input type="text"
-				id="pointvalue" onkeyup="partpointCheckFunction();" class="form-control col-md-3" name="MOVIE_SCENE1"
+				id="pointvalue" onkeyup="partpointCheckFunction();"
+				class="form-control col-md-3" name="MOVIE_SCENE1"
 				placeholder="숫자만입력">
 		</div>
 		<fieldset style="width: 350">
 
 			당신이 예매한 영화의 이름은:
-			<div id="MOVIE_NAME" name="movie" value="<%=MOVIE.getMOVIE_NAME()%>"><%=MOVIE.getMOVIE_NAME()%></div>
+			 
+				<input type="text" class="form-control" readonly id="MEMBER_ID"
+					value="<%=MOVIE.getMOVIE_NAME()%>">
+		 
 			좌석번호 :
 			<div id="seat" name="seat"
-				value="<%=request.getParameter("SEAT_NUMBER")%>"><%=request.getParameter("SEAT_NUMBER")%></div>
+				value="<%=request.getParameter("statusMessage")%>"><%=request.getParameter("statusMessage")%></div>
 			결제금액은
 			<h5 id="statusMessage1"></h5>
 			<h5 id="statusMessage2"></h5>

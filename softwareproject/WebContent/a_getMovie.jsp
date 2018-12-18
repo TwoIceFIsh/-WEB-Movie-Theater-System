@@ -50,7 +50,7 @@
 							<p>
 							상영시간 <%=MOVIE.getPLAY_TIME() %> 분
 			<br>
-										<a class="btn btn-lg btn-danger" href="#" role="button"> 예매하기</a>
+										<a class="btn btn-lg btn-danger" href="reserved_Movie_Page.jsp" role="button"> 예매하기</a>
 						</p>
 					</div>
 				</div>

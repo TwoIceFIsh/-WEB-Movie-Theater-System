@@ -33,60 +33,76 @@
 		</div>
 
 		<%
-			String MOVIE_NAME = null;
+			ScreenDTO SCREEN = new ScreenDTO();
+
 			String SCREEN_DATE = null;
 			String SCREEN_NUMBER = null;
 			String SEAT_BITMAP[] = null;
 			int BIT_MAP_LENGTH = 0;
 
-			if (session.getAttribute("MOVIE_NAME") != null) {
-				MOVIE_NAME = (String) session.getAttribute("MOVIE_NAME");
+			if (session.getAttribute("SCREEN_NUMBER") != null) {
+
 				SCREEN_DATE = (String) session.getAttribute("SCREEN_DATE");
 				SCREEN_NUMBER = (String) session.getAttribute("SCREEN_NUMBER");
-				SEAT_BITMAP = (String[]) session.getAttribute("SEAT_BITMAP");
-				BIT_MAP_LENGTH = (int) session.getAttribute("BIT_MAP_LENGTH");
-				if (MOVIE_NAME == null) {
-					response.sendRedirect("./a_index.jsp");
-				}
+				SCREEN = new ScreenDAO().getMOVIE_SCREEN_INFO(SCREEN_DATE, SCREEN_NUMBER);
+				SEAT_BITMAP = new ScreenDAO().getSEAT_LIST(SCREEN_DATE, SCREEN_NUMBER);
+			}
 		%>
 
 		<div class="row">
 			<div class="col-lg-12">
 
 				영화 :
-				<%=MOVIE_NAME%>
+				<%=SCREEN.getMOVIE_NAME()%>
 				<br> 상영관 :
-				<%=SCREEN_NUMBER%>
+				<%=SCREEN.getSCREEN_NUMBER()%>
 				<br> 상영일자 :
-				<%=SCREEN_DATE%>
+				<%=SCREEN.getSCREEN_DATE()%>
 				<br> ㅡㅡㅡㅡㅡㅡㅡ 스크린 ㅡㅡㅡㅡㅡㅡㅡ<br>
 
 
 				<div class="row ">
 					<%
-						for (int i = 0; i < BIT_MAP_LENGTH; i++) {
+						for (int i = 0; i < SEAT_BITMAP.length; i++) {
+					%>
+
+					<%
+						if (SEAT_BITMAP[i].equals("0")) {
+					%>
+					<input class="" type="submit" id="btn<%=i%>"
+						name="btn<%=SEAT_BITMAP[i]%>" value="O"
+						onclick="clickSeat(<%=i%>)" />
+					<%
+						}
+					%>
+					<%
+						if (SEAT_BITMAP[i].equals("1")) {
+					%>
+					<input class="" type="submit" id="btn<%=i%>"
+						name="btn<%=SEAT_BITMAP[i]%>" value="X" />
+					<%
+						}
 					%>
 
 
-					<input class="col-md-1" type="submit" id="btn<%=i%>"
-						name="btn<%=i%>" value="<%=i%>" />
-
-
-
-
-
-
+					<%
+						if ((i % 8) == 1 && (i != 0)) {
+					%>
+					<br>
 					<%
 						}
+					%>
 
+					<%
 						}
 					%>
 				</div>
 
-				<form method="post" class="form-signin" role="form" value=""
+				<form method="post" class="form-signin" role="form"
 					action="showmethemoney777.jsp">
-					<span><label>좌석번호를 입력하세요</label></span><input type="text"
-						class="form-control" name="SEAT_NUMBER" placeholder="번호">
+
+					<span><label>좌석을 클릭하세요</label></span>
+					<h5 style="" id="statusMessage" name="statusMessage" value="ace"></h5>
 
 					<div class="col-md-6">
 						<span><label></label></span> <br>

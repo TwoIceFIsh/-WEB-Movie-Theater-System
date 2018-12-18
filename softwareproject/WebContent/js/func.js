@@ -52,6 +52,20 @@ function passwordCheckFunction() {
 	}
 }
 
+//[Y]
+function clickSeat(seatNum) {
+	
+	$('#statusMessage').html(seatNum+"번");
+	$('#statusMessage').css("color", "green");
+
+}
+
+function goTo() {
+	
+	 window.location.href='./reserved_Movie_Page.jsp';
+}
+
+
 
 
 //[Y]

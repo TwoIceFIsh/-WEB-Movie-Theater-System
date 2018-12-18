@@ -95,11 +95,11 @@
 					if (session.getAttribute("ALERT") != null) {
 				%>
 
-<div class="col-md-6">
-				<button type="button" class="btn btn-green"><%=(String) session.getAttribute("ALERT")%></button>
+				<div class="col-md-6">
+					<button type="button" class="btn btn-green"><%=(String) session.getAttribute("ALERT")%></button>
 				</div>
 				<%
-				session.removeAttribute("ALERT");
+					session.removeAttribute("ALERT");
 
 					}
 				%>

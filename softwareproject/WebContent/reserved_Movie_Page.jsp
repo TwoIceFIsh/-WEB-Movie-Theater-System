@@ -1,8 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="movie.MovieDTO"%>
-<%@ page import="movie.MovieDAO"%>
+
 <%@ page import="admin.ScreenListDTO"%>
 <%@ page import="admin.ScreenListDAO"%>
 
@@ -78,10 +77,11 @@
 						ScreenListDTO SCREEN_LIST_DTO = SCREEN_LIST.get(j);
 			%>
 			
-				<form method="post" action="ScreenSearchServlet">
+				<form method="post" action="ScreenSelectSeatServlet">
 					<button type="submit" name="data"
-						value="<%=SCREEN_LIST_DTO.getMOVIE_NAME()%>,<%=SCREEN_LIST_DTO.getSCREEN_DATE()%>,<%=SCREEN_LIST_DTO.getSCREEN_NUMBER()%>"
+						value="<%=SCREEN_LIST_DTO.getSCREEN_DATE()%>,<%=SCREEN_LIST_DTO.getSCREEN_NUMBER()%>"
 						class="btn btn-default btn-lg">
+					
 						<%=SCREEN_LIST_DTO.getSCREEN_NUMBER()%>관<br> 일시:
 						<%=SCREEN_LIST_DTO.getSCREEN_DATE()%>
 						<br>남은좌석 :<%=SCREEN_LIST_DTO.getTOTAL_SEAT() - SCREEN_LIST_DTO.getRESERVED_SEAT()%>
