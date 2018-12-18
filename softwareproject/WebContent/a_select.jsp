@@ -115,7 +115,7 @@
 					<button type="submit" class="btn btn-danger">좌석선택하기</button>
 				</div>
 				 <%request.getSession().setAttribute("MOVIE_NAME", SCREEN.getMOVIE_NAME());  %>
-				 
+				     
 			</form>
 		</div>
 
