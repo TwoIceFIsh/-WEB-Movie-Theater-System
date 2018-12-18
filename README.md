@@ -1,2 +1,6 @@
-# softwareproject
-Movie Theater Web Project
+# JSP/Servlet WEB PROJECT
+
+# Concept
+Movie Reservation System
+
+# Features
