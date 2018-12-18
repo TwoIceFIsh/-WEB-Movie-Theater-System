@@ -17,9 +17,7 @@ public class ScreenSetServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException,
 	IOException {
-
-		request.setCharacterEncoding("euc-kr");
-
+ 
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");

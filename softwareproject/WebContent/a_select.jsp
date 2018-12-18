@@ -56,6 +56,8 @@
 				<%=SCREEN.getMOVIE_NAME()%>
 				<br> 상영관 :
 				<%=SCREEN.getSCREEN_NUMBER()%>
+				
+				
 				<br> 상영일자 :
 				<%=SCREEN.getSCREEN_DATE()%>
 				<br> ㅡㅡㅡㅡㅡㅡㅡ 스크린 ㅡㅡㅡㅡㅡㅡㅡ<br>
@@ -69,8 +71,8 @@
 					<%
 						if (SEAT_BITMAP[i].equals("0")) {
 					%>
-					<input class="" type="submit" id="btn<%=i%>"
-						name="btn<%=SEAT_BITMAP[i]%>" value="O"
+					<input class="btn btn-lg btn-default" type="submit" id="btn<%=i%>"
+						name="btn<%=SEAT_BITMAP[i]%>" value="<%=i%>"
 						onclick="clickSeat(<%=i%>)" />
 					<%
 						}
@@ -78,7 +80,7 @@
 					<%
 						if (SEAT_BITMAP[i].equals("1")) {
 					%>
-					<input class="" type="submit" id="btn<%=i%>"
+					<input class="btn btn-lg btn-danger" type="submit" id="btn<%=i%>"
 						name="btn<%=SEAT_BITMAP[i]%>" value="X" />
 					<%
 						}
@@ -86,7 +88,7 @@
 
 
 					<%
-						if ((i % 8) == 1 && (i != 0)) {
+						if ((i % 10) == 0 && (i > 1)) {
 					%>
 					<br>
 					<%
@@ -101,9 +103,10 @@
 				<form method="post" class="form-signin" role="form"
 					action="showmethemoney777.jsp">
 
-					<span><label>좌석을 클릭하세요</label></span>
-					<h5 style="" id="statusMessage" name="statusMessage" value="ace"></h5>
-
+					<span><label>좌석번호를 입력하세요</label></span>
+					<div class="form-group">
+						<input class="form-control" placeholder="SEAT" id="SEAT" name="SEAT"  value=" " autofocus>
+					</div>
 					<div class="col-md-6">
 						<span><label></label></span> <br>
 						<button type="submit" class="btn btn-danger">좌석선택하기</button>

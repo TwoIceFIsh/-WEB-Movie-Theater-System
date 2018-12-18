@@ -56,10 +56,10 @@
 						<ul class="nav navbar-nav">
 
 
-							<li><a href="./a_index.jsp">영화목록</a></li>
+							<li><a onmouseup="goTo()">영화목록</a></li>
 							<li><a href="reserved_Movie_Page.jsp">영화 예매</a></li>
-						
-						
+							<li><a href="a_myTicket.jsp">내 표 확인</a></li>
+
 							<%
 								AdminBitDTO ADMIN = new AdminDAO().getADMIN_BIT(MEMBER_ID);
 													if (ADMIN.getADMIN_BIT() == 1) {
@@ -69,7 +69,7 @@
 							<%
 								}
 							%>
-								<li class="dropdown">
+							<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
 								%> <a href="#" class="dropdown-toggle  " data-toggle="dropdown"

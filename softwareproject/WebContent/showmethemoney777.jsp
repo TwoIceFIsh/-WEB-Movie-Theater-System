@@ -51,6 +51,8 @@ p.select_theater_Time {
 	<%
 		String MEMBER_ID = null;
 		String MOVIE_NAME = null;
+		String SCREEN_NUMBER=  null;
+		String SCREEN_DATE = null;
 		if (session.getAttribute("MEMBER_ID") == null) {
 			response.sendRedirect("./a_index.jsp");
 		}
@@ -59,8 +61,10 @@ p.select_theater_Time {
 			MOVIE_NAME = (String) session.getAttribute("MOVIE_NAME");
 
 			MovieDTO MOVIE = new MovieDAO().getMOVIE_INFO(MOVIE_NAME);
-
+			SCREEN_DATE = (String) session.getAttribute("SCREEN_DATE");
+			SCREEN_NUMBER = (String) session.getAttribute("SCREEN_NUMBER");
 			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+			
 	%>
 
 	<div class="carousel-inner" role="listbox">
@@ -68,8 +72,8 @@ p.select_theater_Time {
 		<h1 align="center">결제 패이지</h1>
 
 	</div>
-	<form name="Movie_choice_form" action="result.jsp"
-		accept-charset="utf-8" method="post">
+	<form name="Movie_choice_form" action="toTicket" accept-charset="utf-8"
+		method="post">
 		<p class="select_theater_room">결제 방식 선택</p>
 		<select name="Movie_room" method="post" accept-charset="utf-8">
 			<option value="선택" selected>----------선택----------</option>
@@ -81,8 +85,11 @@ p.select_theater_Time {
 
 		<p class="select_theater_Movie">포인트 결제</p>
 		<p>현재
-		<div id="MEMBER_ID">
-			<%=MEMBER.getMEMBER_ID()%></div>
+		<div class="form-group">
+			<input class="form-control" readonly id="MEMBER_ID" name="MEMBER_ID"
+				value="<%=MEMBER.getMEMBER_ID()%>" autofocus>
+		</div>
+
 		님의 포인트 잔액은
 		<%=MEMBER.getMEMBER_POINT()%>
 		point 입니다 <br>
@@ -108,18 +115,42 @@ p.select_theater_Time {
 		<fieldset style="width: 350">
 
 			당신이 예매한 영화의 이름은:
-			 
-				<input type="text" class="form-control" readonly id="MEMBER_ID"
-					value="<%=MOVIE.getMOVIE_NAME()%>">
-		 
+			<div class="form-group">
+				<input class="form-control" readonly id="MEMBER_ID" name="MEMBER_ID"
+					value="<%=MOVIE.getMOVIE_NAME()%>" autofocus>
+			</div>
+
+
+			상영관 :
+
+			<div class="form-group">
+				<input class="form-control" readonly id="SCREEN_NUMBER"
+					name="SCREEN_NUMBER" value="<%=SCREEN_NUMBER%>" autofocus>
+			</div>
+
+
+			상영 시간 :
+			<div class="form-group">
+				<input class="form-control" readonly id="SCREEN_DATE"
+					name="SCREEN_DATE" value="<%=SCREEN_DATE%>" autofocus>
+			</div>
+
 			좌석번호 :
-			<div id="seat" name="seat"
-				value="<%=request.getParameter("statusMessage")%>"><%=request.getParameter("statusMessage")%></div>
+			<div class="form-group">
+				<input class="form-control" readonly id="SEAT_NUMBER"
+					name="SEAT_NUMBER" value="<%=request.getParameter("SEAT")%>"
+					autofocus>
+			</div>
+
+
 			결제금액은
 			<h5 id="statusMessage1"></h5>
 			<h5 id="statusMessage2"></h5>
 
 			<p class="check_normal">이렇게 결제 하시겠습니까?</p>
+
+
+
 			<input type="submit" value="보내기"> <input type="reset"
 				value="원점으로 돌리기">
 		</fieldset>

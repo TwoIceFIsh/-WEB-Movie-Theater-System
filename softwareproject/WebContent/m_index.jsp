@@ -220,8 +220,7 @@ a:hover {
 				style="background-size: cover; 	background-position: 100% 100%;
 	background-image: URL(<%=MOVIE.getMOVIE_IMG_URL()%>);">
 				<div class="header-icon-container">
-					<a href="#"> <i class="material-icons header-icon"></i>
-					</a>
+					
 				</div>
 			</div>
 			<!--movie-header-->
@@ -246,8 +245,7 @@ a:hover {
 				<div class="row">
 					<div class="col-md-6">
 
-						<button  onclick="location.href='reserved_Movie_Page.jsp'"
-							class="btn btn-danger btn-lg">예매하기</button>
+						<a class="btn btn-lg btn-danger" onmouseup="goTo()"  role="button"> 예매하기</a>
 					</div>
 					<div class="col-md-6">
 						<form method="post" action="MovieGetServlet">
