@@ -4,6 +4,11 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="movie.MovieDTO"%>
+<%@ page import="movie.MovieDAO"%>
+<%@ page import="admin.ScreenListDTO"%>
+<%@ page import="admin.ScreenListDAO"%>
+<%@page import="java.util.ArrayList"%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,130 +19,94 @@
 </head>
 <body>
 <body>
-
+	<%
+		ScreenListDAO SCREEN = new ScreenListDAO();
+		ArrayList<ScreenListDTO> MOVIE_LIST = SCREEN.MOVIE_LIST();
+	%>
 
 	<jsp:include page="nav.jsp" />
 	<form method="post" class="form-signin" role="form"
-		action="MovieSetServlet">
-
-		<!-- Carousel
-    ================================================== -->
+		action="ScreenSetServlet">
 
 
-		<div class="container">
-			<img class="secont-slnamee" src="./img/sample.png" height="400"
-				wnameth="300" alt="Third slnamee">
-			<div class="carousel-caption ">
-				<div class="row">
-					<div class="col-md-3">
+		<div class="container marketing">
+			<div class="row">
 
 
-
-						<span><label>영화포스터 주소</label></span><input type="text"
-							class="form-control" name="MOVIE_IMG_URL"
-							placeholder="img/sample.jpg">
-					</div>
-					<div class="col-md-3">
-						<span><label>영화제목</label></span><input type="text"
-							class="form-control" name="MOVIE_NAME" placeholder="10자">
-					</div>
-
-					<div class="col-md-6">
-						<span><label>영화설명</label></span><input type="text"
-							class="form-control" name="MOVIE_INFO" placeholder="300자">
-					</div>
+				<div>
+					<span><label>등록할 영화이름</label></span> <select name="MOVIE_NAME">
+						<%
+							for (int i = 0; i < MOVIE_LIST.size(); i++) {
+								ScreenListDTO MOVIE_NAME_LIST = MOVIE_LIST.get(i);
+						%>
+						<option value="<%=MOVIE_NAME_LIST.getMOVIE_NAME()%>"><%=MOVIE_NAME_LIST.getMOVIE_NAME()%></option>
+						<%
+							}
+						%>
+					</select>
 				</div>
-				<div class="row">
-					<div class="col-md-3">
-						<span><label>영화플레이시간</label></span><input type="text"
-							class="form-control" name="PLAY_TIME" placeholder="숫자만">
-					</div>
-					<div class="col-md-3">
-						<span><label>영화가격</label></span><input type="text"
-							class="form-control" name="MOVIE_COST" placeholder="숫자만">
-					</div>
-					<div class="col-md-6">
-						<span><label></label></span> <br>
-						<button type="submit" class="btn btn-danger">영화등록하기</button>
-					</div>
+
+				<div>
+					<span><label>상영관</label></span> <select name="SCREEN_NUMBER">
+						<%
+							for (int i = 1; i <= 10; i++) {
+						%>
+						<option value="<%=i%>"><%=i%>관
+						</option>
+
+						<%
+							}
+						%>
+					</select>
 				</div>
+				<div>
+					<span><label>시간</label></span> <select name="SCREEN_DATE">
+
+						<option value="08:30">08:30</option>
+						<option value="09:30">09:30</option>
+						<option value="10:30">10:30</option>
+						<option value="11:30">11:30</option>
+						<option value="12:30">12:30</option>
+						<option value="15:30">15:30</option>
+						<option value="17:30">17:30</option>
+						<option value="19:30">19:30</option>
+
+					</select>
+				</div>
+				<div>
+					<span><label>총 좌석수</label></span> <select name="TOTAL_SEAT">
+
+						<%
+							for (int i = 25; i < 50; i++) {
+						%>
+						<option value="<%=i%>"><%=i%>석
+						</option>
+						<%
+							}
+						%>
+					</select>
+				</div>
+
+				<div class="col-md-6">
+					<span><label></label></span> <br>
+					<button type="submit" class="btn btn-danger">상영스케줄 등록</button>
+				</div>
+				<%
+					if (session.getAttribute("ALERT") != null) {
+				%>
+
+<div class="col-md-6">
+				<button type="button" class="btn btn-green"><%=(String) session.getAttribute("ALERT")%></button>
+				</div>
+				<%
+				session.removeAttribute("ALERT");
+
+					}
+				%>
+
 
 			</div>
 		</div>
-
-
-
-		<!-- Marketing messaging and featurettes
-    ================================================== -->
-		<!-- Wrap the rest of the page in another container to center all the content. -->
-
-		<div class="container marketing">
-
-			<!-- Three columns of text below the carousel -->
-			<div class="row">
-				<div class="col-lg-4">
-					<div>
-						<span><label>등장인물1 사진 주소를 입력하세요</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE1_URL"
-							placeholder="img/사진파일.jpg">
-					</div>
-
-					<div>
-						<span><label>등장인물1 이름</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE1"
-							placeholder="등장인물 이름을 입력하세요 30자">
-					</div>
-
-
-					<div>
-						<span><label>등장일물1 설명</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE1_INFO" placeholder="500자">
-					</div>
-				</div>
-				<!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div>
-						<span><label>등장인물2 사진 주소를 입력하세요</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE2_URL"
-							placeholder="img/사진파일.jpg">
-					</div>
-
-					<div>
-						<span><label>등장인물2 이름</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE2"
-							placeholder="등장인물 이름을 입력하세요 30자">
-					</div>
-
-
-					<div>
-						<span><label>등장일물2 설명</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE2_INFO" placeholder="500자">
-					</div>
-
-				</div>
-				<!-- /.col-lg-4 -->
-				<div class="col-lg-4">
-					<div>
-						<span><label>등장인물3 사진 주소를 입력하세요</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE3_URL"
-							placeholder="img/사진파일.jpg">
-					</div>
-
-					<div>
-						<span><label>등장인물3 이름</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE3"
-							placeholder="등장인물 이름을 입력하세요 30자">
-					</div>
-
-
-					<div>
-						<span><label>등장일물3 설명</label></span><input type="text"
-							class="form-control" name="MOVIE_PEOPLE3_INFO" placeholder="500자">
-					</div>
-
-				</div>
-
-			</div>
 	</form>
 	<!-- /END THE FEATURETTES -->
 
@@ -153,7 +122,7 @@
 	</p>
 	</footer>
 
-
+	</div>
 	<!-- /.container -->
 
 

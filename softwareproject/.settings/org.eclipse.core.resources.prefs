@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/a_index.jsp=UTF-8
 encoding//WebContent/a_myTicket.jsp=UTF-8
+encoding//src/admin/AdminDAO.java=UTF-8
 encoding//src/movie/MovieDAO.java=UTF-8
 encoding//src/user/UserRegisterCheckServlet.java=UTF-8

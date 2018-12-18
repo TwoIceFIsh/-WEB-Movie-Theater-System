@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="user.UserDTO"%>
 <%@ page import="user.UserDAO"%>
+<%@ page import="admin.AdminBitDTO"%>
+<%@ page import="admin.AdminDAO"%>
 <!DOCTYPE html>
 <html>
 
@@ -24,16 +26,16 @@
 	<%
 		String MEMBER_ID = null;
 
-		if (session.getAttribute("MEMBER_ID") != null) {
-			MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
+			if (session.getAttribute("MEMBER_ID") != null) {
+		MEMBER_ID = (String) session.getAttribute("MEMBER_ID");
+		response.sendRedirect("./a_index.jsp");
+
+		if (MEMBER_ID == null) {
 			response.sendRedirect("./a_index.jsp");
-
-			if (MEMBER_ID == null) {
-				response.sendRedirect("./a_index.jsp");
-			}
-			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
-
 		}
+		UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+
+			}
 	%>
 
 	<div class="navbar-wrapper">
@@ -53,13 +55,21 @@
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 
-							<li class="active"><a href="./a_index.jsp">홈</a></li>
-							<li><a href="./a_index.jsp">영화목록</a></li>
-							<li><a href="a_setMovie.jsp">영화등록</a></li>
 
-							<li><a href="showmethemoney777.jsp">동인이 페이지[로그인/영화선택 필요]</a></li>
-							<li><a href="reserved_Movie_Page.jsp">한성이 페이지</a></li>
-							<li class="dropdown">
+							<li><a href="./a_index.jsp">영화목록</a></li>
+							<li><a href="reserved_Movie_Page.jsp">영화 예매</a></li>
+						
+						
+							<%
+								AdminBitDTO ADMIN = new AdminDAO().getADMIN_BIT(MEMBER_ID);
+													if (ADMIN.getADMIN_BIT() == 1) {
+							%>
+							<li><a href="a_setMovie.jsp">&lt;영화 등록&gt;</a></li>
+							<li><a href="a_setScreen.jsp">&lt;상영 등록&gt;</a></li>
+							<%
+								}
+							%>
+								<li class="dropdown">
 								<%
 									if (MEMBER_ID == null) {
 								%> <a href="#" class="dropdown-toggle  " data-toggle="dropdown"
@@ -93,8 +103,8 @@
 							</li>
 							<%
 								if (MEMBER_ID != null) {
-																			UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
-																			int MEMBER_POINT = MEMBER.getMEMBER_POINT();
+									UserDTO MEMBER = new UserDAO().getMEMBER_INFO(MEMBER_ID);
+									int MEMBER_POINT = MEMBER.getMEMBER_POINT();
 							%>
 							<li><a>포인트 <%=MEMBER_POINT%>점
 							</a></li>

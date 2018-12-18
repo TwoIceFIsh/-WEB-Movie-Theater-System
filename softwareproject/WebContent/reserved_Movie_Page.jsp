@@ -3,8 +3,8 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="movie.MovieDTO"%>
 <%@ page import="movie.MovieDAO"%>
-<%@ page import="screen.ScreenDTO"%>
-<%@ page import="screen.ScreenDAO"%>
+<%@ page import="admin.ScreenListDTO"%>
+<%@ page import="admin.ScreenListDAO"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -25,9 +25,8 @@
 <body>
 
 	<%
-		MovieDAO getDB = new MovieDAO();
-
-		ArrayList<MovieDTO> MOVIE_LIST = getDB.getMovieList();
+		ScreenListDAO SCREEN = new ScreenListDAO();
+		ArrayList<ScreenListDTO> MOVIE_LIST = SCREEN.MOVIE_LIST();
 	%>
 	<jsp:include page="nav.jsp" />
 	<!-- Carousel
@@ -51,50 +50,49 @@
 
 		<%
 			for (int i = 0; i < MOVIE_LIST.size(); i++) {
-				MovieDTO MOVIE = MOVIE_LIST.get(i);
+				ScreenListDTO MOVIE_NAME_LIST = MOVIE_LIST.get(i);
 		%>
 		<div class="row container">
 			<div class="col-md-12">
 
-
-
-				<a class="btn btn-success btn-lg"><%=MOVIE.MOVIE_NAME%></a>
+				<a class="btn btn-success btn-lg"><%=MOVIE_NAME_LIST.getMOVIE_NAME()%></a>
 			</div>
+			<br>
+
+
+			<%
+				ArrayList<ScreenListDTO> SCREEN_LIST = SCREEN.getSCREEN_LIST(MOVIE_NAME_LIST.getMOVIE_NAME());
+
+					if (SCREEN_LIST.size() <= 0) {
+			%>
 			<div class="col-md-12">
-
-				<%
-					ScreenDAO screen = new ScreenDAO();
-						ArrayList<ScreenDTO> SCREEN_LIST = screen.getScreenList(MOVIE.getMOVIE_NAME());
-
-						if (SCREEN_LIST.size() <= 0) {
-				%>
 				<button type="button" class="btn btn-danger btn-lg">일정 없음</button>
-				<%
-					}
-
-						for (int j = 0; j < SCREEN_LIST.size(); j++) {
-							ScreenDTO SCREEN = SCREEN_LIST.get(j);
-				%>
-
-
-
-
-
+			</div>
+			<%
+				}
+			%>
+			
+			<div class="col-md-12">
+			<%
+				for (int j = 0; j < SCREEN_LIST.size(); j++) {
+						ScreenListDTO SCREEN_LIST_DTO = SCREEN_LIST.get(j);
+			%>
+			
 				<form method="post" action="ScreenSearchServlet">
 					<button type="submit" name="data"
-						value="<%=MOVIE.getMOVIE_NAME()%>,<%=SCREEN.getSCREEN_DATE()%>,<%=SCREEN.getSCREEN_NUMBER()%>"
+						value="<%=SCREEN_LIST_DTO.getMOVIE_NAME()%>,<%=SCREEN_LIST_DTO.getSCREEN_DATE()%>,<%=SCREEN_LIST_DTO.getSCREEN_NUMBER()%>"
 						class="btn btn-default btn-lg">
-						<%=SCREEN.getSCREEN_NUMBER()%>관<br> 일시:
-						<%=SCREEN.getSCREEN_DATE()%>
-						<br>남은좌석 :<%=SCREEN.getTOTAL_SEAT() - SCREEN.getRESERVED_SEAT()%>
+						<%=SCREEN_LIST_DTO.getSCREEN_NUMBER()%>관<br> 일시:
+						<%=SCREEN_LIST_DTO.getSCREEN_DATE()%>
+						<br>남은좌석 :<%=SCREEN_LIST_DTO.getTOTAL_SEAT() - SCREEN_LIST_DTO.getRESERVED_SEAT()%>
 				</form>
+		
 
+			<%
+				}
+			%>
+	</div>
 
-				<%
-					}
-				%>
-
-			</div>
 			<!-- 영화이름을 넘긴다. -->
 			<p>
 		</div>

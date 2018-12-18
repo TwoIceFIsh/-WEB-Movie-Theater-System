@@ -20,51 +20,7 @@ public class MovieDAO {
 		 
 	}
 
-	public ArrayList<MovieDTO> getMovieList(){
-		System.out.println("getMovieList");
-		ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
 
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String SQL = "SELECT MOVIE_NAME,MOVIE_INFO, MOVIE_IMG_URL, PLAY_TIME FROM MOVIE_INFO";
-
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");    
-			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
-			pstmt = conn.prepareStatement(SQL);
-
-			rs=pstmt.executeQuery();
-
-			while(rs.next()) {
-				MovieDTO MOVIE = new MovieDTO();
-				MOVIE.setMOVIE_NAME(rs.getString("MOVIE_NAME"));
-				MOVIE.setMOVIE_IMG_URL(rs.getString("MOVIE_IMG_URL"));
-				MOVIE.setPLAY_TIME(rs.getString("PLAY_TIME"));
-				MOVIE.setMOVIE_INFO(rs.getString("MOVIE_INFO"));
-
-				list.add(MOVIE);
-
-			}
-
-			return list;
-
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-
-			try {
-				if(rs!= null)rs.close();
-
-				if(pstmt !=null) pstmt.close();
-				if(conn!=null)conn.close();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		return list;
-	}
 
 	//[Y] LOGIN LOGIC
 	public int MEMBER_LOGIN(String MEMBER_ID, String MEMBER_PW) {
@@ -136,7 +92,6 @@ public class MovieDAO {
 			if(rs.next() ) {
 					String Cost = rs.getString("MOVIE_COST");
 					String Point = Integer.toString(rs.getInt("MEMBER_POINT"));
-					//占쏙옙占쏙옙占쏙옙占쏙옙森占� 占쏙옙占� 占쏙옙占쏙옙占쏙옙潔홰占쏙옙占�
 					String Text = Cost;
 					Text += ",";
 					Text += Point;
@@ -323,14 +278,57 @@ public class MovieDAO {
 	}
 
 	
+	public ArrayList<MovieDTO> getMovieList(){
+		System.out.println("getMovieList");
+		ArrayList<MovieDTO> list = new ArrayList<MovieDTO>();
 
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "SELECT MOVIE_NAME,MOVIE_INFO, MOVIE_IMG_URL, PLAY_TIME FROM MOVIE_INFO";
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");    
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
+			pstmt = conn.prepareStatement(SQL);
+
+			rs=pstmt.executeQuery();
+
+			while(rs.next()) {
+				MovieDTO MOVIE = new MovieDTO();
+				MOVIE.setMOVIE_NAME(rs.getString("MOVIE_NAME"));
+				MOVIE.setMOVIE_IMG_URL(rs.getString("MOVIE_IMG_URL"));
+				MOVIE.setPLAY_TIME(rs.getString("PLAY_TIME"));
+				MOVIE.setMOVIE_INFO(rs.getString("MOVIE_INFO"));
+
+				list.add(MOVIE);
+
+			}
+
+			return list;
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if(rs!= null)rs.close();
+
+				if(pstmt !=null) pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return list;
+	}
 	public int findMovie(String MOVIE_NAME) {
 		 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String SQL = "SELECT MOVIE_NAME FROM MOVIE_INFO WHERE MOVIE_NAME = ? ";
-
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");    
