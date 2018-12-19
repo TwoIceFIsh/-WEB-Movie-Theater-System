@@ -4,7 +4,7 @@
 Movie Reservation System
 
 # Features
-Admin must be set admin bit 1 that can be insert datas
+Admin must be set admin bit by 1 that can be insert datas
 
 User can Registrate  
 
