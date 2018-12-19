@@ -74,7 +74,7 @@ p.select_theater_Time {
 	<form class="container " name="Movie_choice_form" action="toTicket"
 		accept-charset="utf-8" method="post">
 
-		 
+
 
 
 		<div class="form-group">
@@ -89,9 +89,8 @@ p.select_theater_Time {
 				point 입니다
 			</h4>
 		</div>
-		<br>
-<input class="form-control hidden" readonly id="point" name="point"
-				value="<%=MEMBER.getMEMBER_POINT()%>" autofocus>
+		<br> <input class="form-control hidden" readonly id="point"
+			name="point" value="<%=MEMBER.getMEMBER_POINT()%>" autofocus>
 
 
 		<div>
@@ -122,19 +121,23 @@ p.select_theater_Time {
 					name="SEAT_NUMBER" value="<%=request.getParameter("SEAT")%>"
 					autofocus>
 			</div>
-			
+
 			<input type="text" id="moviecost" class=" hidden "
 				placeholder="숫자만입력" value="<%=MOVIE.getMOVIE_COST()%>"> <span><label>사용할
 					포인트를 입력하세요</label></span><input type="text" id="pointvalue"
-				onkeyup="partpointCheckFunction();" class="form-control "
-				placeholder="숫자만입력">
+				onkeyup="partpointCheckFunction();" class="form-control"
+				placeholder="숫자만입력"> 
+				
+	 
 
- <%request.getSession().setAttribute("MOVIE_IMG_URL", MOVIE.getMOVIE_IMG_URL());  %>
+			<%request.getSession().setAttribute("MOVIE_IMG_URL", MOVIE.getMOVIE_IMG_URL());  %>
+			 
+
 			<h4>결제금액은</h4>
-			<a id="statusMessage1"></a> <a id="statusMessage2"></a> 
-			<br>
-			<button class="btn btn-danger btn-lg btn-block"
-				type="submit" >결제 확인</button>
+
+			<a id="statusMessage1"></a> <a class="hidden" id="statusMessage2"></a> <br>
+			<button class="btn btn-danger btn-lg btn-block" type="submit">결제
+				확인</button>
 		</div>
 
 	</form>

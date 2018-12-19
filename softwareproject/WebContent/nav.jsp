@@ -110,8 +110,8 @@
 									int MEMBER_POINT = MEMBER.getMEMBER_POINT();
 							%>
 							<li><a onmouseup="goTo3()">내 표 확인</a></li>
-							<li><a>포인트 <%=MEMBER_POINT%>점
-							</a></li>
+						 
+							
 
 							<%
 								}

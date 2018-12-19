@@ -31,7 +31,7 @@ public class UserDAO {
 		String SQL = "SELECT MEMBER_PW FROM MOVIE_MEMBER WHERE MEMBER_ID = ? ";
 
 		try {
-			 	Class.forName("com.mysql.cj.jdbc.Driver");    
+			Class.forName("com.mysql.cj.jdbc.Driver");    
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
@@ -218,6 +218,51 @@ public class UserDAO {
 			pstmt.setString(3, MEMBER_ADDRESS);
 			pstmt.setString(4, MEMBER_ID);	
 			return pstmt.executeUpdate();
+
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if(pstmt !=null) pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return -1;
+	}
+
+	//[Y] update user Info.
+	public int setPoint(String MEMBER_ID, int Point) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		PreparedStatement pstmt2 = null;
+		ResultSet rs = null;
+
+		String SQL = "SELECT MEMBER_POINT FROM MOVIE_MEMBER WHERE MEMBER_ID = ?";
+
+		String SQL2 = "UPDATE MOVIE_MEMBER SET MEMBER_POINT = ? WHERE MEMBER_ID = ?";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");    
+			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
+
+			UserDTO USER = new UserDTO();
+		 
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+
+			if(rs.next()) {
+				USER.setMEMBER_POINT(rs.getInt("MEMBER_POINT"));
+			}
+
+			pstmt2 = conn.prepareStatement(SQL2);
+			pstmt2.setInt(1, USER.getMEMBER_POINT()-Point);	
+			pstmt2.setString(2, MEMBER_ID);	
+			return pstmt2.executeUpdate();
 
 
 		} catch(Exception e) {

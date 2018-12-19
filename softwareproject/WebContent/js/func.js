@@ -320,6 +320,9 @@ function partpointCheckFunction() {
 		$('#statusMessage1').html(
 				'실제 결제금액 : ' + (moviecost - pointvalue));
 		$('#statusMessage1').css("color", "green");
+		
+		$('#statusMessage2').html(pointvalue);
+		$('#statusMessage2').css("color", "red");
 		 
 	}
 
