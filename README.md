@@ -21,4 +21,4 @@ Admin Can add the movie
 Admin can Add Movie Schedule  
 
 
-Live demo's on https://ou2d.cf  
+Live demo's on http://ou2d.cf  
