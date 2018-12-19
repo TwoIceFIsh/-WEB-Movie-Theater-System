@@ -25,7 +25,7 @@ Admin can Add Movie Schedule
 Live demo's on http://ou2d.cf  
 admin id/pw : asdf/asdf
 
-# next featrues
+# next features
 code refactoring  
 Seat algorithm
 Actual payment system
