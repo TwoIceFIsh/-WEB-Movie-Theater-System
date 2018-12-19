@@ -218,7 +218,7 @@ a:hover {
 		for(int i = 0 ; i< TICKETS.size(); i ++){
 			TicketDTO TIC = TICKETS.get(i);
 			
-			String url = new AdminDAO().getSCREEN_IMG(MEMBER_ID);
+			String url = new AdminDAO().getSCREEN_IMG(MEMBER_ID, TIC.getSCREEN_DATE(), TIC.getSCREEN_NUMBER());
 			
 	%>
 	<div class="movie-card">

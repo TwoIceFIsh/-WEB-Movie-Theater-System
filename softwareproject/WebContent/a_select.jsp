@@ -12,6 +12,7 @@
 
 <!-- 무조건 이양식을 따라야 한글이 제대로 출력이됩니다.
  -->
+
 <title>기본 구성 페이지!</title>
 </head>
 <body>
@@ -99,7 +100,7 @@
 						}
 					%>
 				</div>
-
+ 
 
 			</div>
 			<form method="post" class="form-signin" role="form"

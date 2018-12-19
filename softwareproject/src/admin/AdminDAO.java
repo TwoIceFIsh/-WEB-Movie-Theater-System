@@ -274,13 +274,13 @@ public class AdminDAO {
 		return TICKETS;
 	}
 
-	public String getSCREEN_IMG(String MEMBER_ID) {
+	public String getSCREEN_IMG(String MEMBER_ID, String SCREEN_DATE, int SCREEN_NUMBER) {
 
 		MovieDTO MOVIE = new MovieDTO();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "SELECT MOVIE_IMG_URL FROM MOVIE_INFO WHERE MOVIE_NAME IN(SELECT MOVIE_NAME FROM MY_TICKET, SCREEN_INFO WHERE MEMBER_ID = ? AND SCREEN_INFO.SCREEN_DATE = MY_TICKET.SCREEN_DATE )";
+		String SQL = "SELECT MOVIE_IMG_URL FROM MOVIE_INFO WHERE MOVIE_NAME IN(SELECT MOVIE_NAME FROM MY_TICKET, SCREEN_INFO WHERE MEMBER_ID = ? AND SCREEN_INFO.SCREEN_DATE = ? AND SCREEN_INFO.SCREEN_NUMBER = ? )";
 		String url = null;
 
 		try {
@@ -288,6 +288,8 @@ public class AdminDAO {
 			conn = DriverManager.getConnection(DB_URL,DB_ID,DB_PW);
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, MEMBER_ID);
+			pstmt.setString(2, SCREEN_DATE);
+			pstmt.setInt(3, SCREEN_NUMBER);
 		
 			rs=pstmt.executeQuery();
 
