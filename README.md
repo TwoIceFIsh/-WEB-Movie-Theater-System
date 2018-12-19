@@ -1,4 +1,4 @@
-# JSP/Servlet WEB PROJECT
+# JSP/Servlet WEB PROJECT(MVC patterns)
 
 # Concept
 Movie Reservation System
@@ -13,6 +13,7 @@ User can Change Information
 User Can See movie Schedules  
 User Can see own Tickets  
 User Can select the theater  
+User Can select Seat 
 User Can pay by points  
 
 
@@ -22,3 +23,9 @@ Admin can Add Movie Schedule
 
 
 Live demo's on http://ou2d.cf  
+admin id/pw : asdf/asdf
+
+# next featrues
+code refactoring  
+Seat algorithm
+Actual payment system
