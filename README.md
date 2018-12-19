@@ -19,3 +19,6 @@ User Can pay by points
 
 Admin Can add the movie  
 Admin can Add Movie Schedule  
+
+
+Live demo's on https://ou2d.cf  
