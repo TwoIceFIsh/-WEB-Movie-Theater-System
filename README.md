@@ -22,7 +22,7 @@ Admin Can add the movie
 Admin can Add Movie Schedule  
 
 
-Live demo's on http://ou2d.cf  
+Live demo's on http://ec2-52-78-146-74.ap-northeast-2.compute.amazonaws.com/softwareproject/a_index.jsp  
 Admin id/pw : asdf/asdf
 
 # Next features
